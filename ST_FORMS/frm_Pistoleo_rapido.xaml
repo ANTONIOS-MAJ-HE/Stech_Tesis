@@ -1,0 +1,71 @@
+﻿<Window x:Class="ST_FORMS.frm_Pistoleo_rapido"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ST_FORMS"
+        mc:Ignorable="d"
+        WindowState="Maximized"
+        Title="frm_Pistoleo_rapido" Height="900" Width="1600">
+
+    <Grid>
+        <DockPanel LastChildFill="False" Margin="0,0,0,757">
+            <DockPanel.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF85E2FD" Offset="0.004"/>
+                    <GradientStop Color="White" Offset="1"/>
+                    <GradientStop Color="#FF21C7F7" Offset="0.48"/>
+                    <GradientStop Color="#FF1799BF" Offset="0.86"/>
+                </LinearGradientBrush>
+            </DockPanel.Background>
+        </DockPanel>
+        <Label x:Name="label" Content="LECTURA DE PRODUCTOS" HorizontalAlignment="Center" VerticalAlignment="Top" Height="86" Width="654" FontSize="46" Foreground="White" FontWeight="Bold" Margin="0,-6,0,0"/>
+        <Label x:Name="label_Copy" Content="volver" HorizontalAlignment="Left" Margin="64,21,0,0" VerticalAlignment="Top" Height="26" Width="54" FontSize="14" Foreground="White" FontWeight="Bold" RenderTransformOrigin="0.709,0.835"/>
+        <Button x:Name="button_Copy1" Content="Button" HorizontalAlignment="Left" Margin="33,20,0,0" VerticalAlignment="Top" Height="30" BorderBrush="{x:Null}" Foreground="{x:Null}" Click="button_Click_1" Width="30">
+            <Button.Background>
+                <ImageBrush ImageSource="/4829874_arrow_back_left_icon.png"/>
+            </Button.Background>
+        </Button>
+        <DataGrid x:Name="dtg_oc_pendiente" Margin="33,129,520,40"/>
+        <Button x:Name="button" Content="INICIAR DESPACHO" HorizontalAlignment="Left" Margin="475,94,0,0" VerticalAlignment="Top" Height="25" Width="197" Background="#FF5555F3" Foreground="White" FontWeight="Bold" Click="button_Click"/>
+        <Label x:Name="label1" Content="Ordenes a despachar" HorizontalAlignment="Left" Margin="34,89,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="18"/>
+        <WrapPanel x:Name="PanelDespacho" Margin="1090,94,20,355" Background="#FFDCE7F5"   >
+            <Label x:Name="label2" Content="DESPACHO RAPIDO" HorizontalAlignment="Center" VerticalAlignment="Center" Width="444" FontWeight="Bold" FontSize="22" RenderTransformOrigin="0.5,0.5">
+                <Label.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="-0.026"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Label.RenderTransform>
+            </Label>
+            <Label x:Name="label3" Content="Responsable" Width="115" FontSize="16" FontWeight="Bold" Margin="12,5,4,5"/>
+            <ComboBox x:Name="cmbResponsable" Width="340" Height="25" FontSize="16" RenderTransformOrigin="0.5,0.5">
+                <ComboBox.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="-0.06"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </ComboBox.RenderTransform>
+            </ComboBox>
+            <Label x:Name="label3_Copy" Content="Canal" Width="95" FontWeight="Bold" FontSize="16" Margin="32,5,5.3,5"/>
+            <ComboBox x:Name="cmbCanal" Width="338" Height="26" FontSize="16"/>
+            <Label x:Name="label3_Copy1" Content="Cod. barras" Width="95" FontSize="16" FontWeight="Bold" Margin="12,5,24,5"/>
+            <TextBox x:Name="txtBarras" TextWrapping="Wrap" Width="339" Height="24" FontSize="16" TextChanged="txtBarras_TextChanged"/>
+            <Label x:Name="label3_Copy2" Content="Producto" Width="99" FontSize="16" FontWeight="Bold" Margin="12,5,4,5"/>
+            <TextBox x:Name="txtProducto" TextWrapping="Wrap" Width="343" Height="99" FontSize="16" Margin="15,5,0,5"/>
+            <Label x:Name="label3_Copy3" Content="Partnumber" Width="99" FontWeight="Bold" FontSize="16" Margin="12,0,20,0"/>
+            <TextBox x:Name="txtPartnumber" TextWrapping="Wrap" Width="339" Height="23" FontSize="16"/>
+            <Label x:Name="label3_Copy4" Content="Modelo" Width="90" FontSize="16" FontWeight="Bold" Margin="35,0,0,0"/>
+            <TextBox x:Name="txtModelo" TextWrapping="Wrap" Width="340" Height="24" FontSize="16" Margin="5,0,0,0"/>
+            <Button x:Name="btnINGRESAR" Content="INGRESAR" Width="120" Height="29" FontWeight="Bold" FontSize="16" Click="btnINGRESAR_Click" Margin="205,5,-0.2,0"/>
+            <Button x:Name="btnCANCELAR" Content="ELIMINAR" Width="120" Height="29" FontSize="16" FontWeight="Bold" Click="btnCANCELAR_Click" Margin="25,5,0,0"/>
+        </WrapPanel>
+        <DataGrid x:Name="dtgProd" Margin="70,459,1020,140" SelectionChanged="dtgProd_SelectionChanged" Visibility="Hidden"/>
+        <DataGrid x:Name="dataGrid" Margin="1090,494,20,40"/>
+
+    </Grid>
+</Window>

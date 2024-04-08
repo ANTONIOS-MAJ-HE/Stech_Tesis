@@ -1,0 +1,42 @@
+﻿<Window x:Class="ST_FORMS.frm_Alerta_Stock"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ST_FORMS"
+        mc:Ignorable="d"
+        WindowState="Maximized"
+        Title="frm_Alerta_Stock" Height="900" Width="1600">
+    <Grid>
+        <DockPanel LastChildFill="False" Margin="0,0,0,757">
+            <DockPanel.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF85E2FD" Offset="0.004"/>
+                    <GradientStop Color="White" Offset="1"/>
+                    <GradientStop Color="#FF21C7F7" Offset="0.48"/>
+                    <GradientStop Color="#FF1799BF" Offset="0.86"/>
+                </LinearGradientBrush>
+            </DockPanel.Background>
+        </DockPanel>
+        <Label x:Name="label" Content="ALERTAS STOCK " HorizontalAlignment="Center" VerticalAlignment="Top" Height="87" Width="360" FontSize="46" Foreground="White" FontWeight="Bold"/>
+        <Label x:Name="label_Copy" Content="volver" HorizontalAlignment="Left" Margin="62,22,0,0" VerticalAlignment="Top" Height="26" Width="54" FontSize="14" Foreground="White" FontWeight="Bold" RenderTransformOrigin="0.709,0.835"/>
+        <Button x:Name="button" Content="Button" HorizontalAlignment="Left" Margin="35,22,0,0" VerticalAlignment="Top" Height="30" BorderBrush="{x:Null}" Foreground="{x:Null}" Click="button_Click_1" Width="30">
+            <Button.Background>
+                <ImageBrush ImageSource="/4829874_arrow_back_left_icon.png"/>
+            </Button.Background>
+        </Button>
+        <DataGrid x:Name="dtg_Vista" Margin="62,187,40,207" SelectionChanged="dtg_Vista_SelectionChanged" ClipboardCopyMode="IncludeHeader"/>
+        <Label x:Name="label1_Copy8" Content="Productos con bajo stock" HorizontalAlignment="Left" Margin="62,156,0,0" VerticalAlignment="Top" Height="36" FontFamily="Arial Rounded MT Bold" FontSize="18" FontStretch="Normal" FontWeight="Bold"/>
+        <Label x:Name="label1_Copy7" Content="Productos :" HorizontalAlignment="Left" Margin="1359,656,0,0" VerticalAlignment="Top" Height="36" FontFamily="Bahnschrift Light" FontSize="18" FontStretch="Normal" FontWeight="UltraBold"/>
+        <Label x:Name="lblcant_prod" Content="" Margin="1465,655,40,0" VerticalAlignment="Top" Height="36" FontFamily="Arial Rounded MT Bold" FontSize="18" FontStretch="Normal" FontWeight="Bold"/>
+        <TextBox x:Name="txtCantidad" HorizontalAlignment="Left" Margin="1075,136,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Label x:Name="label1" Content="Stock restante" HorizontalAlignment="Left" Margin="985,132,0,0" VerticalAlignment="Top"/>
+        <DatePicker x:Name="dt_Inicio" HorizontalAlignment="Left" Margin="1280,131,0,0" VerticalAlignment="Top" IsEnabled="False"/>
+        <DatePicker x:Name="dt_Fin" HorizontalAlignment="Left" Margin="1280,160,0,0" VerticalAlignment="Top" IsEnabled="False"/>
+        <Label x:Name="label1_Copy" Content="Fecha inicio" HorizontalAlignment="Left" Margin="1203,130,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label1_Copy1" Content="Fecha fin" HorizontalAlignment="Left" Margin="1218,158,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="btn_Buscar" Content="Buscar" HorizontalAlignment="Left" Margin="1460,126,0,0" VerticalAlignment="Top" Click="button6_Click" Height="28" Width="100" FontSize="16" Foreground="White" Background="#FF2263A4"/>
+        <Button x:Name="btn_Limp_Copy1" Content="Limpiar" HorizontalAlignment="Left" Margin="1460,159,0,0" VerticalAlignment="Top" Height="28" Width="100" Background="#FFA5B600" Foreground="White" FontWeight="Normal" FontSize="16" Click="btn_Limp_Copy1_Click" />
+
+    </Grid>
+</Window>

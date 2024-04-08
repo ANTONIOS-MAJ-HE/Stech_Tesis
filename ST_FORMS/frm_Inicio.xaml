@@ -1,0 +1,297 @@
+﻿<Window x:Class="ST_FORMS.frm_Inicio"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ST_FORMS"
+        mc:Ignorable="d"
+         WindowState="Maximized"
+        Title="MainWindow" Height="900" Width="1600">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Button x:Name="button" Margin="37,195,1383,500" BorderBrush="#FFDCF0F6" Content="&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;   REGISTRO INCIDENCIAS" FontFamily="Bahnschrift" FontSize="14" Click="button_Click" Foreground="Black">
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="White"/>
+                    <GradientStop Color="#FF68DDFF" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+
+        </Button>
+        <DockPanel LastChildFill="False" Margin="0,0,0,718">
+            <DockPanel.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF85E2FD" Offset="0.004"/>
+                    <GradientStop Color="White" Offset="1"/>
+                    <GradientStop Color="#FF21C7F7" Offset="0.48"/>
+                    <GradientStop Color="#FF1799BF" Offset="0.86"/>
+                </LinearGradientBrush>
+            </DockPanel.Background>
+        </DockPanel>
+        <Label x:Name="label" Content="STECH PERU FORMS  " HorizontalAlignment="Left" Margin="642,0,0,0" VerticalAlignment="Top" Height="92" Width="768" FontSize="56" Foreground="White" FontWeight="Bold">
+            <Label.FocusVisualStyle>
+                <Style/>
+            </Label.FocusVisualStyle>
+        </Label>
+        <Image x:Name="image" HorizontalAlignment="Left" Height="82" Margin="120,10,0,0" VerticalAlignment="Top" Width="258" Source="/Logo-ST-201901_300x100_2.png"/>
+        <Image x:Name="image1" HorizontalAlignment="Left" Height="64" Margin="47,195,0,0" VerticalAlignment="Top" Width="70" Source="/7114300_eye_laser_correction_icon.png"/>
+        <Button x:Name="button_Copy" Margin="244,195,1176,500" BorderBrush="#FFDCF0F6" Content="&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;REGISTRO NUEVO PROD" FontFamily="Bahnschrift" FontSize="14" Click="button1_Click" Foreground="Black">
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="White"/>
+                    <GradientStop Color="#FF68DDFF" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+
+        </Button>
+        <Button x:Name="button_Copy1" Margin="456,195,964,500" BorderBrush="#FFDCF0F6" Content="&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;REGISTRO ENTRADAS" FontFamily="Bahnschrift" FontSize="14" Click="button_Copy1_Click" Foreground="Black">
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="White"/>
+                    <GradientStop Color="#FF68DDFF" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+
+        </Button>
+        <Image x:Name="image2" HorizontalAlignment="Left" Height="69" Margin="466,195,0,0" VerticalAlignment="Top" Width="70" Source="/7340573_e-commerce_online_shopping_ui_package_icon (1).png"/>
+        <Image x:Name="image2_Copy" HorizontalAlignment="Left" Height="69" Margin="256,195,0,0" VerticalAlignment="Top" Width="70" Source="/3669431_new_fiber_ic_icon.png"/>
+        <Button x:Name="button_Copy2" Margin="37,361,1383,334" BorderBrush="#FFDCF0F6" Content="&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;                          PEDIDOS" FontFamily="Bahnschrift" FontSize="14" Click="button_Copy2_Click" Foreground="Black">
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="White"/>
+                    <GradientStop Color="#FF68DDFF" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+
+        </Button>
+        <Image x:Name="image2_Copy1" HorizontalAlignment="Left" Height="69" Margin="42,361,0,0" VerticalAlignment="Top" Width="70" Source="/2639879_order_icon.png"/>
+        <Button x:Name="button_Copy3" Margin="244,361,1176,334" BorderBrush="#FFDCF0F6" Content="&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;       REGISTRO SALIDAS" FontFamily="Bahnschrift" FontSize="14" Click="button_Copy3_Click"  Foreground="Black">
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="White"/>
+                    <GradientStop Color="#FF68DDFF" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+
+        </Button>
+        <Image x:Name="image3" HorizontalAlignment="Left" Height="60" Margin="256,372,0,0" VerticalAlignment="Top" Width="50" Source="/4213459_common_door_exit_logout_out_icon.png"/>
+        <Button x:Name="button_Copy4" Margin="456,361,964,334" BorderBrush="#FFDCF0F6" Content="&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;           PLANTA STECH" FontFamily="Bahnschrift" FontSize="14" Click="button_Copy4_Click"  Foreground="Black">
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="White"/>
+                    <GradientStop Color="#FF68DDFF" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+
+        </Button>
+        <Image x:Name="image3_Copy" HorizontalAlignment="Left" Height="78" Margin="466,361,0,0" VerticalAlignment="Top" Width="67" Source="/4265793_building_storage_warehouse_icon.png"/>
+        <Button x:Name="button_Copy5" Margin="37,528,1383,167" BorderBrush="#FFDCF0F6" Content="&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;        LECTURA PRODUCTOS&#xD;&#xA;" FontFamily="Bahnschrift" FontSize="14"  Foreground="Black" Click="button_Copy5_Click">
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="White"/>
+                    <GradientStop Color="#FF68DDFF" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+
+        </Button>
+        <Image x:Name="image2_Copy2" HorizontalAlignment="Left" Height="69" Margin="47,528,0,0" VerticalAlignment="Top" Width="70" Source="/5726984_barcode_code_qr_scan_scanner_icon.png" RenderTransformOrigin="0.757,0.493"/>
+        <Button x:Name="btn_Alertas_Stock" Margin="244,528,1176,167" BorderBrush="#FFDCF0F6" Content="&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;            ALERTAS STOCK" FontFamily="Bahnschrift" FontSize="14"   Foreground="Black" Click="btn_Alertas_Stock_Click">
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="White"/>
+                    <GradientStop Color="#FF68DDFF" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+
+        </Button>
+        <Image x:Name="image4" HorizontalAlignment="Left" Height="63" Margin="256,534,0,0" VerticalAlignment="Top" Width="58" Source="/2561316_octagon_alert_icon.png"/>
+        <Button x:Name="btn_Alertas_Stock_Copy" Margin="456,528,964,167" BorderBrush="#FFDCF0F6" Content="&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;                  CONSULTA&#xD;&#xA;        COMPROBANTES" FontFamily="Bahnschrift" FontSize="14"   Foreground="Black" Click="btn_Alertas_Stock_Copy_Click" >
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="White"/>
+                    <GradientStop Color="#FF68DDFF" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+
+        </Button>
+        <Image x:Name="image4_Copy" HorizontalAlignment="Left" Height="68" Margin="466,534,0,0" VerticalAlignment="Top" Width="64" Source="/6588641_and_business_finance_invoice_icon.png"/>
+        <Button x:Name="button_Copy6" Margin="670,195,750,500" BorderBrush="#FFDCF0F6" Content="&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;     EDITAR PRODUCTOS&#xA;" FontFamily="Bahnschrift" FontSize="14"  Foreground="Black" Click="button_Copy6_Click" >
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="White"/>
+                    <GradientStop Color="#FF68DDFF" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+
+        </Button>
+        <Image x:Name="image2_Copy3" HorizontalAlignment="Left" Height="57" Margin="680,202,0,0" VerticalAlignment="Top" Width="55" Source="/2561427_edit_icon (1).png" RenderTransformOrigin="0.757,0.493"/>
+        <Button x:Name="btn_tipoCambio" Margin="670,361,750,334" BorderBrush="#FFDCF0F6" Content="&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;     TIPOS DE CAMBIO&#xA;" FontFamily="Bahnschrift" FontSize="14"  Foreground="Black" Click="btn_tipoCambio_Click" >
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="White"/>
+                    <GradientStop Color="#FF68DDFF" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+
+        </Button>
+        <Image  HorizontalAlignment="Left" Height="70" Margin="680,372,0,0" VerticalAlignment="Top" Width="80" Source="/tp_cambio_icono.png"/>
+        <Button x:Name="btn_Consolidados" Margin="670,528,750,167" BorderBrush="#FFDCF0F6" Content="&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;    CONSOLIDADOS&#xA;" FontFamily="Bahnschrift" FontSize="14"  Foreground="Black" Click="btn_Consolidados_Click" >
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="White"/>
+                    <GradientStop Color="#FF68DDFF" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+
+        </Button>
+        <Image x:Name="icono_consolidados" HorizontalAlignment="Left" Height="68" Margin="696,534,0,0" VerticalAlignment="Top" Width="64" Source="/consolidados_icono.png">
+            <Image.OpacityMask>
+                <ImageBrush ImageSource="/consolidados_icono.png"/>
+            </Image.OpacityMask>
+        </Image>
+        <Button x:Name="btn_Clientes" Margin="885,202,535,500" BorderBrush="#FFDCF0F6" Content="&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;     CLIENTES/CONTACTOS&#xA;" FontFamily="Bahnschrift" FontSize="14"  Foreground="Black" Click="btn_Clientes_Click" >
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="White"/>
+                    <GradientStop Color="#FF68DDFF" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+
+        </Button>
+        <Button x:Name="btn_Guias" Margin="885,356,535,346" BorderBrush="#FFDCF0F6" Content="&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;     GUIAS DE REMISION&#xA;" FontFamily="Bahnschrift" FontSize="14"  Foreground="Black" Click="btn_Guias_Click" >
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="White"/>
+                    <GradientStop Color="#FF68DDFF" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+
+        </Button>
+        <Button x:Name="btn_transportista" Margin="885,534,535,168" BorderBrush="#FFDCF0F6" Content="&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;     TRANSPORTISTAS&#xA;" FontFamily="Bahnschrift" FontSize="14"  Foreground="Black" Click="btn_transportista_Click" >
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="White"/>
+                    <GradientStop Color="#FF68DDFF" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+
+        </Button>
+        <Image x:Name="icono_consolidados_Copy" HorizontalAlignment="Left" Height="68" Margin="911,538,0,0" VerticalAlignment="Top" Width="64" Source="/transporte.png">
+            <Image.OpacityMask>
+                <ImageBrush ImageSource="/transporte.png"/>
+            </Image.OpacityMask>
+        </Image>
+        <Button x:Name="btn_GuiasOficina" Margin="1090,202,330,500" BorderBrush="#FFDCF0F6" Content="&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;    GUIAS DE OFICINA&#xA;" FontFamily="Bahnschrift" FontSize="14"  Foreground="Black" Click="btn_GuiasOficina_Click" >
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="White"/>
+                    <GradientStop Color="#FF68DDFF" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+
+        </Button>
+        <Button x:Name="btn_facturacion" Margin="1090,361,330,341" BorderBrush="#FFDCF0F6" Content="&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;    FACTURACION&#xA;" FontFamily="Bahnschrift" FontSize="14"  Foreground="Black" Click="btn_facturacion_Click" >
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="White"/>
+                    <GradientStop Color="#FF68DDFF" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+
+        </Button>
+        <Button x:Name="btn_ratio" Margin="1090,535,330,167" BorderBrush="#FFDCF0F6" Content="&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;    RATIOS DE VENTA&#xA;" FontFamily="Bahnschrift" FontSize="14"  Foreground="Black" Click="btn_ratio_Click" >
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="White"/>
+                    <GradientStop Color="#FF68DDFF" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+
+        </Button>
+        <Image x:Name="image2_Copy4" HorizontalAlignment="Left" Height="56" Margin="1115,387,0,0" VerticalAlignment="Top" Width="55" Source="/factura.png" RenderTransformOrigin="0.757,0.493"/>
+        <Image  HorizontalAlignment="Left" Height="70" Margin="911,220,0,0" VerticalAlignment="Top" Width="80" Source="/cliente.png"/>
+        <Image  HorizontalAlignment="Left" Height="70" Margin="1115,548,0,0" VerticalAlignment="Top" Width="80" Source="/ratio.png"/>
+        <Image  HorizontalAlignment="Left" Height="70" Margin="911,377,0,0" VerticalAlignment="Top" Width="80" Source="/documento.png"/>
+        <Image  HorizontalAlignment="Left" Height="70" Margin="1108,230,0,0" VerticalAlignment="Top" Width="80" Source="/documento.PNG"/>
+        <Button x:Name="btn_Kardex" Margin="1295,202,125,500" BorderBrush="#FFDCF0F6" Content="&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;    ACT. KARDEX&#xA;" FontFamily="Bahnschrift" FontSize="14"  Foreground="Black" Click="btn_Kardex_Click" >
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="White"/>
+                    <GradientStop Color="#FF68DDFF" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+
+        </Button>
+        <Button x:Name="btn_Guias_Conecta" Margin="1295,364,125,337" BorderBrush="#FFDCF0F6" Content="&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;     GUIAS CONECTA&#xA;" FontFamily="Bahnschrift" FontSize="14"  Foreground="Black" Click="btn_GuiasC_Click" >
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="White"/>
+                    <GradientStop Color="#FF68DDFF" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+
+        </Button>
+    </Grid>
+</Window>

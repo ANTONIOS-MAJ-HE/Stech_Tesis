@@ -1,0 +1,50 @@
+﻿<Window x:Class="ST_FORMS.frm_SagaGuias"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ST_FORMS"
+        mc:Ignorable="d"
+        WindowState="Maximized"
+        Title="frm_SagaGuias" Height="900" Width="1600">
+    <Grid>
+        <DataGrid x:Name="dtgGuias" HorizontalAlignment="Left" Height="595" Margin="10,211,0,0" VerticalAlignment="Top" Width="1161" d:ItemsSource="{d:SampleData ItemCount=5}" SelectionChanged="dtgGuias_SelectionChanged" ClipboardCopyMode="ExcludeHeader"/>
+        <Rectangle HorizontalAlignment="Center" Height="104" Stroke="Black" VerticalAlignment="Top" Width="1598">
+            <Rectangle.Fill>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF474D4E" Offset="1"/>
+                    <GradientStop Color="#FF72DCEA" Offset="0.777"/>
+                </LinearGradientBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+        <Button x:Name="btnModificar" Content="Modificar" HorizontalAlignment="Left" Height="41" Margin="1202,713,0,0" VerticalAlignment="Top" Width="156" Click="btnModificar_Click"/>
+        <TextBox x:Name="txtObsv" HorizontalAlignment="Left" Height="30" Margin="1202,556,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="388"/>
+        <Label Content="Obseracion" HorizontalAlignment="Left" Height="26" Margin="1202,525,0,0" VerticalAlignment="Top" Width="79"/>
+        <Label Content="Direccion de llegada" HorizontalAlignment="Left" Margin="1202,458,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtDirLle" HorizontalAlignment="Left" Height="31" Margin="1202,489,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="388"/>
+        <Label Content="Nombre transportista" HorizontalAlignment="Left" Margin="1202,329,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtNombreTrans" HorizontalAlignment="Left" Height="29" Margin="1202,359,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="388"/>
+        <Label Content="Numero MTC" HorizontalAlignment="Left" Margin="1202,393,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtMTC" HorizontalAlignment="Left" Height="34" Margin="1202,424,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="388"/>
+        <Label Content="GUIAS DE REMISION SAGA" HorizontalAlignment="Left" Margin="524,15,0,0" VerticalAlignment="Top" Foreground="White" FontSize="48"/>
+        <Button Content="" HorizontalAlignment="Left" Margin="39,33,0,0" VerticalAlignment="Top" Height="28" Width="36" Click="Button_Click">
+            <Button.Background>
+                <ImageBrush ImageSource="/4829874_arrow_back_left_icon.png"/>
+            </Button.Background>
+        </Button>
+        <Label Content="EOT" HorizontalAlignment="Left" Height="32" Margin="1202,255,0,0" VerticalAlignment="Top" Width="59"/>
+        <TextBox x:Name="txtEOT" HorizontalAlignment="Left" Height="32" Margin="1202,292,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="388"/>
+        <Label Content="NRO OCS" HorizontalAlignment="Left" Margin="1202,608,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtNroOcs" HorizontalAlignment="Left" Height="35" Margin="1176,639,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="414"/>
+        <Label x:Name="label" Content="FECHA" HorizontalAlignment="Left" Height="25" Margin="1202,129,0,0" VerticalAlignment="Top" Width="79"/>
+        <DatePicker x:Name="dtFecha" HorizontalAlignment="Left" Margin="1202,159,0,0" VerticalAlignment="Top" Width="194" Height="27"/>
+        <Button x:Name="btn_buscar" Content="Buscar" HorizontalAlignment="Left" Height="24" Margin="1430,159,0,0" VerticalAlignment="Top" Width="75" Click="btn_buscar_Click"/>
+        <Button x:Name="btn_enviar" Content="Emitir" HorizontalAlignment="Left" Height="41" Margin="1383,713,0,0" VerticalAlignment="Top" Width="160" Click="btn_enviar_Click"/>
+        <Label x:Name="lblCantidad" Content="Cantidad de Guias: " HorizontalAlignment="Left" Height="41" Margin="815,165,0,0" VerticalAlignment="Top" Width="360" FontFamily="Arial Rounded MT Bold" FontSize="24"/>
+        <Button x:Name="btn_enviarTodo" Content="Emitir Todo" HorizontalAlignment="Left" Height="41" Margin="1383,765,0,0" VerticalAlignment="Top" Width="160" Click="btn_enviarTodo_Click"/>
+        <Button x:Name="btn_EmititrLista" Content="Emitir Lista" HorizontalAlignment="Left" Height="41" Margin="1202,765,0,0" VerticalAlignment="Top" Width="156" Click="button_Click_1"/>
+        <TextBox x:Name="txt_NROOC" HorizontalAlignment="Left" Height="28" Margin="1202,222,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="194"/>
+        <Label x:Name="label1" Content="NRO OC" HorizontalAlignment="Left" Margin="1202,191,0,0" VerticalAlignment="Top"/>
+
+    </Grid>
+</Window>

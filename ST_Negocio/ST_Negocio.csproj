@@ -1,0 +1,18 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.2" />
+    <PackageReference Include="RestSharp" Version="109.0.1" />
+    <PackageReference Include="RestSharp.Serializers.NewtonsoftJson" Version="109.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ST_Datos\ST_Datos.csproj" />
+    <ProjectReference Include="..\ST_Entidades\ST_Entidades.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,62 @@
+﻿<Window x:Class="ST_FORMS.frm_Planta"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ST_FORMS"
+        mc:Ignorable="d"
+        WindowState="Maximized"
+        Title="frm_Planta" Height="900" Width="1600">
+    <Grid>
+        <DockPanel LastChildFill="False" Margin="0,0,0,757">
+            <DockPanel.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF85E2FD" Offset="0.004"/>
+                    <GradientStop Color="White" Offset="1"/>
+                    <GradientStop Color="#FF21C7F7" Offset="0.48"/>
+                    <GradientStop Color="#FF1799BF" Offset="0.86"/>
+                </LinearGradientBrush>
+            </DockPanel.Background>
+        </DockPanel>
+        <Label x:Name="label" Content="PLANTA STECH WAREHOUSE" HorizontalAlignment="Center" VerticalAlignment="Top" Height="86" Width="656" FontSize="46" Foreground="White" FontWeight="Bold" Margin="0,-6,0,0"/>
+        <Button x:Name="button" Content="Button" HorizontalAlignment="Left" Margin="33,10,0,0" VerticalAlignment="Top" Height="30" BorderBrush="{x:Null}" Foreground="{x:Null}" Click="button_Click_1" Width="30">
+            <Button.Background>
+                <ImageBrush ImageSource="/4829874_arrow_back_left_icon.png"/>
+            </Button.Background>
+        </Button>
+        <Label x:Name="label_Copy" Content="volver" HorizontalAlignment="Left" Margin="63,10,0,0" VerticalAlignment="Top" Height="26" Width="54" FontSize="14" Foreground="White" FontWeight="Bold" RenderTransformOrigin="0.709,0.835"/>
+        <DataGrid x:Name="dtg_prod" Margin="10,261,10,10" SelectionChanged="dataGrid_SelectionChanged" HorizontalGridLinesBrush="#FF252526" VerticalGridLinesBrush="#FF172F70" ClipboardCopyMode="IncludeHeader">
+            <DataGrid.CellStyle>
+                <Style/>
+            </DataGrid.CellStyle>
+        </DataGrid>
+        <Label x:Name="label1_Copy15" Content="Buscar por:" HorizontalAlignment="Left" Margin="33,105,0,0" VerticalAlignment="Top" Height="36" FontFamily="Arial Rounded MT Bold" FontSize="18" FontStretch="Normal" FontWeight="Bold"/>
+        <TextBox x:Name="txtBarras" HorizontalAlignment="Left" Margin="68,146,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="237"/>
+        <Label x:Name="label1" Content="Cod. barras" HorizontalAlignment="Left" Margin="-2,140,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label1_Copy" Content="SKU" HorizontalAlignment="Left" Margin="33,172,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtSKU" HorizontalAlignment="Left" Margin="145,176,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="160" Height="24" TextChanged="txtSKU_TextChanged"/>
+        <Label x:Name="label1_Copy2" Content="Mini código" HorizontalAlignment="Left" Margin="321,142,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label1_Copy3" Content="Modelo" HorizontalAlignment="Left" Margin="343,172,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label1_Copy4" Content="Partnumber" HorizontalAlignment="Left" Margin="321,202,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtMinicod" HorizontalAlignment="Left" Margin="399,146,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="168" KeyDown="txtMinicod_KeyDown"/>
+        <TextBox x:Name="txtModelo" HorizontalAlignment="Left" Margin="399,176,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="168" KeyDown="txtMinicod_KeyDown"/>
+        <TextBox x:Name="txtPartnumb" HorizontalAlignment="Left" Margin="399,206,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="168" KeyDown="txtMinicod_KeyDown"/>
+        <Label x:Name="label1_Copy5" Content="Marca" HorizontalAlignment="Left" Margin="629,142,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.585,0.522"/>
+        <Label x:Name="label1_Copy6" Content="Tipo" HorizontalAlignment="Left" Margin="637,174,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.585,0.522"/>
+        <Label x:Name="label1_Copy7" Content="Producto" HorizontalAlignment="Left" Margin="613,202,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.585,0.522"/>
+        <TextBox x:Name="textBox5" HorizontalAlignment="Left" Margin="677,146,0,0" Text="TextBox" TextWrapping="Wrap" VerticalAlignment="Top" Width="168"/>
+        <TextBox x:Name="txtMarca" HorizontalAlignment="Left" Margin="677,146,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="168" KeyDown="txtMinicod_KeyDown"/>
+        <TextBox x:Name="txtTipo" HorizontalAlignment="Left" Margin="677,178,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="168" KeyDown="txtMinicod_KeyDown"/>
+        <TextBox x:Name="txtProducto" HorizontalAlignment="Left" Margin="677,206,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="168" KeyDown="txtProducto_KeyDown" TextChanged="txtProducto_TextChanged"/>
+        <Button x:Name="btn_Nuevo" Content="Buscar" HorizontalAlignment="Left" Margin="883,128,0,0" VerticalAlignment="Top" Click="buttonnvo_Click" Height="28" Width="100" FontSize="16" Background="#FF2DA0CB" Foreground="White"/>
+        <Button x:Name="btn_Nuevo_Copy" Content="Limpiar" HorizontalAlignment="Left" Margin="883,166,0,0" VerticalAlignment="Top" Click="btn_Nuevo_Copy_Click" Height="28" Width="100" FontSize="16" Background="#FFFFAF4E" Foreground="White"/>
+        <Label x:Name="label2" Content="Cant. Items" HorizontalAlignment="Left" Margin="10,235,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+        <Label x:Name="lblcant" Content="" HorizontalAlignment="Left" Margin="84,235,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+        <Button x:Name="btn_Nuevo_Copy1" Content="Export" HorizontalAlignment="Left" Margin="883,207,0,0" VerticalAlignment="Top"  Height="28" Width="100" FontSize="16" Background="#FF2DCBAE" Foreground="White" Click="btn_Nuevo_Copy1_Click"/>
+        <TextBox x:Name="txtcambio" HorizontalAlignment="Left" Margin="1354,232,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Text="4.0"/>
+        <Label x:Name="label1_Copy1" Content="Tipo de cambio" HorizontalAlignment="Left" Margin="1260,228,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.585,0.522"/>
+        <Button x:Name="btn_Nuevo_Copy2" Content="Aplicar" HorizontalAlignment="Left" Margin="1489,225,0,0" VerticalAlignment="Top"  Height="28" Width="100" FontSize="16" Background="#FF6CBF4C" Foreground="White" Click="btn_Nuevo_Copy2_Click"/>
+        <ComboBox x:Name="cmbSKU" HorizontalAlignment="Left" Height="24" Margin="68,176,0,0" VerticalAlignment="Top" Width="78"/>
+
+    </Grid>
+</Window>

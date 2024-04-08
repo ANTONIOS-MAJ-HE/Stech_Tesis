@@ -1,0 +1,36 @@
+﻿<Window x:Class="ST_FORMS.frm_facturacion"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ST_FORMS"
+        mc:Ignorable="d"
+        WindowState="Maximized"
+        Title="frm_facturacion" Height="800" Width="1600">
+    <Grid Background="#FFE2DFDF">
+        <DataGrid x:Name="dtgFacturas" HorizontalAlignment="Left" Height="523" Margin="10,235,0,0" VerticalAlignment="Top" Width="1124" d:ItemsSource="{d:SampleData ItemCount=5}" SelectionChanged="dtgFacturas_SelectionChanged" />
+        <Rectangle HorizontalAlignment="Center" Height="104" Stroke="Black" VerticalAlignment="Top" Width="1600" Fill="#FF79C3DC"/>
+        <Button x:Name="btn_facturar" Content="Facturar" HorizontalAlignment="Left" Height="44" Margin="1203,560,0,0" VerticalAlignment="Top" Width="138" Click="btn_facturar_Click"/>
+        <ComboBox x:Name="cmb_canal" HorizontalAlignment="Left" Height="34" Margin="10,175,0,0" VerticalAlignment="Top" Width="194" SelectionChanged="cmb_canal_SelectionChanged"/>
+        <TextBox x:Name="txtNroOC" HorizontalAlignment="Left" Height="32" Margin="1202,252,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="340"/>
+        <Label Content="FACTURAR ORDENES" HorizontalAlignment="Left" Margin="451,-2,0,0" VerticalAlignment="Top" Background="#00000000" Foreground="White" FontSize="72"/>
+        <Button x:Name="btn_volver" Content="" HorizontalAlignment="Left" Height="42" Margin="10,10,0,0" VerticalAlignment="Top" Width="70" BorderThickness="0,0,0,0" Click="btn_volver_Click">
+            <Button.Background>
+                <ImageBrush ImageSource="/4829874_arrow_back_left_icon.png"/>
+            </Button.Background>
+        </Button>
+        <TextBox x:Name="txtJson" HorizontalAlignment="Left" Height="209" Margin="1189,327,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="366"/>
+        <Button x:Name="btnBuscar" Content="Buscar" HorizontalAlignment="Left" Height="33" Margin="1310,289,0,0" VerticalAlignment="Top" Width="104" Click="btnBuscar_Click"/>
+        <Label x:Name="label" Content="Numero de Orden" HorizontalAlignment="Left" Height="38" Margin="1202,209,0,0" VerticalAlignment="Top" Width="113"/>
+        <Button x:Name="btn_facturarTodo" Content="Facturar TODO" HorizontalAlignment="Left" Height="44" Margin="1403,560,0,0" VerticalAlignment="Top" Width="152" Click="btn_facturarTodo_Click"/>
+        <Label x:Name="lblCantidad" Content="Cantidad de pedidos: " HorizontalAlignment="Left" Height="37" Margin="833,192,0,0" VerticalAlignment="Top" Width="301" FontSize="24" FontFamily="Arial Rounded MT Bold"/>
+        <Label x:Name="label1" Content="Fecha" HorizontalAlignment="Left" Margin="1202,139,0,0" VerticalAlignment="Top"/>
+        <DatePicker x:Name="dt_fecha" HorizontalAlignment="Left" Height="22" Margin="1202,170,0,0" VerticalAlignment="Top" Width="212"/>
+        <ComboBox x:Name="RazonS"   Text="" Margin="1306,625,45,125" Height="34"/>
+        <Label Content="Razon Social" Margin="1202,623,294,127" Width="104" Height="34"/>
+        <Button  x:Name="btnModificar" Content="Modificar"  Click="btnModificar_Click" Padding="10" Margin="1296,683,152,57" Width="152" Height="44"/>
+        <TextBox x:Name="NumRuc" TextWrapping="Wrap" Text="" Margin="1391,699,139,64" RenderTransformOrigin="0.186,0.908" Visibility="Hidden"/>
+        <TextBox x:Name="DirecC"  TextWrapping="Wrap" Text="" Margin="1480,699,45,64" Visibility="Hidden" />
+
+    </Grid>
+</Window>

@@ -1,0 +1,36 @@
+﻿<Window x:Class="ST_FORMS.frm_TipoCambio"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ST_FORMS"
+        WindowState="Maximized"
+        mc:Ignorable="d"
+        Title="frm_TipoCambio" Height="450" Width="800">
+    <Grid Margin="0,0,10,-6">
+        <DataGrid x:Name="dtg_tipoCambio" Margin="240,100,10,31"/>
+        <Calendar x:Name="cl_fecha" HorizontalAlignment="Left" Margin="36,100,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="btn_Agregar" Content="Agregar Actual" HorizontalAlignment="Left" Margin="36,273,0,0" VerticalAlignment="Top" Height="30" Width="84" Click="btn_Agregar_Click"/>
+        <Button x:Name="btn_Buscar" Content="Buscar" HorizontalAlignment="Left" Margin="132,273,0,0" VerticalAlignment="Top" Height="30" Width="83" Click="btn_Buscar_Click"/>
+        <Rectangle HorizontalAlignment="Center" Height="70" Stroke="Black" VerticalAlignment="Top" Fill="#FF47D1CA" MinWidth="4" Width="2000"/>
+        <Label Content="TIPO DE CAMBIO" HorizontalAlignment="Left" Margin="309,0,0,0" VerticalAlignment="Top" Foreground="White" Height="68" Width="376" FontSize="48"/>
+        <Button x:Name="btn_back" Content="" HorizontalAlignment="Left" Margin="10,4,0,0" VerticalAlignment="Top" Width="37" Height="30" Click="btn_back_Click">
+            <Button.Background>
+                <ImageBrush ImageSource="/4829874_arrow_back_left_icon.png"/>
+            </Button.Background>
+        </Button>
+        <Label Content="" HorizontalAlignment="Left" Margin="850,10,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.434,-1.404" Height="32" Width="82">
+            <Label.Background>
+                <ImageBrush ImageSource="/Logo-ST-201901_300x100_2.png"/>
+            </Label.Background>
+        </Label>
+        <Button x:Name="btn_Agregar_filtro" Content="Agregar" HorizontalAlignment="Left" Margin="36,323,0,0" VerticalAlignment="Top" Height="30" Width="84" Click="btn_Agregar_filtro_Click"/>
+        <Button x:Name="btn_reset" Content="" HorizontalAlignment="Left" Margin="10,422,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.298,-0.23" Height="20" Width="53" Click="btn_reset_Click">
+            <Button.Background>
+                <ImageBrush ImageSource="/3688457_refresh_sync_map_reload_rotate_icon.png"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="btn_Buscar_mes" Content="Buscar por mes" HorizontalAlignment="Left" Margin="132,323,0,0" VerticalAlignment="Top" Height="30" Width="83" Click="btn_Buscar_mes_Click"/>
+
+    </Grid>
+</Window>

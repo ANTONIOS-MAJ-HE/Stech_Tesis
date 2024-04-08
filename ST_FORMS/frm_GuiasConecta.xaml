@@ -1,0 +1,120 @@
+﻿<Window x:Class="ST_FORMS.frm_GuiasConecta"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ST_FORMS"
+        mc:Ignorable="d"
+        Width="1000" Height="700"
+        Icon="/4829874_arrow_back_left_icon.png"
+        WindowState="Maximized"
+        Title="frm_GuiasConecta" >
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0" Background="#FF79C3DC" Height="104" >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="9*"/>
+            </Grid.ColumnDefinitions>
+            <Button Grid.Column="0" Content="" HorizontalAlignment="Left" Margin="25" VerticalAlignment="Top" Height="50" Width="50" BorderThickness="0,0,0,0" Click="Button_Click">
+                <Button.Background>
+                    <ImageBrush ImageSource="/4829874_arrow_back_left_icon.png"/>
+                </Button.Background>
+            </Button>
+            <Label Grid.Column="1" Content="GUIAS DE REMISION CONECTA" HorizontalAlignment="Center"  VerticalAlignment="Center" Foreground="White" FontSize="48" FontWeight="Bold"/>
+        </Grid>
+        <Grid Grid.Row="1" Margin="10">
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="8*"/>
+                <ColumnDefinition Width="2*"/>
+            </Grid.ColumnDefinitions>
+
+            <StackPanel Grid.Column="0" Margin="5">
+                <Label  x:Name="lblCantidad" Content="Cantidad de Guias: " HorizontalAlignment="Right" Height="41"  VerticalAlignment="Top" Width="300" FontFamily="Arial Rounded MT Bold" FontSize="24"/>
+                <DataGrid  x:Name="dtgGuias" AutoGenerateColumns="True"  d:ItemsSource="{d:SampleData ItemCount=5}" SelectionChanged="dtgGuias_SelectionChanged" ClipboardCopyMode="ExcludeHeader"/>
+            </StackPanel>
+
+            <Grid Grid.Column="1" Margin="5">
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <Grid Grid.Row="0">
+                    <Label x:Name="label" Content="FECHA" HorizontalAlignment="Left" Height="25"  VerticalAlignment="Top" Width="79"/>
+                </Grid>
+
+                <Grid Grid.Row="1" >
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="3*"/>
+                        <ColumnDefinition Width="2*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <DatePicker Grid.Column="0" x:Name="dtFecha"  Width="auto" Height="27"/>
+                    <Button Grid.Column="1" x:Name="btn_buscar" Content="Buscar" HorizontalAlignment="Center" Height="auto"  VerticalAlignment="Center" Width="auto" Click="btn_buscar_Click"/>
+                </Grid>
+                <StackPanel Grid.Row="2">
+
+                    <Label x:Name="label1" Content="NRO OC" HorizontalAlignment="Left"  VerticalAlignment="Top"/>
+                    <TextBox x:Name="txt_NroOC" HorizontalAlignment="Left" Height="28"  TextWrapping="Wrap" VerticalAlignment="Top" Width="300"/>
+
+                    <Label Content="Fecha de Traslado" HorizontalAlignment="Left" Height="32" VerticalAlignment="Top" Width="59"/>
+                    <DatePicker x:Name="txtFechaT" HorizontalAlignment="Left" Height="32" Text="" VerticalAlignment="Top" Width="150"/>
+
+                    <Label Content="Numero de Ruc" HorizontalAlignment="Left"  VerticalAlignment="Top"/>
+                    <TextBox x:Name="NumRuc" HorizontalAlignment="Left" Height="29" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="150"/>
+
+                    <Label Content="Razon Social" HorizontalAlignment="Left"  VerticalAlignment="Top"/>
+                    <ComboBox x:Name="RazonS" HorizontalAlignment="Left" Height="34"   Text="" VerticalAlignment="Top" Width="300"/>
+
+                    <Label Content="Direccion de llegada" HorizontalAlignment="Left"  VerticalAlignment="Top"/>
+                    <TextBox x:Name="DirecC" HorizontalAlignment="Left" Height="31"  TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="300"/>
+
+                    <Label Content="Obseracion" HorizontalAlignment="Left" Height="26"  VerticalAlignment="Top" Width="79"/>
+                    <TextBox x:Name="txtObsv" HorizontalAlignment="Left" Height="30"  TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="300"/>
+
+                    <Label Content="NRO OCS" HorizontalAlignment="Left"  VerticalAlignment="Top"/>
+                    <TextBox x:Name="txtNroOcs" HorizontalAlignment="Left" Height="35"  TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="300"/>
+
+                </StackPanel>
+                <Grid Grid.Row="3">
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="2*"/>
+                        <ColumnDefinition Width="2*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Button Grid.Column="0" x:Name="btnModificar" Content="Modificar"  Click="btnModificar_Click" Padding="10" Margin="5"/>
+                    <Button Grid.Column="1" x:Name="btn_enviar" Content="Emitir"  Click="btn_enviar_Click" Padding="10" Margin="5"/>
+
+                </Grid>
+                <Grid Grid.Row="4">
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="2*"/>
+                        <ColumnDefinition Width="2*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Button Grid.Column="0" x:Name="btn_enviarTodo" Content="Emitir Todo"  Click="btn_enviarTodo_Click" Padding="10" Margin="5"/>
+                    <Button Grid.Column="1" x:Name="btn_EmititrLista" Content="Emitir Lista"  Click="button_Click_1" Padding="10" Margin="5"/>
+
+                </Grid>
+            </Grid>
+        </Grid>
+    </Grid>
+</Window>
+

@@ -1,0 +1,85 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <ApplicationIcon>Logo-S_T-201901_270x180.ico</ApplicationIcon>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="2561316_octagon_alert_icon.png" />
+    <None Remove="2561427_edit_icon %281%29.png" />
+    <None Remove="2639879_order_icon.png" />
+    <None Remove="3669431_new_fiber_ic_icon.png" />
+    <None Remove="3688457_refresh_sync_map_reload_rotate_icon.png" />
+    <None Remove="3688460_pencil_text_update_write_draw_icon.png" />
+    <None Remove="4213459_common_door_exit_logout_out_icon.png" />
+    <None Remove="4265793_building_storage_warehouse_icon.png" />
+    <None Remove="4781854_alert_caution_circle_danger_error_icon.png" />
+    <None Remove="4829874_arrow_back_left_icon.png" />
+    <None Remove="48796_search_icon.png" />
+    <None Remove="5726984_barcode_code_qr_scan_scanner_icon.png" />
+    <None Remove="6588641_and_business_finance_invoice_icon.png" />
+    <None Remove="7019497_shipping_transportation_delivery_truck_online_icon.png" />
+    <None Remove="7114300_eye_laser_correction_icon.png" />
+    <None Remove="7340573_e-commerce_online_shopping_ui_package_icon %281%29.png" />
+    <None Remove="cliente.png" />
+    <None Remove="consolidados_icono.png" />
+    <None Remove="contacto.png" />
+    <None Remove="documento.PNG" />
+    <None Remove="factura.png" />
+    <None Remove="Logo-ST-201901_300x100_2.png" />
+    <None Remove="ratio.png" />
+    <None Remove="tp_cambio_icono.png" />
+    <None Remove="transporte.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="cliente.png" />
+    <Resource Include="consolidados_icono.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Aspose.BarCode" Version="23.1.0" />
+    <PackageReference Include="DevExpress.Data" Version="22.2.4" />
+    <PackageReference Include="Microsoft.Office.Interop.Excel" Version="15.0.4795.1001" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+    <PackageReference Include="RestSharp" Version="109.0.1" />
+    <PackageReference Include="RestSharp.Serializers.NewtonsoftJson" Version="109.0.1" />
+    <PackageReference Include="System.Data.SqlClient" Version="4.8.5" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ST_Negocio\ST_Negocio.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="2561316_octagon_alert_icon.png" />
+    <Resource Include="2561427_edit_icon (1).png" />
+    <Resource Include="2639879_order_icon.png" />
+    <Resource Include="3669431_new_fiber_ic_icon.png" />
+    <Resource Include="3688457_refresh_sync_map_reload_rotate_icon.png" />
+    <Resource Include="3688460_pencil_text_update_write_draw_icon.png" />
+    <Resource Include="4213459_common_door_exit_logout_out_icon.png" />
+    <Resource Include="4265793_building_storage_warehouse_icon.png" />
+    <Resource Include="4781854_alert_caution_circle_danger_error_icon.png" />
+    <Resource Include="4829874_arrow_back_left_icon.png" />
+    <Resource Include="48796_search_icon.png" />
+    <Resource Include="5726984_barcode_code_qr_scan_scanner_icon.png" />
+    <Resource Include="6588641_and_business_finance_invoice_icon.png" />
+    <Resource Include="7019497_shipping_transportation_delivery_truck_online_icon.png" />
+    <Resource Include="7114300_eye_laser_correction_icon.png" />
+    <Resource Include="7340573_e-commerce_online_shopping_ui_package_icon (1).png" />
+    <Resource Include="contacto.png" />
+    <Resource Include="documento.PNG" />
+    <Resource Include="factura.png" />
+    <Resource Include="Logo-ST-201901_300x100_2.png" />
+    <Resource Include="ratio.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="tp_cambio_icono.png" />
+    <Resource Include="transporte.png" />
+  </ItemGroup>
+
+</Project>

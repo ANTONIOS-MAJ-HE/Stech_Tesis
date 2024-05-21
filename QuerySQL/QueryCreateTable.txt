@@ -1,0 +1,206 @@
+--Para la vista de Nuevo Producto
+
+CREATE TABLE [dbo].[ST_NVO_PROD](
+	[FECHA_REGISTRO] [datetime] NULL,
+	[UPC] [varchar](15) NULL,
+	[EAN] [varchar](15) NULL,
+	[MANDATORIO] [varchar](15) NULL,
+	[EAN_UPC] [varchar](15) NULL,
+	[MODELO] [varchar](50) NULL,
+	[MINI_CODIGO] [varchar](50) NULL,
+	[PARTNUMBER] [varchar](50) NULL,
+	[MARCA] [varchar](50) NULL,
+	[TIPO] [varchar](50) NULL,
+	[TITULO] [varchar](250) NULL,
+	[MONEDA] [varchar](3) NULL,
+	[COSTO_UNIT_S_IGV] [decimal](20, 4) NULL,
+	[DESCRIPCION] [varchar](max) NULL,
+	[OBS] [varchar](250) NULL,
+	[FECHA_PROCESO] [datetime] NULL,
+	[ID_NVOPRD] [int] IDENTITY(1,1) NOT NULL,
+	[COLOR] [varchar](200) NULL,
+	[PESO] [float] NULL,
+	[EMPAQUE_ALTO] [float] NULL,
+	[EMPAQUE_ANCHO] [float] NULL,
+	[EMPAQUE_LARGO] [float] NULL,
+	[PRODUCTO_ALTO] [float] NULL,
+	[PRODUCTO_ANCHO] [float] NULL,
+	[PRODUCTO_LARGO] [float] NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[ID_NVOPRD] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+
+
+--Para la vista de tipo de cambio
+
+CREATE TABLE [dbo].[TC_SUNAT](
+	[FECHA] [varchar](50) NULL,
+	[DIA_ORIGEN] [float] NULL,
+	[COMPRA_ORIGEN] [float] NULL,
+	[VENTA_ORIGEN] [float] NULL,
+	[DIA] [float] NULL,
+	[COMPRA] [float] NULL,
+	[VENTA] [float] NULL,
+	[FECHA_AMD] [float] NULL
+) ON [PRIMARY]
+
+use DBSISTEMA_VENTA
+
+SELECT TOP 365 * FROM TC_SUNAT ORDER BY FECHA DESC, DIA DESC
+
+INSERT INTO TC_SUNAT (FECHA,DIA_ORIGEN, COMPRA_ORIGEN, VENTA_ORIGEN, DIA, COMPRA, VENTA, FECHA_AMD) VALUES('2024-05-20',	NULL,	NULL,	NULL	,20	,3.735,	3.742,	NULL)
+
+
+
+
+GO
+
+CREATE TABLE [dbo].[ST_NVO_PROD](
+	[FECHA_REGISTRO] [datetime] NULL,
+	[UPC] [varchar](15) NULL,
+	[EAN] [varchar](15) NULL,
+	[MANDATORIO] [varchar](15) NULL,
+	[EAN_UPC] [varchar](15) NULL,
+	[MODELO] [varchar](50) NULL,
+	[MINI_CODIGO] [varchar](50) NULL,
+	[PARTNUMBER] [varchar](50) NULL,
+	[MARCA] [varchar](50) NULL,
+	[TIPO] [varchar](50) NULL,
+	[TITULO] [varchar](250) NULL,
+	[MONEDA] [varchar](3) NULL,
+	[COSTO_UNIT_S_IGV] [decimal](20, 4) NULL,
+	[DESCRIPCION] [varchar](max) NULL,
+	[OBS] [varchar](250) NULL,
+	[FECHA_PROCESO] [datetime] NULL,
+	[ID_NVOPRD] [int] IDENTITY(1,1) NOT NULL,
+	[COLOR] [varchar](200) NULL,
+	[PESO] [float] NULL,
+	[EMPAQUE_ALTO] [float] NULL,
+	[EMPAQUE_ANCHO] [float] NULL,
+	[EMPAQUE_LARGO] [float] NULL,
+	[PRODUCTO_ALTO] [float] NULL,
+	[PRODUCTO_ANCHO] [float] NULL,
+	[PRODUCTO_LARGO] [float] NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[ID_NVOPRD] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+
+--Guias de remision, tablas que se usan, 
+
+/*
+
+GUIAS_SAGA_CONS
+
+OC_SF_CONS
+
+LOGISTICA_SAGA
+
+*/
+
+GO
+
+CREATE TABLE [dbo].[GUIAS_SAGA_CONS](
+	[NRO_OC] [varchar](200) NOT NULL,
+	[SERIE DE FACTURA] [varchar](1) NULL,
+	[NUMERO DOCUMENTO FACTURA] [varchar](1) NULL,
+	[TIPO DEL DOCUMENTO] [varchar](1) NULL,
+	[TIPO DEL DOCUMENTO DEL CLIENTE] [varchar](200) NOT NULL,
+	[NUMERO DE DOCUMENTO] [varchar](200) NOT NULL,
+	[NOMBRE CLIENTE] [varchar](200) NOT NULL,
+	[DIRECCION] [varchar](200) NOT NULL,
+	[CORREO] [varchar](200) NOT NULL,
+	[TELEFONO] [varchar](200) NOT NULL,
+	[OBSERVACIONES] [varchar](200) NOT NULL,
+	[DESCRIPCION DEL MOTIVO DEL TRASLADO] [varchar](200) NOT NULL,
+	[FECHA_DE_TRASLADO] [datetime] NULL,
+	[PESO] [float] NULL,
+	[UBIGEO DE LLEGADA] [varchar](200) NOT NULL,
+	[DIRECCION LLEGADA] [varchar](200) NOT NULL,
+	[CODIGO DEL DOMICILIO DE LLEGADA] [varchar](200) NOT NULL,
+	[TIPO DOCUMENTO TRANSPORTISTA] [varchar](200) NOT NULL,
+	[DOCUMENTO_TRANSPORTISTA] [varchar](200) NOT NULL,
+	[NOMBRE TRANSPORTISTA] [varchar](200) NOT NULL,
+	[NUMERO MTC] [varchar](200) NOT NULL,
+	[CODIGO ITEM(SKU)] [varchar](200) NULL,
+	[CANTIDAD] [int] NOT NULL,
+	[FECHA_PROCESO] [datetime] NULL
+) ON [PRIMARY]
+GO
+
+GO
+
+CREATE TABLE [dbo].[OC_SF_CONS](
+	[NRO_F12] [varchar](12) NULL,
+	[NRO_OC] [varchar](15) NULL,
+	[FECHA_EMISION_OC] [datetime] NULL,
+	[FECHA_DESPACHO_PACTADA] [datetime] NULL,
+	[NOM_COMPRADOR] [varchar](100) NULL,
+	[TELEFONO_COMPRADOR] [varchar](20) NULL,
+	[NOM_RECEPTOR] [varchar](100) NULL,
+	[DIRECCION_RECEPTOR] [varchar](250) NULL,
+	[COMUNA_RECEPTOR] [varchar](100) NULL,
+	[CIUDAD_RECEPTOR] [varchar](100) NULL,
+	[COD_POSTAL_RECEPTOR] [varchar](50) NULL,
+	[TELEFONO_RECEPTOR] [varchar](20) NULL,
+	[ATENCION] [varchar](100) NULL,
+	[NRO_LOCAL] [varchar](10) NULL,
+	[LOCAL] [varchar](100) NULL,
+	[DESPACHAR_A] [varchar](100) NULL,
+	[OBSERVACION] [varchar](250) NULL,
+	[UPC] [varchar](25) NULL,
+	[SKU] [varchar](25) NULL,
+	[DESCRIPCION] [varchar](250) NULL,
+	[UNIDADES] [int] NULL,
+	[PRECIO_COSTO] [float] NULL,
+	[DESCUENTO] [float] NULL,
+	[PAPEL_REGALO] [varchar](100) NULL,
+	[SALUDO] [varchar](250) NULL,
+	[HORARIO_PROGRAMADO] [varchar](250) NULL,
+	[DOMICILIO_OFICINA] [varchar](250) NULL,
+	[EMAIL] [varchar](80) NULL,
+	[ENTRE_CALLE] [varchar](250) NULL,
+	[FECHA_REPARTO_CLIENTE] [datetime] NULL,
+	[REGION] [varchar](50) NULL,
+	[IDENTIFICACION_CLIENTE] [varchar](250) NULL,
+	[DNI_COMPRADOR] [varchar](20) NULL,
+	[MODELO_SKU] [varchar](50) NULL,
+	[PISO] [varchar](30) NULL,
+	[FECHA_DESDE] [datetime] NULL,
+	[FECHA_HASTA] [datetime] NULL,
+	[TALLA] [varchar](30) NULL,
+	[FECHA_PROCESO] [datetime] NULL,
+	[ST_DESPACHO] [varchar](25) NULL,
+	[ST_ORDEN] [varchar](25) NULL,
+	[FECHA_ENTREGA] [datetime] NULL,
+	[ST_OBSERVACION] [varchar](500) NULL,
+	[PART_NUMB_REAL] [varchar](50) NULL,
+	[UNIDADES_REAL] [int] NULL,
+	[SERIE_FACT] [varchar](20) NULL,
+	[NRO_FACT] [varchar](20) NULL,
+	[PRECIO_COSTO_S_IGV] [decimal](20, 4) NULL,
+	[DSCTO] [decimal](20, 4) NULL,
+	[SUB_TOTAL] [decimal](20, 4) NULL,
+	[NRO_GUIA] [varchar](20) NULL
+) ON [PRIMARY]
+GO
+
+GO
+
+CREATE TABLE [dbo].[LOGISTICA_CONECTA](
+	[SKU] [varchar](100) NULL,
+	[NOMBRE] [varchar](250) NULL,
+	[PVP_SOL_CIGV] [varchar](250) NULL,
+	[COSTO_SOL_SIGV] [varchar](250) NULL,
+	[MARCA] [varchar](250) NULL,
+	[MODELO] [varchar](250) NULL,
+	[PARTNUMBER_CONECTA] [varchar](250) NULL,
+	[PESO] [varchar](250) NULL,
+	[PARTNUMBER] [varchar](250) NULL
+) ON [PRIMARY]
+GO
+

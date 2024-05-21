@@ -1,0 +1,101 @@
+﻿<UserControl x:Class="ST_FORMS.View.Empleado.ClientContactView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:ST_FORMS.View.Empleado"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <ScrollViewer VerticalScrollBarVisibility="Auto">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" MinHeight="207"/>
+                <!-- Primera fila con altura automática -->
+                <RowDefinition Height="Auto" MinHeight="69"/>
+                <!-- Segunda fila que ocupa todo el espacio restante -->
+                <RowDefinition Height="Auto"/>
+                <!-- Tercera fila que ocupa todo el espacio restante -->
+                <RowDefinition Height="*"/>
+                <!-- Cuarta fila que ocupa todo el espacio restante -->
+            </Grid.RowDefinitions>
+
+            <!-- Contenido de la primera fila con dos columnas -->
+            <Grid Grid.Row="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <!-- Primera columna -->
+                    <ColumnDefinition  Width="*"/>
+                    <!-- Segunda columna -->
+                </Grid.ColumnDefinitions>
+                <!-- Contenido de la primera columna -->
+                <Label Grid.Column="0" Content="Nombre del cliente" HorizontalAlignment="Left" Height="25" VerticalAlignment="Top" Width="114" Margin="5,0,0,0"/>
+                <Label Grid.Column="0" Content="Documento" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="240,0,0,0" Height="25" Width="72"/>
+                <Button Grid.Column="0" x:Name="btn_BusCliente" Content="Buscar" HorizontalAlignment="Left" Height="25" VerticalAlignment="Top" Width="80" Margin="317,0,0,0"/>
+                <Label Grid.Column="0" Content="Ubigeo" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="427,0,0,0" Height="25" Width="49"/>
+                <Label Grid.Column="0" Content="Direccion del fiscal cliente" HorizontalAlignment="Left" VerticalAlignment="Top" Height="32" Width="150" Margin="5,65,0,0"/>
+                <Label Grid.Column="0" Content="Correo" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="216,63,0,0"/>
+                <Label Grid.Column="0" x:Name="Codigo_Ubigeo" Content="Codigo Ubigeo" HorizontalAlignment="Left" Height="26" VerticalAlignment="Top" Width="90" Margin="400,63,0,0"/>
+                <Label Grid.Column="0" Content="Direccion de entrega cliente" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,121,0,0"/>
+                <Label Grid.Column="0" Content="Telefono" HorizontalAlignment="Left" Height="25" VerticalAlignment="Top" Width="67" Margin="330,121,0,0"/>
+
+
+                <TextBox Grid.Column="0" x:Name="txtNomCliente" Height="24" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Margin="5,30,318,0"/>
+                <ComboBox Grid.Column="0" x:Name="cmbTipodoc" HorizontalAlignment="Left" Height="24" VerticalAlignment="Top" Width="66" Margin="240,30,0,0" RenderTransformOrigin="0.515,1.293"/>
+                <TextBox Grid.Column="0" x:Name="txtdoc" HorizontalAlignment="Left" Height="24" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="94" Margin="317,30,0,0"/>
+                <TextBox Grid.Column="0" x:Name="txtUbigeo" HorizontalAlignment="Left" Height="24" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="87" Margin="427,30,10,0"/>
+                <TextBox Grid.Column="0" x:Name="txtDirFisCliente" HorizontalAlignment="Left" Height="22" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="215" Margin="5,94,0,0"/>
+                <TextBox Grid.Column="0" x:Name="txtCorreo" Height="22" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Margin="225,94,140,0"/>
+                <TextBox Grid.Column="0" x:Name="txtCodUbigeo" HorizontalAlignment="Left" Height="22" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="114" IsEnabled="False" Margin="400,94,0,0"/>
+                <TextBox Grid.Column="0" x:Name="txtDirEntCliente" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="271" Margin="10,146,0,0"/>
+                <TextBox Grid.Column="0" x:Name="txtTelefono" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="204" Margin="298,146,0,0"/>
+
+                <Button Grid.Column="0" x:Name="btnBuscar" Content="Buscar" HorizontalAlignment="Left" Height="24" VerticalAlignment="Top" Width="102" Background="#FF35F5F1" Margin="17,174,0,0"/>
+                <Button Grid.Column="0" x:Name="btn_Limpiar_cl" Content="Limpiar" HorizontalAlignment="Left" VerticalAlignment="Top" Width="102" Background="#FFFFE438" Height="23" Margin="137,175,0,0"/>
+                <Button Grid.Column="0" x:Name="btn_Insertar" Content="Añadir" HorizontalAlignment="Left" Height="22" VerticalAlignment="Top" Width="102" Background="#FF5975E6" Margin="262,176,0,0"/>
+                <Button Grid.Column="0" x:Name="btn_Modificar" Content="Modificar" HorizontalAlignment="Left" Height="22" VerticalAlignment="Top" Width="96" Background="#FFCAED70" Margin="374,176,0,0"/>
+                <!-- Contenido de la segunda columna -->
+                <DataGrid Grid.Column="1" x:Name="dtUbigeo" Margin="10,10,10,10"/>
+            </Grid>
+
+            <!-- Contenido de la segunda fila -->
+            <DataGrid Grid.Row="1" x:Name="dtg_Clientes" VerticalAlignment="Center" Height="49" Margin="10,0,10,0" />
+
+            <!-- Contenido de la tercera fila -->
+            <Grid Grid.Row="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="200*"/>
+                    <ColumnDefinition Width="200*"/>
+                    <ColumnDefinition Width="229*"/>
+                    <ColumnDefinition Width="Auto" MinWidth="171"/>
+                </Grid.ColumnDefinitions>
+
+                <Label Grid.Column="0" x:Name="Nombre_del_Contacto" Content="Nombre del contacto" HorizontalAlignment="Left" VerticalAlignment="Top" Height="26" Width="123"/>
+                <Label Grid.Column="0" Content="Telefono del contacto" VerticalAlignment="Top" Margin="5,50,139,0" Height="26"/>
+                <Label Grid.Column="1" Content="Nro de documento" HorizontalAlignment="Left" VerticalAlignment="Top" Height="25" Margin="5,0,0,0" Width="111"/>
+                <Label Grid.Column="1" Content="Correo" VerticalAlignment="Top" Margin="0,50,200,0" Height="26"/>
+                <Label Grid.Column="2" Content="Observacion" HorizontalAlignment="Left" VerticalAlignment="Top" Height="26" Margin="5,0,0,0" Width="76"/>
+                <Label Grid.Column="2" Content="Nro de contacto" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5,50,0,0" Height="26" Width="96"/>
+                <Label Grid.Column="2" Content="Id Cliente" HorizontalAlignment="Left" Height="29" VerticalAlignment="Top" Width="67" Margin="123,50,0,0" RenderTransformOrigin="0.507,0.725"/>
+
+                <TextBox Grid.Column="0" x:Name="txt_ContNom" Height="24" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Margin="5,26,10,0"/>
+                <TextBox Grid.Column="0" x:Name="txt_ContTelf" Height="27" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Margin="10,76,38,0"/>
+                <TextBox Grid.Column="1" x:Name="txtContDoc" Height="24" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Margin="5,26,10,0"/>
+                <TextBox Grid.Column="1" x:Name="txt_ContCorr" Height="24" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Margin="10,76,10,0"/>
+                <TextBox Grid.Column="2" x:Name="txt_ContObv" Height="24" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Margin="5,26,10,0"/>
+                <TextBox Grid.Column="2" x:Name="txt_ContNro" HorizontalAlignment="Left" Height="25" TextWrapping="Wrap" Text="1" VerticalAlignment="Top" Width="92" IsReadOnly="True" IsEnabled="False" Margin="6,78,0,0"/>
+                <TextBox Grid.Column="2" x:Name="txt_ContIdCl" Height="25" TextWrapping="Wrap" Text="" VerticalAlignment="Top" IsEnabled="False" Margin="116,77,5,0"/>
+
+
+                <Button Grid.Column="3" x:Name="btnContAdd" Content="Añadir" VerticalAlignment="Top" Background="#FF5975E6" Margin="33,64,33,0" Height="20"/>
+                <Button Grid.Column="3" x:Name="btnContFind" Content="Buscar" Height="26" VerticalAlignment="Top" Background="#FF35F5F1" Margin="33,0,33,0"/>
+                <Button Grid.Column="3" x:Name="btnContUpdt" Content="Modificar" Height="26" VerticalAlignment="Top" Background="#FFCAED70" Margin="33,31,33,0"/>
+                <Button Grid.Column="3" x:Name="btn_Limpiar_cn" Content="Limpiar" VerticalAlignment="Top" Background="#FFFFE438" Height="24" Margin="33,90,33,0"/>
+
+            </Grid>
+
+            <!-- Contenido de la cuarta fila -->
+            <DataGrid Grid.Row="3" x:Name="dtgContactos" Margin="10,0,10,0"/>
+
+        </Grid>
+    </ScrollViewer>
+</UserControl>

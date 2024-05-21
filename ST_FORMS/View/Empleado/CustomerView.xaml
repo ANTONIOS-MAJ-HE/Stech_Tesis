@@ -1,0 +1,156 @@
+﻿<UserControl x:Class="ST_FORMS.View.Empleado.CustomerView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:ST_FORMS.View.Empleado"
+             xmlns:fa="http://schemas.awesome.incremented/wpf/xaml/fontawesome.sharp"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="120"/>
+            </Grid.ColumnDefinitions>
+            <StackPanel Orientation="Horizontal"
+                VerticalAlignment="Top"
+                Grid.Column="0">
+                <fa:IconImage Icon="Search" Height="20" Width="20" Foreground="{StaticResource plainTextColor3}"/>
+                <TextBox Text="Search..."   
+            FontSize="13"
+                 Height="24"
+                   Width="300"
+                   Background="Transparent"
+                     FontWeight="Medium"
+                     FontFamily="Montserrat"                            
+                     Foreground="{StaticResource plainTextColor3}"
+                     CaretBrush="{StaticResource plainTextColor3}"
+                     BorderBrush="{StaticResource plainTextColor3}"
+                     BorderThickness="0,0,0,1"                             
+                     VerticalContentAlignment="Center"
+                     Margin="5,5,0,0"></TextBox>
+            </StackPanel>
+            <Button Grid.Column="1"
+                    Command="{Binding LoginCommand}"                            
+                    Content="Search"                            
+                    FontSize="12"
+                    FontFamily="Montserrat"
+                    Cursor="Hand"
+                    BorderThickness="0"
+                    Foreground="White"
+            VerticalAlignment="Top">
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Setter Property="Background" Value="#773DFF"/>
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="Button">
+                                    <Border Height="30"
+                                            CornerRadius="15"
+                                            Background="{TemplateBinding Background}">
+                                        <ContentPresenter VerticalAlignment="Center"
+                                                              HorizontalAlignment="Center"/>
+                                    </Border>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#836EFB"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+            </Button>
+        </Grid>
+        <Border Grid.Row="1"
+        Background="#200F53"
+        CornerRadius="10" 
+        Padding="10">
+            <DataGrid ItemsSource="{Binding Facturas}"
+      ColumnWidth="*"
+      Background="#200F53"
+      BorderThickness="0"
+      CanUserAddRows="False"
+      CanUserDeleteRows="False"
+      AutoGenerateColumns="False"
+      HeadersVisibility="All">
+                <DataGrid.ColumnHeaderStyle>
+                    <Style TargetType="DataGridColumnHeader">
+                        <Setter Property="Background" Value="Transparent"/>
+                        <Setter Property="Foreground" Value="#BCBEE0"/>
+                        <Setter Property="Padding" Value="10,0,0,10"/>
+                        <Setter Property="FontFamily" Value="Montserrat"/>
+                        <Setter Property="FontSize" Value="15"/>
+                        <Setter Property="FontWeight" Value="Bold"/>
+                        <Setter Property="BorderBrush" Value="Transparent"/>
+                        <Setter Property="BorderThickness" Value="0"/>
+                    </Style>
+                </DataGrid.ColumnHeaderStyle>
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="ID"
+                        Binding="{Binding Numero_Orden}"
+                        ClipboardContentBinding="{x:Null}"
+                        Width="Auto"
+                        MinWidth="50"
+                        FontWeight="Bold"/>
+                    <DataGridTextColumn Header="First name"
+                        Binding="{Binding Ruc_Proveedor}"
+                        ClipboardContentBinding="{x:Null}"
+                        Width="*"/>
+                    <DataGridTextColumn Header="Last name"
+                        Binding="{x:Null}"
+                        ClipboardContentBinding="{x:Null}"
+                        Width="*"/>
+                    <DataGridTextColumn Header="Phone"
+                        Binding="{x:Null}"
+                        ClipboardContentBinding="{x:Null}"
+                        Width="*"/>
+                    <DataGridTextColumn Header="Number"
+                        Binding="{x:Null}"
+                        ClipboardContentBinding="{x:Null}"
+                        Width="*"/>
+                    <DataGridTextColumn Header="Address"
+                        Binding="{x:Null}"
+                        ClipboardContentBinding="{x:Null}"
+                        Width="*"/>
+                    <DataGridTemplateColumn Header="Edit">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Button Content="&#xE710;"
+                        FontFamily="Segoe MDL2 Assets"
+                        FontSize="15"
+                       Foreground="Transparent"
+                        Background="Transparent"
+                        BorderBrush="Transparent"
+                        Command="{x:Null}">
+                                    <Button.Style>
+                                        <Style TargetType="Button">
+                                            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                                            <Setter Property="VerticalContentAlignment" Value="Center"/>
+                                            <Setter Property="Template">
+                                                <Setter.Value>
+                                                    <ControlTemplate TargetType="Button">
+                                                        <Grid Background="Transparent">
+                                                            <ContentPresenter HorizontalAlignment="Center"
+                                                              VerticalAlignment="Center"/>
+                                                        </Grid>
+                                                    </ControlTemplate>
+                                                </Setter.Value>
+                                            </Setter>
+                                        </Style>
+                                    </Button.Style>
+                                </Button>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                </DataGrid.Columns>
+            </DataGrid>
+        </Border>
+    </Grid>
+</UserControl>

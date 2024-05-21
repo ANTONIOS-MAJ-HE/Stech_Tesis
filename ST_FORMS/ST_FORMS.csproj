@@ -33,16 +33,44 @@
     <None Remove="ratio.png" />
     <None Remove="tp_cambio_icono.png" />
     <None Remove="transporte.png" />
+	  <None Remove="Images\back-image.jpg" />
+	  <None Remove="Images\logo.png" />
+	  <None Remove="Images\key-icon.png" />
+	  <None Remove="Images\user-icon.png" />
+	  <None Remove="Images\profile-picture.jpg" />
+	  <None Remove="Images\dashboard-template.png" />
+	  <None Remove="Images\7114300_eye_laser_correction_icon.png" />
+	  <None Remove="Images\ImagesForBusiness\Logo-ST-201901_300x100_2.png" />
+	  <None Remove="Images\ImagesForBusiness\4829874_arrow_back_left_icon.png" />
+	  <None Remove="Images\ImagesForBusiness\3688457_refresh_sync_map_reload_rotate_icon.png" />
+	  <None Remove="Images\ImagesForBusiness\Logo-S_T-201901_270x180.ico" />
+	  <None Remove="Images\ImagesForBusiness\Logo_STECH.jpg" />
+	  <None Remove="Images\ImagesForBusiness\Logo-S.png" />
   </ItemGroup>
 
   <ItemGroup>
     <Resource Include="cliente.png" />
     <Resource Include="consolidados_icono.png" />
+
+	  <Resource Include="Images\back-image.jpg" />
+	  <Resource Include="Images\logo.png" />
+	  <Resource Include="Images\key-icon.png" />
+	  <Resource Include="Images\user-icon.png" />
+	  <Resource Include="Images\profile-picture.jpg" />
+	  <Resource Include="Images\dashboard-template.png" />
+	  <Resource Include="Images\7114300_eye_laser_correction_icon.png" />
+	  <Resource Include="Images\ImagesForBusiness\Logo-ST-201901_300x100_2.png" />
+	  <Resource Include="Images\ImagesForBusiness\4829874_arrow_back_left_icon.png" />
+	  <Resource Include="Images\ImagesForBusiness\3688457_refresh_sync_map_reload_rotate_icon.png" />
+	  <Resource Include="Images\ImagesForBusiness\Logo-S_T-201901_270x180.ico" />
+	  <Resource Include="Images\ImagesForBusiness\Logo_STECH.jpg" />
+	  <Resource Include="Images\ImagesForBusiness\Logo-S.png" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Aspose.BarCode" Version="23.1.0" />
     <PackageReference Include="DevExpress.Data" Version="22.2.4" />
+    <PackageReference Include="FontAwesome.Sharp" Version="6.3.0" />
     <PackageReference Include="Microsoft.Office.Interop.Excel" Version="15.0.4795.1001" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
     <PackageReference Include="RestSharp" Version="109.0.1" />
@@ -80,6 +108,11 @@
     </Resource>
     <Resource Include="tp_cambio_icono.png" />
     <Resource Include="transporte.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Images\" />
+    <Folder Include="ViewModel\" />
   </ItemGroup>
 
 </Project>

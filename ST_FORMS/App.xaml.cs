@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ST_FORMS.View.Comunes;
+using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
@@ -13,5 +14,19 @@ namespace ST_FORMS
     /// </summary>
     public partial class App : Application
     {
+        protected void ApplicationStart(object sender, StartupEventArgs e)
+        {
+            var loginView = new LoginView();
+            loginView.Show();
+            loginView.IsVisibleChanged += (s, ev) =>
+            {
+                if (loginView.IsVisible == false && loginView.IsLoaded)
+                {
+                    var mainView = new MainWindow();
+                    mainView.Show();
+                    loginView.Close();
+                }
+            };
+        }
     }
 }

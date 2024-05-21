@@ -19,7 +19,8 @@ namespace ST_Datos
         {
             try
             {
-                string CadenaConexion = "Data Source= PC005;Initial Catalog= DB_ST;User Id=STEC;Password=sasa;";
+                //string CadenaConexion = "Data Source= PC005;Initial Catalog= DB_ST;User Id=STEC;Password=sasa;";               
+                string CadenaConexion = "Data Source= LAPTOP-R1VL050P\\MSSQLSERVER01; Initial Catalog = DB_ST; Integrated Security = True;";
                 conn = new SqlConnection(CadenaConexion);
                 conn.Open();
                 

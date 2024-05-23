@@ -17,19 +17,12 @@ namespace ST_FORMS
     /// <summary>
     /// Interaction logic for Form_Kardex.xaml
     /// </summary>
-    public partial class Form_Kardex : Window
+    public partial class Form_Kardex : UserControl
     {
         n_Kardex n_Kardex = new n_Kardex();
         public Form_Kardex()
         {
             InitializeComponent();
-        }
-
-        private void button_Click_1(object sender, RoutedEventArgs e)
-        {
-            frm_Inicio frm = new frm_Inicio();
-            this.Close();
-            frm.ShowDialog();
         }
 
         private void btn_Buscar_Click(object sender, RoutedEventArgs e)

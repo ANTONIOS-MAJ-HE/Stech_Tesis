@@ -9,14 +9,7 @@
         Title="frm_SagaGuias" Height="900" Width="1600">
     <Grid>
         <DataGrid x:Name="dtgGuias" HorizontalAlignment="Left" Height="595" Margin="10,211,0,0" VerticalAlignment="Top" Width="1161" d:ItemsSource="{d:SampleData ItemCount=5}" SelectionChanged="dtgGuias_SelectionChanged" ClipboardCopyMode="ExcludeHeader"/>
-        <Rectangle HorizontalAlignment="Center" Height="104" Stroke="Black" VerticalAlignment="Top" Width="1598">
-            <Rectangle.Fill>
-                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <GradientStop Color="#FF474D4E" Offset="1"/>
-                    <GradientStop Color="#FF72DCEA" Offset="0.777"/>
-                </LinearGradientBrush>
-            </Rectangle.Fill>
-        </Rectangle>
+        
         <Button x:Name="btnModificar" Content="Modificar" HorizontalAlignment="Left" Height="41" Margin="1202,713,0,0" VerticalAlignment="Top" Width="156" Click="btnModificar_Click"/>
         <TextBox x:Name="txtObsv" HorizontalAlignment="Left" Height="30" Margin="1202,556,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="388"/>
         <Label Content="Obseracion" HorizontalAlignment="Left" Height="26" Margin="1202,525,0,0" VerticalAlignment="Top" Width="79"/>
@@ -27,11 +20,6 @@
         <Label Content="Numero MTC" HorizontalAlignment="Left" Margin="1202,393,0,0" VerticalAlignment="Top"/>
         <TextBox x:Name="txtMTC" HorizontalAlignment="Left" Height="34" Margin="1202,424,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="388"/>
         <Label Content="GUIAS DE REMISION SAGA" HorizontalAlignment="Left" Margin="524,15,0,0" VerticalAlignment="Top" Foreground="White" FontSize="48"/>
-        <Button Content="" HorizontalAlignment="Left" Margin="39,33,0,0" VerticalAlignment="Top" Height="28" Width="36" Click="Button_Click">
-            <Button.Background>
-                <ImageBrush ImageSource="/4829874_arrow_back_left_icon.png"/>
-            </Button.Background>
-        </Button>
         <Label Content="EOT" HorizontalAlignment="Left" Height="32" Margin="1202,255,0,0" VerticalAlignment="Top" Width="59"/>
         <TextBox x:Name="txtEOT" HorizontalAlignment="Left" Height="32" Margin="1202,292,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="388"/>
         <Label Content="NRO OCS" HorizontalAlignment="Left" Margin="1202,608,0,0" VerticalAlignment="Top"/>

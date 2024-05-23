@@ -269,7 +269,7 @@
         <Image  HorizontalAlignment="Left" Height="70" Margin="1115,548,0,0" VerticalAlignment="Top" Width="80" Source="/ratio.png"/>
         <Image  HorizontalAlignment="Left" Height="70" Margin="911,377,0,0" VerticalAlignment="Top" Width="80" Source="/documento.png"/>
         <Image  HorizontalAlignment="Left" Height="70" Margin="1108,230,0,0" VerticalAlignment="Top" Width="80" Source="/documento.PNG"/>
-        <Button x:Name="btn_Kardex" Margin="1295,202,125,500" BorderBrush="#FFDCF0F6" Content="&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;    ACT. KARDEX&#xA;" FontFamily="Bahnschrift" FontSize="14"  Foreground="Black" Click="btn_Kardex_Click" >
+        <Button x:Name="btn_Kardex" Margin="1295,202,125,500" BorderBrush="#FFDCF0F6" Content="&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;    ACT. KARDEX&#xA;" FontFamily="Bahnschrift" FontSize="14"  Foreground="Black"  >
             <Button.Effect>
                 <DropShadowEffect/>
             </Button.Effect>

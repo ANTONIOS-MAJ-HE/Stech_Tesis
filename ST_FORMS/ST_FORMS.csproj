@@ -71,6 +71,8 @@
     <PackageReference Include="Aspose.BarCode" Version="23.1.0" />
     <PackageReference Include="DevExpress.Data" Version="22.2.4" />
     <PackageReference Include="FontAwesome.Sharp" Version="6.3.0" />
+    <PackageReference Include="MaterialDesignColors" Version="3.0.0" />
+    <PackageReference Include="MaterialDesignThemes" Version="5.0.0" />
     <PackageReference Include="Microsoft.Office.Interop.Excel" Version="15.0.4795.1001" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
     <PackageReference Include="RestSharp" Version="109.0.1" />
@@ -112,7 +114,6 @@
 
   <ItemGroup>
     <Folder Include="Images\" />
-    <Folder Include="ViewModel\" />
   </ItemGroup>
 
 </Project>

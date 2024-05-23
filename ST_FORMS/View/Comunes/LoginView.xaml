@@ -7,7 +7,7 @@
         xmlns:customcontrols="clr-namespace:ST_FORMS.CustomControls" 
         xmlns:viewModel="clr-namespace:ST_FORMS.ViewModel.Comunes"
         mc:Ignorable="d"
-        Title="LoginView" Height="450" Width="800"
+        Title="LoginView" Height="550" Width="800"
         WindowStyle="None"
         ResizeMode="NoResize"
         WindowStartupLocation="CenterScreen"

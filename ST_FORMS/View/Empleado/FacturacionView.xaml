@@ -1,0 +1,258 @@
+﻿<UserControl x:Class="ST_FORMS.View.Empleado.FacturacionView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:ST_FORMS.View.Empleado"
+             xmlns:fa="http://schemas.awesome.incremented/wpf/xaml/fontawesome.sharp"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid >
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- Header Section -->
+        <Grid Grid.Row="0" Margin="10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Grid.Column="0">
+                <TextBlock Text="Fecha: " Foreground="DarkGray" FontSize="22" FontWeight="Medium" FontFamily="Montserrat"/>
+                <StackPanel Orientation="Horizontal">
+                    <DatePicker x:Name="dt_fecha" Width="150" Height="28" VerticalContentAlignment="Center"/>
+                </StackPanel>
+            </StackPanel>
+            <StackPanel Grid.Column="1" Orientation="Horizontal">
+              
+                <Label x:Name="lblCantidad" FontSize="22" FontFamily="Arial Rounded MT Bold" Foreground="DarkGray" />
+
+                <Button Click="btnBuscar_Click" 
+                        FontSize="12" FontFamily="Montserrat" Cursor="Hand"
+                        BorderThickness="0" Foreground="White" VerticalAlignment="Top"
+                        Background="#773DFF" Width="40" Height="40">
+                    <fa:IconImage Icon="Search" Foreground="White" Width="20" Height="20"/>
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <Setter Property="Background" Value="#773DFF"/>
+                            <Setter Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate TargetType="Button">
+                                        <Border Height="40" Width="40" CornerRadius="20" Background="{TemplateBinding Background}">
+                                            <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                        </Border>
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" Value="#836EFB"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+                </Button>
+                <Button 
+                        FontSize="12" FontFamily="Montserrat" Cursor="Hand"
+                        BorderThickness="0" Foreground="White" VerticalAlignment="Top"
+                        Background="#773DFF" Width="40" Height="40">
+                    <fa:IconImage Icon="Broom" Foreground="White" Width="20" Height="20"/>
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <Setter Property="Background" Value="#773DFF"/>
+                            <Setter Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate TargetType="Button">
+                                        <Border Height="40" Width="40" CornerRadius="20" Background="{TemplateBinding Background}">
+                                            <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                        </Border>
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" Value="#836EFB"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+                </Button>
+            </StackPanel>
+        </Grid>
+
+        <!-- Main Content Section -->
+        <Grid Grid.Row="1" Margin="10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="200"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <!-- Left Section (Form Inputs) -->
+            <StackPanel Grid.Column="0" Margin="10">
+                <TextBlock Text="Numero de Orden" Foreground="DarkGray" FontSize="12" FontWeight="Medium" FontFamily="Montserrat"/>
+                <TextBox x:Name="txtNroOC" FontSize="13" FontWeight="Medium" FontFamily="Montserrat" Foreground="White"
+                         CaretBrush="LightGray" BorderBrush="DarkGray" BorderThickness="0,0,0,2" Height="28" Width="180"
+                         VerticalContentAlignment="Center" Padding="20,0,0,0">
+                    <TextBox.Background>
+                        <VisualBrush Stretch="None" AlignmentX="Left" AlignmentY="Center">
+                            <VisualBrush.Visual>
+                                <fa:IconImage Icon="Key" Foreground="DarkGray" Width="15"/>
+                            </VisualBrush.Visual>
+                        </VisualBrush>
+                    </TextBox.Background>
+                </TextBox>
+
+                <TextBlock Text="Razon Social" Foreground="DarkGray" FontSize="12" FontWeight="Medium" FontFamily="Montserrat"/>
+                <ComboBox x:Name="RazonS" Width="180" Height="28" Padding="20,0,0,0" Margin="0,5,0,10"/>
+
+                
+
+                <TextBlock Text="Canal" Foreground="DarkGray" FontSize="12" FontWeight="Medium" FontFamily="Montserrat"/>
+                <ComboBox x:Name="cmb_canal" Width="180" Height="28" Padding="20,0,0,0" Margin="0,5,0,10" SelectionChanged="cmb_canal_SelectionChanged"/>
+
+                <StackPanel Grid.Row="2" Orientation="Vertical" HorizontalAlignment="Center" >
+                    <TextBox x:Name="NumRuc" TextWrapping="Wrap"  Width="100" Visibility="Hidden"/>
+                    <TextBox x:Name="txtJson" Width="180" Height="150" VerticalScrollBarVisibility="Auto" TextWrapping="Wrap"/>
+                    <TextBox x:Name="DirecC" TextWrapping="Wrap"  Width="180" Visibility="Hidden"/>
+                </StackPanel>
+                
+            </StackPanel>
+
+            <!-- Right Section (DataGrid and Buttons) -->
+            <Grid Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <Border Background="#200F53" CornerRadius="10" Padding="10" Grid.Row="0">
+                    <DataGrid x:Name="dtgFacturas" AutoGenerateColumns="False" Background="#200F53" BorderThickness="0" SelectionChanged="dtgFacturas_SelectionChanged">
+                        <DataGrid.ColumnHeaderStyle>
+                            <Style TargetType="DataGridColumnHeader">
+                                <Setter Property="Background" Value="Transparent"/>
+                                <Setter Property="Foreground" Value="#BCBEE0"/>
+                                <Setter Property="Padding" Value="10,0,0,10"/>
+                                <Setter Property="FontFamily" Value="Montserrat"/>
+                                <Setter Property="FontSize" Value="15"/>
+                            </Style>
+                        </DataGrid.ColumnHeaderStyle>
+                        <DataGrid.Columns>
+                            <!-- Define your columns here -->
+                            <DataGridTextColumn Header="Nro Ord." Binding="{Binding NRO_OC}"/>
+                            <DataGridTextColumn Header="Serie Fact." Binding="{Binding SERIE_FACTURA}"/>
+                            <DataGridTextColumn Header="Nro. Doc. Fact." Binding="{Binding NUMERO_DOCUMENTO_FACTURA}"/>
+                            <DataGridTextColumn Header="Tipo Doc." Binding="{Binding TIPO_DOCUMENTO}"/>
+                            <DataGridTextColumn Header="Tipo Doc. Cliente" Binding="{Binding TIPO_DOCUMENTO_CLIENTE}"/>
+                            <DataGridTextColumn Header="NUMERO_DOCUMENTO" Binding="{Binding NUMERO_DOCUMENTO}"/>
+                            <DataGridTextColumn Header="NOMBRE_CLIENTE" Binding="{Binding NOMBRE_CLIENTE}"/>
+                            <DataGridTextColumn Header="DIRECCION_CLIENTE" Binding="{Binding DIRECCION_CLIENTE}"/>
+                            <DataGridTextColumn Header="CORREO" Binding="{Binding CORREO}"/>
+                            <DataGridTextColumn Header="TELEFONO" Binding="{Binding TELEFONO}"/>
+                            <DataGridTextColumn Header="OBSERVACION" Binding="{Binding OBSERVACION}"/>
+                            <DataGridTextColumn Header="DESCRIPCION_MOTIVO" Binding="{Binding DESCRIPCION_MOTIVO}"/>
+                            <DataGridTextColumn Header="FECHA_TRASLADO" Binding="{Binding FECHA_TRASLADO}"/>
+                            <DataGridTextColumn Header="PESO" Binding="{Binding PESO}"/>
+                            <DataGridTextColumn Header="UBIGEO_LLEGADA" Binding="{Binding UBIGEO_LLEGADA}"/>
+                            <DataGridTextColumn Header="DIRECCION_LLEGADA" Binding="{Binding OBSERVACION}"/>
+                        </DataGrid.Columns>
+                        <DataGrid.RowStyle>
+                            <Style TargetType="DataGridRow">
+                                <Style.Triggers>
+                                    <DataTrigger Binding="{Binding Visibility}" Value="Collapsed">
+                                        <Setter Property="Visibility" Value="Collapsed"/>
+                                    </DataTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </DataGrid.RowStyle>
+                    </DataGrid>
+                </Border>
+
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Grid.Row="1" Margin="10">
+                    <Button x:Name="btn_facturar" Content="Facturar" Width="100" Height="30"  Click="btn_facturar_Click">
+                        <Button.Style>
+                            <Style TargetType="Button">
+                                <Setter Property="Background" Value="#773DFF"/>
+                                <Setter Property="Foreground" Value="White"/>
+                                <Setter Property="BorderThickness" Value="0"/>
+                                <Setter Property="FontSize" Value="12"/>
+                                <Setter Property="FontFamily" Value="Montserrat"/>
+                                <Setter Property="Cursor" Value="Hand"/>
+                                <Setter Property="Template">
+                                    <Setter.Value>
+                                        <ControlTemplate TargetType="Button">
+                                            <Border Height="30" Width="100" CornerRadius="15" Background="{TemplateBinding Background}">
+                                                <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                            </Border>
+                                        </ControlTemplate>
+                                    </Setter.Value>
+                                </Setter>
+                                <Style.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter Property="Background" Value="#836EFB"/>
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Button.Style>
+                    </Button>
+                    <Button x:Name="btn_facturarTodo" Content="Facturar TODO" Width="100" Height="30" Margin="5,0,0,0" Click="btn_facturarTodo_Click">
+                        <Button.Style>
+                            <Style TargetType="Button">
+                                <Setter Property="Background" Value="#773DFF"/>
+                                <Setter Property="Foreground" Value="White"/>
+                                <Setter Property="BorderThickness" Value="0"/>
+                                <Setter Property="FontSize" Value="12"/>
+                                <Setter Property="FontFamily" Value="Montserrat"/>
+                                <Setter Property="Cursor" Value="Hand"/>
+                                <Setter Property="Template">
+                                    <Setter.Value>
+                                        <ControlTemplate TargetType="Button">
+                                            <Border Height="30" Width="100" CornerRadius="15" Background="{TemplateBinding Background}">
+                                                <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                            </Border>
+                                        </ControlTemplate>
+                                    </Setter.Value>
+                                </Setter>
+                                <Style.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter Property="Background" Value="#836EFB"/>
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Button.Style>
+                    </Button>
+                    <Button x:Name="btnModificar" Content="Modificar" Width="100" Height="30" Margin="5,0,0,0" Click="btnModificar_Click">
+                        <Button.Style>
+                            <Style TargetType="Button">
+                                <Setter Property="Background" Value="#773DFF"/>
+                                <Setter Property="Foreground" Value="White"/>
+                                <Setter Property="BorderThickness" Value="0"/>
+                                <Setter Property="FontSize" Value="12"/>
+                                <Setter Property="FontFamily" Value="Montserrat"/>
+                                <Setter Property="Cursor" Value="Hand"/>
+                                <Setter Property="Template">
+                                    <Setter.Value>
+                                        <ControlTemplate TargetType="Button">
+                                            <Border Height="30" Width="100" CornerRadius="15" Background="{TemplateBinding Background}">
+                                                <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                            </Border>
+                                        </ControlTemplate>
+                                    </Setter.Value>
+                                </Setter>
+                                <Style.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter Property="Background" Value="#836EFB"/>
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Button.Style>
+                    </Button>
+                </StackPanel>
+
+                
+            </Grid>
+        </Grid>
+    </Grid>
+</UserControl>

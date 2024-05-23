@@ -147,6 +147,12 @@ namespace ST_FORMS.ViewModel.Comunes
         public ICommand ShowPlantaStechViewCommand { get; }
         public ICommand ShowRegistroSalidasViewCommand { get; }
 
+        //Antonio
+
+        public ICommand ShowSagaGuiasViewCommand { get; }
+        public ICommand ShowFacturaViewCommand { get; }
+        public ICommand ShowGuiasConectaViewCommand { get; }
+        public ICommand ShowPistoleoInicioViewCommand { get; }
 
         // Constructor para inicializar el ViewModel
         public MainViewModel()
@@ -176,6 +182,13 @@ namespace ST_FORMS.ViewModel.Comunes
             ShowPedidosViewCommand = new ViewModelCommand(ExecuteShowPedidosViewCommand);
             ShowPlantaStechViewCommand = new ViewModelCommand(ExecuteShowPlantaStechViewCommand);
             ShowRegistroSalidasViewCommand = new ViewModelCommand(ExecuteShowRegistroSalidasViewCommand);
+
+            //Antonio
+
+            ShowSagaGuiasViewCommand = new ViewModelCommand(ExecuteShowSagaGuiasViewCommand);
+            ShowFacturaViewCommand = new ViewModelCommand(ExecuteShowFacturaViewCommand);
+            ShowGuiasConectaViewCommand = new ViewModelCommand(ExecuteShowGuiasConectaViewCommand);
+            ShowPistoleoInicioViewCommand = new ViewModelCommand(ExecuteShowPistoleoInicioViewCommand);
 
             // Mostrar la vista de inicio por defecto al inicio de la aplicación
             ExecuteShowHomeViewCommand(null);
@@ -286,6 +299,35 @@ namespace ST_FORMS.ViewModel.Comunes
             Caption = "Entradas"; // Establecer el título de la vista
             Icon = IconChar.User; // Establecer el ícono asociado a la vista
         }
+
+        //Antonio
+        private void ExecuteShowSagaGuiasViewCommand(object obj)
+        {
+            CurrentChildView = new SagaGuiasViewModel(); // Crear una nueva instancia de la vista de inicio de la aplicación
+            Caption = "Saga Guias"; // Establecer el título de la vista
+            Icon = IconChar.User; // Establecer el ícono asociado a la vista
+        }
+
+        private void ExecuteShowFacturaViewCommand(object obj)
+        {
+            CurrentChildView = new FacturaViewModel(); // Crear una nueva instancia de la vista de inicio de la aplicación
+            Caption = "Factura"; // Establecer el título de la vista
+            Icon = IconChar.User; // Establecer el ícono asociado a la vista
+        }
+
+        private void ExecuteShowGuiasConectaViewCommand(object obj)
+        {
+            CurrentChildView = new GuiasConectaViewModel(); // Crear una nueva instancia de la vista de inicio de la aplicación
+            Caption = "Guias Conecta"; // Establecer el título de la vista
+            Icon = IconChar.User; // Establecer el ícono asociado a la vista
+        }
+        private void ExecuteShowPistoleoInicioViewCommand(object obj)
+        {
+            CurrentChildView = new PistoleoInicioViewModel(); // Crear una nueva instancia de la vista de inicio de la aplicación
+            Caption = "Pistoleo Home"; // Establecer el título de la vista
+            Icon = IconChar.User; // Establecer el ícono asociado a la vista
+        }
+
 
         // Método para cargar los datos del usuario actual desde el repositorio
         private void LoadCurrentUserData()

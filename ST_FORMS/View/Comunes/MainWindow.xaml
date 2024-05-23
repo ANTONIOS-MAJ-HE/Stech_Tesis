@@ -10,9 +10,10 @@
         xmlns:localEmpleado="clr-namespace:ST_FORMS.View.Empleado"
         xmlns:localAdmin="clr-namespace:ST_FORMS.View.Admin"
         xmlns:localComunes="clr-namespace:ST_FORMS.View.Comunes"
+        xmlns:localfrm="clr-namespace:ST_FORMS"
         xmlns:fa="http://schemas.awesome.incremented/wpf/xaml/fontawesome.sharp"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800"
+        Title="MainWindow" Height="550" Width="800"
         WindowStartupLocation="CenterScreen"
         WindowStyle="None"
         Background="Transparent"
@@ -48,7 +49,7 @@
         </DataTemplate>
         <!--Agregando Mas vistas-->
         <DataTemplate DataType="{x:Type viewEmpleado:ActKardexViewModel}">
-            <localEmpleado:ActKardexView/>
+            <localfrm:Form_Kardex/>
         </DataTemplate>
         <DataTemplate DataType="{x:Type viewEmpleado:ClientContactViewModel}">
             <localEmpleado:ClientContactView/>
@@ -67,6 +68,19 @@
         </DataTemplate>
         <DataTemplate DataType="{x:Type viewEmpleado:RegistroSalidasViewModel}">
             <localEmpleado:RegistroSalidasView/>
+        </DataTemplate>
+
+        <DataTemplate DataType="{x:Type viewEmpleado:SagaGuiasViewModel}">
+            <localEmpleado:SagaGuiasView/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type viewEmpleado:FacturaViewModel}">
+            <localEmpleado:FacturacionView/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type viewEmpleado:GuiasConectaViewModel}">
+            <localEmpleado:GuiasConectaView/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type viewEmpleado:PistoleoInicioViewModel}">
+            <localEmpleado:PistoleoInicioView/>
         </DataTemplate>
 
     </Window.Resources>
@@ -114,8 +128,11 @@
                                VerticalAlignment="Center"
                                Margin="10,0,0,0"/>
                     </StackPanel>
+                    <Grid>
+                        
+                    
                     <ScrollViewer VerticalScrollBarVisibility="Auto" CanContentScroll="True">
-                        <StackPanel Orientation="Vertical" MaxHeight="500">
+                        <StackPanel Orientation="Vertical" Height="440">
 
                             <!--Menu Buttons-->
                             <RadioButton Style="{StaticResource menuButton}"
@@ -279,8 +296,45 @@ Command="{Binding ShowRegistroSalidasViewCommand}">
                                 </StackPanel>
                             </RadioButton>
 
+
+                            <RadioButton Style="{StaticResource menuButton}"
+Tag="{StaticResource color8}"
+Command="{Binding ShowSagaGuiasViewCommand}">
+                                <StackPanel Orientation="Horizontal">
+                                    <fa:IconImage Icon="Tools" Style="{StaticResource menuButtonIcon}"/>
+                                    <TextBlock Text="Saga Guias" Style="{StaticResource menuButtonText}"/>
+                                </StackPanel>
+                            </RadioButton>
+                            <RadioButton Style="{StaticResource menuButton}"
+Tag="{StaticResource color8}"
+Command="{Binding ShowFacturaViewCommand}">
+                                <StackPanel Orientation="Horizontal">
+                                    <fa:IconImage Icon="Tools" Style="{StaticResource menuButtonIcon}"/>
+                                    <TextBlock Text="Facturación" Style="{StaticResource menuButtonText}"/>
+                                </StackPanel>
+                            </RadioButton>
+
+                            <RadioButton Style="{StaticResource menuButton}"
+Tag="{StaticResource color8}"
+Command="{Binding ShowGuiasConectaViewCommand}">
+                                <StackPanel Orientation="Horizontal">
+                                    <fa:IconImage Icon="Tools" Style="{StaticResource menuButtonIcon}"/>
+                                    <TextBlock Text="Guias Conecta" Style="{StaticResource menuButtonText}"/>
+                                </StackPanel>
+                            </RadioButton>
+
+                            <RadioButton Style="{StaticResource menuButton}"
+Tag="{StaticResource color8}"
+Command="{Binding ShowPistoleoInicioViewCommand}">
+                                <StackPanel Orientation="Horizontal">
+                                    <fa:IconImage Icon="Tools" Style="{StaticResource menuButtonIcon}"/>
+                                    <TextBlock Text="Pistoleo" Style="{StaticResource menuButtonText}"/>
+                                </StackPanel>
+                            </RadioButton>
+
                         </StackPanel>
                     </ScrollViewer>
+                    </Grid>
                 </StackPanel>
             </Border>
 
@@ -355,6 +409,9 @@ Command="{Binding ShowRegistroSalidasViewCommand}">
                                    FontFamily="Montserrat"
                                    FontWeight="Medium"
                                    VerticalAlignment="Center"/>
+
+                            
+
                         </StackPanel>
 
                         <!--User options-->

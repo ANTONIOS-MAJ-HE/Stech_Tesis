@@ -182,12 +182,12 @@ namespace ST_FORMS
             frm.ShowDialog();
         }
 
-        private void btn_Kardex_Click(object sender, RoutedEventArgs e)
-        {
-            Form_Kardex frm = new Form_Kardex();
-            this.Close();
-            frm.ShowDialog();
-        }
+        //private void btn_Kardex_Click(object sender, RoutedEventArgs e)
+        //{
+        //    Form_Kardex frm = new Form_Kardex();
+        //    this.Close();
+        //    frm.Show();
+        //}
         //agregando Conecta
         private void btn_GuiasC_Click(object sender, RoutedEventArgs e)
         {

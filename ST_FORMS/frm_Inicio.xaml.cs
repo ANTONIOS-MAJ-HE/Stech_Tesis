@@ -27,22 +27,64 @@ namespace ST_FORMS
             tipocambio();
         }
 
+        //public void tipocambio()
+        //{
+        //    //Consulta la API por el tipo de cambio
+        //    d_Api api_Cambio = new d_Api();
+        //    dynamic respuesta = api_Cambio.Get("https://api.apis.net.pe/v1/tipo-cambio-sunat");
+        //    //Crea la entidad Tipo_cambio
+        //    e_Tipo_cambio tipo_Cambio = new e_Tipo_cambio();
+        //    tipo_Cambio.FECHA = Convert.ToString(respuesta.fecha);
+        //    tipo_Cambio.DIA_ORIGEN = Convert.ToDouble(DateTime.Now.Day);
+        //    tipo_Cambio.VENTA_ORIGEN = Convert.ToDouble(respuesta.venta);
+        //    tipo_Cambio.COMPRA_ORIGEN = Convert.ToDouble(respuesta.compra);
+        //    //Crea la entidad de planta
+        //    n_TipoCambio d_TipoCambio = new n_TipoCambio();
+        //    //Verifica si ya se añadio el tipo de cambio de hoy
+        //    try
+        //    {
+        //        d_TipoCambio.newCambio(tipo_Cambio);
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        MessageBox.Show(ex.Message);
+        //    }
+        //}
+
         public void tipocambio()
         {
-            //Consulta la API por el tipo de cambio
-            d_Api api_Cambio = new d_Api();
-            dynamic respuesta = api_Cambio.Get("https://api.apis.net.pe/v1/tipo-cambio-sunat");
-            //Crea la entidad Tipo_cambio
+            // Crea la entidad Tipo_cambio
             e_Tipo_cambio tipo_Cambio = new e_Tipo_cambio();
-            tipo_Cambio.FECHA = Convert.ToString(respuesta.fecha);
-            tipo_Cambio.DIA_ORIGEN = Convert.ToDouble(DateTime.Now.Day);
-            tipo_Cambio.VENTA_ORIGEN = Convert.ToDouble(respuesta.venta);
-            tipo_Cambio.COMPRA_ORIGEN = Convert.ToDouble(respuesta.compra);
-            //Crea la entidad de planta
+            // Crea la entidad de planta
             n_TipoCambio d_TipoCambio = new n_TipoCambio();
-            //Verifica si ya se añadio el tipo de cambio de hoy
+
             try
             {
+                // Consulta la API por el tipo de cambio
+                d_Api api_Cambio = new d_Api();
+                dynamic respuesta = api_Cambio.Get("https://api.apis.net.pe/v1/tipo-cambio-sunat");
+
+                // Asigna los valores de la respuesta de la API a la entidad Tipo_cambio
+                tipo_Cambio.FECHA = Convert.ToString(respuesta.fecha);
+                tipo_Cambio.DIA_ORIGEN = Convert.ToDouble(DateTime.Now.Day);
+                tipo_Cambio.VENTA_ORIGEN = Convert.ToDouble(respuesta.venta);
+                tipo_Cambio.COMPRA_ORIGEN = Convert.ToDouble(respuesta.compra);
+            }
+            catch (Exception ex)
+            {
+                // En caso de error, asigna un valor predeterminado
+                tipo_Cambio.FECHA = DateTime.Now.ToString("yyyy-MM-dd");
+                tipo_Cambio.DIA_ORIGEN = Convert.ToDouble(DateTime.Now.Day);
+                tipo_Cambio.VENTA_ORIGEN = 3.8;
+                tipo_Cambio.COMPRA_ORIGEN = 3.8;
+
+                // Opcional: muestra un mensaje de error
+                MessageBox.Show("No se pudo obtener el tipo de cambio de la API. Se usará un valor predeterminado. Error: " + ex.Message);
+            }
+
+            try
+            {
+                // Verifica si ya se añadió el tipo de cambio de hoy
                 d_TipoCambio.newCambio(tipo_Cambio);
             }
             catch (Exception ex)

@@ -356,7 +356,7 @@ namespace ST_Datos
                 e_FacturasPendientes Factura = null;
                 string consulta = "select NRO_PEDIDO,NOMBRE,ISNULL(DOCUMENTO_CLIENTE,0) AS DOCUMENTO_CLIENTE,ISNULL(NOMBRE_CLIENTE,'-') AS NOMBRE_CLIENTE," +
                     "CONCAT(DIRECCION_RECEPTOR,' ',REFERENCIA_RECEPTOR,' ',UBIGEO_RECEPTOR) AS DOMICILIO ,'' AS EMAIL, ISNULL(TELEFONO_CLIENTE,0) AS TELEFONO_CLIENTE," +
-                    "SKU,CANTIDAD,CONVERT(float,PRECIO)/1.18 AS PRECIO_UNITARIO, CONVERT(float,ENVIO) AS COSTO_ENVIO from OC_JTZ_CONS" +
+                    "SKU,CANTIDAD,ROUND(CONVERT(float, ISNULL(PRECIO, SUB_TOTAL)) / 1.18,2) AS PRECIO_UNITARIO, CONVERT(float,ENVIO) AS COSTO_ENVIO from OC_JTZ_CONS" +
                     " WHERE CONVERT(varchar,FECHA_PROCESO,23) = CONVERT(varchar,GETDATE(),23) AND NRO_PEDIDO NOT IN (Select NRO_OC from ST_FACTURA) AND ESTADO='LISTO PARA ENVIAR'";
                 SqlCommand cmd_0 = new SqlCommand(consulta, con);
                 SqlDataReader reader = cmd_0.ExecuteReader();
@@ -1148,17 +1148,19 @@ namespace ST_Datos
                 List<e_FacturasPendientes> lista_items = new List<e_FacturasPendientes>();
                 e_FacturasPendientes Factura = null;
                 string consulta = "select FB.ORDER_NUMBER,'20611125888 ' AS DOCUMENTO,ST.TITULO,ST.PARTNUMBER,SUM(FB.UNIDADES_REAL) AS " +
-                    "UNIDADES ,'ARTOS ELECTRONIC E.I.R.L.' AS NOMBRE, CASE (E.MONEDA) WHEN 'PEN' THEN E.PRECIO_UNIT_S_IGV ELSE " +
-                    "E.PRECIO_UNIT_S_IGV *TC.COMPRA END AS PRECIO,'' AS EMAIL, " +
-                    "'AV. HONORIO DELGADO NRO. 224 URB. INGENIERIA LIMA - LIMA - SAN MARTIN DE PORRES' AS DIRECCION " +
+                    "UNIDADES ,'ARTOS ELECTRONIC E.I.R.L.' AS NOMBRE" +
+                    //", CASE (E.MONEDA) WHEN 'PEN' THEN E.PRECIO_UNIT_S_IGV ELSE E.PRECIO_UNIT_S_IGV *TC.COMPRA END AS PRECIO " +
+                    ", CASE WHEN (E.MONEDA = 'USD') THEN E.PRECIO_UNIT_S_IGV * TC.COMPRA WHEN (E.MONEDA = 'PEN') THEN E.PRECIO_UNIT_S_IGV END AS PRECIO " +
+                    ",'' AS EMAIL, 'AV. HONORIO DELGADO NRO. 224 URB. INGENIERIA LIMA - LIMA - SAN MARTIN DE PORRES' AS DIRECCION " +
                     "from ST_STOCK ST JOIN OC_FBL_CONS FB ON FB.FALABELLA_SKU = ST.SKU_FALABELLA " +
                     "LEFT JOIN ST_ENTRADAS_CONS E ON E.MINICODIGO = ST.MINI_CODIGO AND " +
                     "E.FECHA_PROCESO = (select MAX(FECHA_PROCESO) FROM ST_ENTRADAS_CONS WHERE MINICODIGO=ST.MINI_CODIGO AND " +
                     "PRECIO_UNIT_S_IGV IS NOT NULL AND PRECIO_UNIT_S_IGV >0) JOIN TC_SUNAT TC ON " +
                     "CONVERT(varchar,FB.FECHA_PROCESO,23) = CONVERT(varchar,TC.FECHA,23) " +
                     "WHERE CONVERT(varchar,FB.FECHA_PROCESO,23) = CONVERT(varchar,GETDATE(),23) " +
-                    "AND CASE (E.MONEDA) WHEN 'PEN' THEN E.PRECIO_UNIT_S_IGV ELSE E.PRECIO_UNIT_S_IGV *TC.COMPRA END >1.0" +
-                    "GROUP BY ST.TITULO,ST.PARTNUMBER,e.PRECIO_UNIT_S_IGV,FB.ORDER_NUMBER,E.MONEDA,TC.COMPRA";
+                    //"AND CASE (E.MONEDA) WHEN 'PEN' THEN E.PRECIO_UNIT_S_IGV ELSE E.PRECIO_UNIT_S_IGV *TC.COMPRA END >1.0" +
+                    "AND CASE WHEN (E.MONEDA = 'USD') THEN E.PRECIO_UNIT_S_IGV * TC.COMPRA WHEN (E.MONEDA = 'PEN') THEN E.PRECIO_UNIT_S_IGV ELSE ST.COSTO_U_S_IGV_DOLARES * TC.COMPRA END > 1.0" +
+                    "GROUP BY ST.TITULO,ST.PARTNUMBER,e.PRECIO_UNIT_S_IGV,FB.ORDER_NUMBER,E.MONEDA,TC.COMPRA, ST.COSTO_U_S_IGV_DOLARES";
                 SqlCommand cmd_0 = new SqlCommand(consulta, con);
                 SqlDataReader reader = cmd_0.ExecuteReader();
                 while (reader.Read())
@@ -2145,7 +2147,7 @@ namespace ST_Datos
                 SqlConnection con = db_conect.Conecta_DB();
                 List<e_ClienteFactura> lista_clientes = new List<e_ClienteFactura>();
                 e_ClienteFactura cliente = null;
-                string consulta = "select NATIONAL_REGISTRATION_NUMBER,CUSTOMER_NAME,CONCAT(BILLING_ADDRESS,' ',BILLING_ADDRESS_2,' ',BILLING_ADDRESS_3," +
+                string consulta = "select LEGAL_ID,CUSTOMER_NAME,CONCAT(BILLING_ADDRESS,' ',BILLING_ADDRESS_2,' ',BILLING_ADDRESS_3," +
                     "'-', BILLING_CITY) AS DIRECCION_CLI from OC_FBL_CONS " +
                     "Where ORDER_NUMBER= '" + NRO_OC + "'";
                 SqlCommand cmd_0 = new SqlCommand(consulta, con);
@@ -2153,9 +2155,9 @@ namespace ST_Datos
                 while (reader.Read())
                 {
                     cliente = new e_ClienteFactura();
-                    cliente.codigo_tipo_documento_identidad = Convert.ToString((string)reader["NATIONAL_REGISTRATION_NUMBER"]).Length == 11 ? "6" : "1";
+                    cliente.codigo_tipo_documento_identidad = Convert.ToString((string)reader["LEGAL_ID"]).Length == 11 ? "6" : "1";
                     cliente.apellidos_y_nombres_o_razon_social = (string)reader["CUSTOMER_NAME"];
-                    cliente.numero_documento = (string)reader["NATIONAL_REGISTRATION_NUMBER"];
+                    cliente.numero_documento = (string)reader["LEGAL_ID"];
                     cliente.codigo_pais = "PE";
                     cliente.ubigeo = "";
                     cliente.direccion = (string)reader["DIRECCION_CLI"];

@@ -101,7 +101,7 @@ namespace ST_Datos
                 return ex;
             }
         }
-
+        //el error, que no se por que sucede
         public dynamic Get(string url)
         {
             HttpWebRequest httpWebRequest = (HttpWebRequest)WebRequest.Create(url);

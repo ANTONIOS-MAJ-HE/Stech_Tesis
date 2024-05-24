@@ -14,7 +14,7 @@ namespace ST_Datos
             try
             {
                 SqlConnection con = db_st.Conecta_DB();
-                string insert = string.Format("IF NOT EXISTS(SELECT FECHA,COMPRA FROM TC_SUNAT WHERE FECHA = '{0}' AND COMPRA = {2} ) INSERT INTO TC_SUNAT (FECHA,DIA,COMPRA,VENTA) VALUES ('{0}',{1},{2},{3}) ", tc.FECHA, tc.DIA_ORIGEN, tc.COMPRA_ORIGEN, tc.VENTA_ORIGEN);
+                string insert = string.Format("IF NOT EXISTS(SELECT FECHA,COMPRA FROM TC_SUNAT WHERE FECHA = '{0}' ) INSERT INTO TC_SUNAT (FECHA,DIA,COMPRA,VENTA) VALUES ('{0}',{1},{2},{3}) ", tc.FECHA, tc.DIA_ORIGEN, tc.COMPRA_ORIGEN, tc.VENTA_ORIGEN);
                 SqlCommand cmd_0 = new SqlCommand(insert, con);
                 cmd_0.ExecuteNonQuery();
                 return "Tipo de cambio registrado correctamente";

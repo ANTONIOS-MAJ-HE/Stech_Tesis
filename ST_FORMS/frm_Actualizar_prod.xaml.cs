@@ -73,6 +73,8 @@ namespace ST_FORMS
             txt_C_U_S_IGV_USD.Text = "";
             txt_SKU_CATPHONE.Text = "";
             txt_SKU_MLIBRE.Text = "";
+            //AGREGANDO CONECTA
+            txt_SKU_CONECTA.Text = "";
             pn = null;
         }
         private void dataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -106,6 +108,8 @@ namespace ST_FORMS
                     txt_SKU_CATPHONE.Text = planta.SKU_CATPHONE;
                     txt_SKU_MLIBRE.Text = planta.SKU_MLIBRE;
                     txt_SKU_COOLBOX.Text = planta.SKU_COOLBOX;
+                    //AGREGANDO CONECTA
+                    txt_SKU_CONECTA.Text = planta.SKU_CONECTA;
                 }
             }
         }
@@ -143,7 +147,7 @@ namespace ST_FORMS
                 MessageBox.Show(planta_obj.Actualizar_planta(txt_UPC.Text, txt_EAN.Text, txt_Modelo.Text, txt_Mini_codigo.Text, txt_Partnumber.Text, txt_Marca.Text,
                     txt_Tipo.Text, txt_Titulo.Text, txt_Descont.Text, txt_SKU_SAGA.Text, txt_SKU_LINIO.Text, txt_SKU_RIPLEY.Text, txt_SKU_RPG.Text,
                     txt_SKU_JUNTOZ.Text, txt_SKU_LUMINGO.Text, txt_SKU_SODIMAC.Text, txt_SKU_TOTTUS.Text, txt_SKU_KINGSTON.Text, txt_C_U_S_IGV_USD.Text,
-                    txt_C_U_S_IGV_PEN.Text, pn, txt_SKU_CATPHONE.Text, txt_SKU_MLIBRE.Text,txt_SKU_COOLBOX.Text,txt_SKU_FALABELLA.Text));
+                    txt_C_U_S_IGV_PEN.Text, pn, txt_SKU_CATPHONE.Text, txt_SKU_MLIBRE.Text,txt_SKU_COOLBOX.Text,txt_SKU_FALABELLA.Text, txt_SKU_CONECTA.Text));//AGREGANDO CONECTA
                 Limpiar();
             }
 

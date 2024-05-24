@@ -16,7 +16,7 @@ namespace ST_Negocio
             actDAOB = new d_Act_planta();
         }
 
-        public string Actualizar_planta(string UPC, string EAN,string MODELO, string MINI_CODIGO, string PARTNUMBER, string MARCA, string TIPO, string TITULO, string DESCONTINUADO, string SKU_SAGA, string SKU_LINIO, string SKU_RIPLEY, string SKU_REALPLAZA, string SKU_JUNTOZ, string SKU_LUMINGO, string SKU_SODIMAC, string SKU_TOTTUS, string SKU_KINGSTON, string COSTO_U_S_IGV_DOLARES, string COSTO_U_S_IGV_SOLES, string ID, string SKU_CATPHONE, string SKU_MLIBRE,string SKU_COOLBOX,string SKU_FALABELLA)
+        public string Actualizar_planta(string UPC, string EAN,string MODELO, string MINI_CODIGO, string PARTNUMBER, string MARCA, string TIPO, string TITULO, string DESCONTINUADO, string SKU_SAGA, string SKU_LINIO, string SKU_RIPLEY, string SKU_REALPLAZA, string SKU_JUNTOZ, string SKU_LUMINGO, string SKU_SODIMAC, string SKU_TOTTUS, string SKU_KINGSTON, string COSTO_U_S_IGV_DOLARES, string COSTO_U_S_IGV_SOLES, string ID, string SKU_CATPHONE, string SKU_MLIBRE,string SKU_COOLBOX,string SKU_FALABELLA, string SKU_CONECTA)  //AGREGANDO CONECTA 
         {
             e_Planta planta = new e_Planta()
             {
@@ -44,7 +44,9 @@ namespace ST_Negocio
                 SKU_CATPHONE = SKU_CATPHONE,
                 SKU_MLIBRE = SKU_MLIBRE,
                 SKU_COOLBOX=SKU_COOLBOX,
-                SKU_FALABELLA=SKU_FALABELLA
+                SKU_FALABELLA=SKU_FALABELLA,
+                //AGREGANDO CONECTA
+                SKU_CONECTA = SKU_CONECTA
             };
             return actDAOB.Actualizar_planta(planta);
  

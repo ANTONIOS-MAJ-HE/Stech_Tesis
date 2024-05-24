@@ -85,7 +85,7 @@ namespace ST_Negocio
                 Guia.observaciones = guias[0].OBSERVACION;
                 Guia.orden_pedido_externo = Nro_OC;
                 Guia.codigo_modo_transporte = "02";
-                Guia.codigo_motivo_traslado = "05";
+                Guia.codigo_motivo_traslado = "01";
                 Guia.descripcion_motivo_traslado = guias[0].DESCRIPCION_MOTIVO;
                 Guia.fecha_de_traslado = guias[0].FECHA_TRASLADO;
                 Guia.codigo_de_puerto = "";

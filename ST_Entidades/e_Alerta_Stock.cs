@@ -19,6 +19,7 @@ namespace ST_Entidades
         public string SKU_SODIMAC { get; set; }
         public string SKU_SAGA { get; set; }
         public string SKU_TOTTUS { get; set; }
+
         public string SKU_LINIO { get; set; }
         public string SKU_RIPLEY { get; set; }
         public string SKU_JUNTOZ { get; set; }

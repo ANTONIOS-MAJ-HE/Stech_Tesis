@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ST_FORMS.ViewModel.Comunes;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows;
@@ -18,9 +19,11 @@ namespace ST_FORMS.View.Empleado
     /// </summary>
     public partial class PlantaStechView : UserControl
     {
-        public PlantaStechView()
+        private readonly MainViewModel _mainViewModel;
+        public PlantaStechView(MainViewModel mainViewModel)
         {
             InitializeComponent();
+            _mainViewModel = mainViewModel;
         }
     }
 }

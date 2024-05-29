@@ -9,14 +9,10 @@
     <ScrollViewer VerticalScrollBarVisibility="Auto">
         <Grid>
             <Grid.RowDefinitions>
-                <RowDefinition Height="Auto" MinHeight="207"/>
-                <!-- Primera fila con altura automática -->
-                <RowDefinition Height="Auto" MinHeight="69"/>
-                <!-- Segunda fila que ocupa todo el espacio restante -->
                 <RowDefinition Height="Auto"/>
-                <!-- Tercera fila que ocupa todo el espacio restante -->
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="160"/>
                 <RowDefinition Height="*"/>
-                <!-- Cuarta fila que ocupa todo el espacio restante -->
             </Grid.RowDefinitions>
 
             <!-- Contenido de la primera fila con dos columnas -->
@@ -28,31 +24,191 @@
                     <!-- Segunda columna -->
                 </Grid.ColumnDefinitions>
                 <!-- Contenido de la primera columna -->
-                <Label Grid.Column="0" Content="Nombre del cliente" HorizontalAlignment="Left" Height="25" VerticalAlignment="Top" Width="114" Margin="5,0,0,0"/>
-                <Label Grid.Column="0" Content="Documento" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="240,0,0,0" Height="25" Width="72"/>
-                <Button Grid.Column="0" x:Name="btn_BusCliente" Content="Buscar" HorizontalAlignment="Left" Height="25" VerticalAlignment="Top" Width="80" Margin="317,0,0,0"/>
-                <Label Grid.Column="0" Content="Ubigeo" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="427,0,0,0" Height="25" Width="49"/>
-                <Label Grid.Column="0" Content="Direccion del fiscal cliente" HorizontalAlignment="Left" VerticalAlignment="Top" Height="32" Width="150" Margin="5,65,0,0"/>
-                <Label Grid.Column="0" Content="Correo" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="216,63,0,0"/>
-                <Label Grid.Column="0" x:Name="Codigo_Ubigeo" Content="Codigo Ubigeo" HorizontalAlignment="Left" Height="26" VerticalAlignment="Top" Width="90" Margin="400,63,0,0"/>
-                <Label Grid.Column="0" Content="Direccion de entrega cliente" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,121,0,0"/>
-                <Label Grid.Column="0" Content="Telefono" HorizontalAlignment="Left" Height="25" VerticalAlignment="Top" Width="67" Margin="330,121,0,0"/>
+                <Label Grid.Column="0" Foreground="DarkGray" Content="Nombre del cliente" HorizontalAlignment="Left" Height="25" VerticalAlignment="Top" Width="114" Margin="5,0,0,0"/>
+                <Label Grid.Column="0" Foreground="DarkGray" Content="Documento" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="240,0,0,0" Height="25" Width="72"/>
+                <Button Grid.Column="0" x:Name="btn_BusCliente" Content="Buscar" FontSize="10" FontFamily="Montserrat" Cursor="Hand" BorderThickness="0" Foreground="DarkGray" VerticalAlignment="Top" Background="#773DFF" Margin="317,-4,135,0" Height="37">
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <Setter Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate TargetType="Button">
+                                        <Border Height="30" CornerRadius="10" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}">
+                                            <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                        </Border>
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" Value="#836EFB"/>
+                                    <Setter Property="BorderBrush" Value="#836EFB"/>
+                                    <Setter Property="Effect">
+                                        <Setter.Value>
+                                            <DropShadowEffect BlurRadius="5" Color="#836EFB" ShadowDepth="0"/>
+                                        </Setter.Value>
+                                    </Setter>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+                </Button>
+                <Label Grid.Column="0" Foreground="DarkGray" Content="Ubigeo" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="427,0,0,0" Height="25" Width="49"/>
+                <Label Grid.Column="0" Foreground="DarkGray" Content="Direccion del fiscal cliente" HorizontalAlignment="Left" VerticalAlignment="Top" Height="32" Width="150" Margin="5,65,0,0"/>
+                <Label Grid.Column="0" Foreground="DarkGray" Content="Correo" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="216,63,0,0"/>
+                <Label Grid.Column="0" Foreground="DarkGray" x:Name="Codigo_Ubigeo" Content="Codigo Ubigeo" HorizontalAlignment="Left" Height="26" VerticalAlignment="Top" Width="90" Margin="400,63,0,0"/>
+                <Label Grid.Column="0" Foreground="DarkGray" Content="Direccion de entrega cliente" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,121,0,0"/>
+                <Label Grid.Column="0" Foreground="DarkGray" Content="Telefono" HorizontalAlignment="Left" Height="25" VerticalAlignment="Top" Width="67" Margin="330,121,0,0"/>
 
 
-                <TextBox Grid.Column="0" x:Name="txtNomCliente" Height="24" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Margin="5,30,318,0"/>
+                <TextBox Grid.Column="0" x:Name="txtNomCliente" FontSize="13" FontWeight="Medium" FontFamily="Montserrat" Foreground="White" CaretBrush="LightGray" BorderBrush="DarkGray" BorderThickness="0,0,0,2" Height="22" Margin="5,30,297,161">
+                    <TextBox.Background>
+                        <VisualBrush Stretch="None" AlignmentX="Left" AlignmentY="Center">
+                        </VisualBrush>
+                    </TextBox.Background>
+                </TextBox>
                 <ComboBox Grid.Column="0" x:Name="cmbTipodoc" HorizontalAlignment="Left" Height="24" VerticalAlignment="Top" Width="66" Margin="240,30,0,0" RenderTransformOrigin="0.515,1.293"/>
-                <TextBox Grid.Column="0" x:Name="txtdoc" HorizontalAlignment="Left" Height="24" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="94" Margin="317,30,0,0"/>
-                <TextBox Grid.Column="0" x:Name="txtUbigeo" HorizontalAlignment="Left" Height="24" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="87" Margin="427,30,10,0"/>
-                <TextBox Grid.Column="0" x:Name="txtDirFisCliente" HorizontalAlignment="Left" Height="22" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="215" Margin="5,94,0,0"/>
-                <TextBox Grid.Column="0" x:Name="txtCorreo" Height="22" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Margin="225,94,140,0"/>
+                <TextBox Grid.Column="0" x:Name="txtdoc" FontSize="13" FontWeight="Medium" FontFamily="Montserrat" Foreground="White" CaretBrush="LightGray" BorderBrush="DarkGray" BorderThickness="0,0,0,2" Height="22" Margin="317,32,135,159">
+                    <TextBox.Background>
+                        <VisualBrush Stretch="None" AlignmentX="Left" AlignmentY="Center">
+                        </VisualBrush>
+                    </TextBox.Background>
+                </TextBox>
+                <TextBox Grid.Column="0" x:Name="txtUbigeo" FontSize="13" FontWeight="Medium" FontFamily="Montserrat" Foreground="White" CaretBrush="LightGray" BorderBrush="DarkGray" BorderThickness="0,0,0,2" Height="22" Margin="426,30,12,161">
+                    <TextBox.Background>
+                        <VisualBrush Stretch="None" AlignmentX="Left" AlignmentY="Center">
+                        </VisualBrush>
+                    </TextBox.Background>
+                </TextBox>
+                <TextBox Grid.Column="0" x:Name="txtDirFisCliente" FontSize="13" FontWeight="Medium" FontFamily="Montserrat" Foreground="White" CaretBrush="LightGray" BorderBrush="DarkGray" BorderThickness="0,0,0,2" Height="22" Margin="5,94,297,97">
+                    <TextBox.Background>
+                        <VisualBrush Stretch="None" AlignmentX="Left" AlignmentY="Center">
+                        </VisualBrush>
+                    </TextBox.Background>
+                </TextBox>
+                <TextBox Grid.Column="0" x:Name="txtCorreo" FontSize="13" FontWeight="Medium" FontFamily="Montserrat" Foreground="White" CaretBrush="LightGray" BorderBrush="DarkGray" BorderThickness="0,0,0,2" Height="22" Margin="229,94,135,97">
+                    <TextBox.Background>
+                        <VisualBrush Stretch="None" AlignmentX="Left" AlignmentY="Center">
+                        </VisualBrush>
+                    </TextBox.Background>
+                </TextBox>
                 <TextBox Grid.Column="0" x:Name="txtCodUbigeo" HorizontalAlignment="Left" Height="22" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="114" IsEnabled="False" Margin="400,94,0,0"/>
-                <TextBox Grid.Column="0" x:Name="txtDirEntCliente" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="271" Margin="10,146,0,0"/>
-                <TextBox Grid.Column="0" x:Name="txtTelefono" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="204" Margin="298,146,0,0"/>
+                <TextBox Grid.Column="0" x:Name="txtDirEntCliente" FontSize="13" FontWeight="Medium" FontFamily="Montserrat" Foreground="White" CaretBrush="LightGray" BorderBrush="DarkGray" BorderThickness="0,0,0,2" Height="22" Margin="10,146,297,45">
+                    <TextBox.Background>
+                        <VisualBrush Stretch="None" AlignmentX="Left" AlignmentY="Center">
+                        </VisualBrush>
+                    </TextBox.Background>
+                </TextBox>
+                <TextBox Grid.Column="0" x:Name="txtTelefono" FontSize="13" FontWeight="Medium" FontFamily="Montserrat" Foreground="White" CaretBrush="LightGray" BorderBrush="DarkGray" BorderThickness="0,0,0,2" Height="22" Margin="330,146,12,45">
+                    <TextBox.Background>
+                        <VisualBrush Stretch="None" AlignmentX="Left" AlignmentY="Center">
+                        </VisualBrush>
+                    </TextBox.Background>
+                </TextBox>
 
-                <Button Grid.Column="0" x:Name="btnBuscar" Content="Buscar" HorizontalAlignment="Left" Height="24" VerticalAlignment="Top" Width="102" Background="#FF35F5F1" Margin="17,174,0,0"/>
-                <Button Grid.Column="0" x:Name="btn_Limpiar_cl" Content="Limpiar" HorizontalAlignment="Left" VerticalAlignment="Top" Width="102" Background="#FFFFE438" Height="23" Margin="137,175,0,0"/>
-                <Button Grid.Column="0" x:Name="btn_Insertar" Content="Añadir" HorizontalAlignment="Left" Height="22" VerticalAlignment="Top" Width="102" Background="#FF5975E6" Margin="262,176,0,0"/>
-                <Button Grid.Column="0" x:Name="btn_Modificar" Content="Modificar" HorizontalAlignment="Left" Height="22" VerticalAlignment="Top" Width="96" Background="#FFCAED70" Margin="374,176,0,0"/>
+                <Button  Grid.Column="0" x:Name="btnBuscar" Content="Buscar" FontSize="12" FontFamily="Montserrat" Cursor="Hand" BorderThickness="0" Foreground="DarkGray" VerticalAlignment="Top" HorizontalAlignment="Left" Width="100" Background="#773DFF" Margin="19,179,0,0">
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <Setter Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate TargetType="Button">
+                                        <Border Height="30" CornerRadius="15" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}">
+                                            <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                        </Border>
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" Value="#836EFB"/>
+                                    <Setter Property="BorderBrush" Value="#836EFB"/>
+                                    <Setter Property="Effect">
+                                        <Setter.Value>
+                                            <DropShadowEffect BlurRadius="5" Color="#836EFB" ShadowDepth="0"/>
+                                        </Setter.Value>
+                                    </Setter>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+                </Button>
+                <Button Grid.Column="0" x:Name="btn_Limpiar_cl" Content="Limpiar" FontSize="12" FontFamily="Montserrat" Cursor="Hand" BorderThickness="0" Foreground="DarkGray" VerticalAlignment="Top" HorizontalAlignment="Left" Width="100" Background="#773DFF" Margin="146,179,0,0">
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <Setter Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate TargetType="Button">
+                                        <Border Height="30" CornerRadius="15" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}">
+                                            <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                        </Border>
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" Value="#836EFB"/>
+                                    <Setter Property="BorderBrush" Value="#836EFB"/>
+                                    <Setter Property="Effect">
+                                        <Setter.Value>
+                                            <DropShadowEffect BlurRadius="5" Color="#836EFB" ShadowDepth="0"/>
+                                        </Setter.Value>
+                                    </Setter>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+                </Button>
+                <Button Grid.Column="0" x:Name="btn_Insertar" Content="Añadir" FontSize="12" FontFamily="Montserrat" Cursor="Hand" BorderThickness="0" Foreground="DarkGray" VerticalAlignment="Top" HorizontalAlignment="Left" Width="100" Background="#773DFF" Margin="262,179,0,0">
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <Setter Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate TargetType="Button">
+                                        <Border Height="30" CornerRadius="15" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}">
+                                            <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                        </Border>
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" Value="#836EFB"/>
+                                    <Setter Property="BorderBrush" Value="#836EFB"/>
+                                    <Setter Property="Effect">
+                                        <Setter.Value>
+                                            <DropShadowEffect BlurRadius="5" Color="#836EFB" ShadowDepth="0"/>
+                                        </Setter.Value>
+                                    </Setter>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+                </Button>
+                <Button Grid.Column="0" x:Name="btn_Modificar" Content="Modificar" FontSize="12" FontFamily="Montserrat" Cursor="Hand" BorderThickness="0" Foreground="DarkGray" VerticalAlignment="Top" HorizontalAlignment="Left" Width="100" Background="#773DFF" Margin="395,179,0,0">
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <Setter Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate TargetType="Button">
+                                        <Border Height="30" CornerRadius="15" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}">
+                                            <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                        </Border>
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" Value="#836EFB"/>
+                                    <Setter Property="BorderBrush" Value="#836EFB"/>
+                                    <Setter Property="Effect">
+                                        <Setter.Value>
+                                            <DropShadowEffect BlurRadius="5" Color="#836EFB" ShadowDepth="0"/>
+                                        </Setter.Value>
+                                    </Setter>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+                </Button>
                 <!-- Contenido de la segunda columna -->
                 <DataGrid Grid.Column="1" x:Name="dtUbigeo" Margin="10,10,10,10"/>
             </Grid>
@@ -65,37 +221,194 @@
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="200*"/>
                     <ColumnDefinition Width="200*"/>
-                    <ColumnDefinition Width="229*"/>
+                    <ColumnDefinition Width="229"/>
                     <ColumnDefinition Width="Auto" MinWidth="171"/>
                 </Grid.ColumnDefinitions>
 
-                <Label Grid.Column="0" x:Name="Nombre_del_Contacto" Content="Nombre del contacto" HorizontalAlignment="Left" VerticalAlignment="Top" Height="26" Width="123"/>
-                <Label Grid.Column="0" Content="Telefono del contacto" VerticalAlignment="Top" Margin="5,50,139,0" Height="26"/>
-                <Label Grid.Column="1" Content="Nro de documento" HorizontalAlignment="Left" VerticalAlignment="Top" Height="25" Margin="5,0,0,0" Width="111"/>
-                <Label Grid.Column="1" Content="Correo" VerticalAlignment="Top" Margin="0,50,200,0" Height="26"/>
-                <Label Grid.Column="2" Content="Observacion" HorizontalAlignment="Left" VerticalAlignment="Top" Height="26" Margin="5,0,0,0" Width="76"/>
-                <Label Grid.Column="2" Content="Nro de contacto" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5,50,0,0" Height="26" Width="96"/>
-                <Label Grid.Column="2" Content="Id Cliente" HorizontalAlignment="Left" Height="29" VerticalAlignment="Top" Width="67" Margin="123,50,0,0" RenderTransformOrigin="0.507,0.725"/>
+                <Label Grid.Column="0" Foreground="DarkGray" x:Name="Nombre_del_Contacto" Content="Nombre del contacto" HorizontalAlignment="Left" VerticalAlignment="Top" Height="26" Width="123"/>
+                <Label Grid.Column="0" Foreground="DarkGray" Content="Telefono del contacto" VerticalAlignment="Top" Margin="5,50,58,0" Height="26"/>
+                <Label Grid.Column="1" Foreground="DarkGray" Content="Nro de documento" HorizontalAlignment="Left" VerticalAlignment="Top" Height="25" Margin="5,0,0,0" Width="111"/>
+                <Label Grid.Column="1" Foreground="DarkGray" Content="Correo" VerticalAlignment="Top" Margin="0,50,42,0" Height="26"/>
+                <Label Grid.Column="2" Foreground="DarkGray" Content="Observacion" HorizontalAlignment="Left" VerticalAlignment="Top" Height="26" Margin="5,0,0,0" Width="76"/>
+                <Label Grid.Column="2" Foreground="DarkGray" Content="Nro de contacto" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5,50,0,0" Height="26" Width="96"/>
+                <Label Grid.Column="2" Foreground="DarkGray" Content="Id Cliente" HorizontalAlignment="Left" Height="29" VerticalAlignment="Top" Width="67" Margin="123,50,0,0" RenderTransformOrigin="0.507,0.725"/>
 
-                <TextBox Grid.Column="0" x:Name="txt_ContNom" Height="24" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Margin="5,26,10,0"/>
-                <TextBox Grid.Column="0" x:Name="txt_ContTelf" Height="27" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Margin="10,76,38,0"/>
-                <TextBox Grid.Column="1" x:Name="txtContDoc" Height="24" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Margin="5,26,10,0"/>
-                <TextBox Grid.Column="1" x:Name="txt_ContCorr" Height="24" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Margin="10,76,10,0"/>
-                <TextBox Grid.Column="2" x:Name="txt_ContObv" Height="24" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Margin="5,26,10,0"/>
+                <TextBox Grid.Column="0" x:Name="txt_ContNom" FontWeight="Medium" FontFamily="Montserrat" Foreground="White" CaretBrush="LightGray" BorderBrush="DarkGray" BorderThickness="0,0,0,2" Margin="10,26,38,107">
+                    <TextBox.Background>
+                        <VisualBrush Stretch="None" AlignmentX="Left" AlignmentY="Center">
+                        </VisualBrush>
+                    </TextBox.Background>
+                </TextBox>
+                <TextBox Grid.Column="0" x:Name="txt_ContTelf" FontWeight="Medium" FontFamily="Montserrat" Foreground="White" CaretBrush="LightGray" BorderBrush="DarkGray" BorderThickness="0,0,0,2" Margin="10,80,38,57">
+                    <TextBox.Background>
+                        <VisualBrush Stretch="None" AlignmentX="Left" AlignmentY="Center">
+                        </VisualBrush>
+                    </TextBox.Background>
+                </TextBox>
+                <TextBox  Grid.Column="1" x:Name="txtContDoc" FontWeight="Medium" FontFamily="Montserrat" Foreground="White" CaretBrush="LightGray" BorderBrush="DarkGray" BorderThickness="0,0,0,2" Height="22" Margin="24,31,24,107">
+                    <TextBox.Background>
+                        <VisualBrush Stretch="None" AlignmentX="Left" AlignmentY="Center">
+                        </VisualBrush>
+                    </TextBox.Background>
+                </TextBox>
+                <TextBox  Grid.Column="1" x:Name="txt_ContCorr" FontWeight="Medium" FontFamily="Montserrat" Foreground="White" CaretBrush="LightGray" BorderBrush="DarkGray" BorderThickness="0,0,0,2" Height="22" Margin="24,81,24,57">
+                    <TextBox.Background>
+                        <VisualBrush Stretch="None" AlignmentX="Left" AlignmentY="Center">
+                        </VisualBrush>
+                    </TextBox.Background>
+                </TextBox>
+                <TextBox Grid.Column="2" x:Name="txt_ContObv" FontWeight="Medium" FontFamily="Montserrat" Foreground="White" CaretBrush="LightGray" BorderBrush="DarkGray" BorderThickness="0,0,0,2" Margin="10,26,38,110">
+                    <TextBox.Background>
+                        <VisualBrush Stretch="None" AlignmentX="Left" AlignmentY="Center">
+                        </VisualBrush>
+                    </TextBox.Background>
+                </TextBox>
+
                 <TextBox Grid.Column="2" x:Name="txt_ContNro" HorizontalAlignment="Left" Height="25" TextWrapping="Wrap" Text="1" VerticalAlignment="Top" Width="92" IsReadOnly="True" IsEnabled="False" Margin="6,78,0,0"/>
                 <TextBox Grid.Column="2" x:Name="txt_ContIdCl" Height="25" TextWrapping="Wrap" Text="" VerticalAlignment="Top" IsEnabled="False" Margin="116,77,5,0"/>
 
 
-                <Button Grid.Column="3" x:Name="btnContAdd" Content="Añadir" VerticalAlignment="Top" Background="#FF5975E6" Margin="33,64,33,0" Height="20"/>
-                <Button Grid.Column="3" x:Name="btnContFind" Content="Buscar" Height="26" VerticalAlignment="Top" Background="#FF35F5F1" Margin="33,0,33,0"/>
-                <Button Grid.Column="3" x:Name="btnContUpdt" Content="Modificar" Height="26" VerticalAlignment="Top" Background="#FFCAED70" Margin="33,31,33,0"/>
-                <Button Grid.Column="3" x:Name="btn_Limpiar_cn" Content="Limpiar" VerticalAlignment="Top" Background="#FFFFE438" Height="24" Margin="33,90,33,0"/>
-
+                <Button Grid.Column="3" x:Name="btnContFind" Content="Buscar" FontSize="12" FontFamily="Montserrat" Cursor="Hand" BorderThickness="0" Foreground="DarkGray" VerticalAlignment="Top" HorizontalAlignment="Center" Width="60" Background="#773DFF" Height="30" Margin="0,1,0,0">
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <Setter Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate TargetType="Button">
+                                        <Border Height="30" CornerRadius="15" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}">
+                                            <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                        </Border>
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" Value="#836EFB"/>
+                                    <Setter Property="BorderBrush" Value="#836EFB"/>
+                                    <Setter Property="Effect">
+                                        <Setter.Value>
+                                            <DropShadowEffect BlurRadius="5" Color="#836EFB" ShadowDepth="0"/>
+                                        </Setter.Value>
+                                    </Setter>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+                </Button>
+                <Button Grid.Column="3" x:Name="btnContUpdt" Content="Modificar" FontSize="12" FontFamily="Montserrat" Cursor="Hand" BorderThickness="0" Foreground="DarkGray" VerticalAlignment="Top" HorizontalAlignment="Center" Width="60" Background="#773DFF" Height="30" Margin="0,36,0,0">
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <Setter Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate TargetType="Button">
+                                        <Border Height="30" CornerRadius="15" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}">
+                                            <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                        </Border>
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" Value="#836EFB"/>
+                                    <Setter Property="BorderBrush" Value="#836EFB"/>
+                                    <Setter Property="Effect">
+                                        <Setter.Value>
+                                            <DropShadowEffect BlurRadius="5" Color="#836EFB" ShadowDepth="0"/>
+                                        </Setter.Value>
+                                    </Setter>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+                </Button>
+                <Button Grid.Column="3" x:Name="btnContAdd" Content="Añadir" FontSize="12" FontFamily="Montserrat" Cursor="Hand" BorderThickness="0" Foreground="DarkGray" VerticalAlignment="Top" HorizontalAlignment="Center" Width="60" Background="#773DFF" Height="30" Margin="0,71,0,0">
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <Setter Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate TargetType="Button">
+                                        <Border Height="30" CornerRadius="15" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}">
+                                            <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                        </Border>
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" Value="#836EFB"/>
+                                    <Setter Property="BorderBrush" Value="#836EFB"/>
+                                    <Setter Property="Effect">
+                                        <Setter.Value>
+                                            <DropShadowEffect BlurRadius="5" Color="#836EFB" ShadowDepth="0"/>
+                                        </Setter.Value>
+                                    </Setter>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+                </Button>
+                <Button Grid.Column="3" x:Name="btn_Limpiar_cn" Content="Limpiar" FontSize="12" FontFamily="Montserrat" Cursor="Hand" BorderThickness="0" Foreground="DarkGray" VerticalAlignment="Top" HorizontalAlignment="Center" Width="60" Background="#773DFF" Height="30" Margin="0,106,0,0">
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <Setter Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate TargetType="Button">
+                                        <Border Height="30" CornerRadius="15" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}">
+                                            <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                        </Border>
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" Value="#836EFB"/>
+                                    <Setter Property="BorderBrush" Value="#836EFB"/>
+                                    <Setter Property="Effect">
+                                        <Setter.Value>
+                                            <DropShadowEffect BlurRadius="5" Color="#836EFB" ShadowDepth="0"/>
+                                        </Setter.Value>
+                                    </Setter>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+                </Button>
             </Grid>
 
             <!-- Contenido de la cuarta fila -->
-            <DataGrid Grid.Row="3" x:Name="dtgContactos" Margin="10,0,10,0"/>
-
+            <Border Background="#200F53" CornerRadius="10" Padding="10" Grid.Row="3" Margin="10,0,10,0">
+                <DataGrid x:Name="dtgContactos" AutoGenerateColumns="False" Background="#200F53" BorderThickness="0" Margin="-10,-10,-10,49">
+                    <DataGrid.ColumnHeaderStyle>
+                        <Style TargetType="DataGridColumnHeader">
+                            <Setter Property="Background" Value="Transparent"/>
+                            <Setter Property="Foreground" Value="#BCBEE0"/>
+                            <Setter Property="Padding" Value="10,0,0,10"/>
+                            <Setter Property="FontFamily" Value="Montserrat"/>
+                            <Setter Property="FontSize" Value="15"/>
+                        </Style>
+                    </DataGrid.ColumnHeaderStyle>
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="IdProducto" Binding="{Binding IdProducto}"/>
+                        <DataGridTextColumn Header="Codigo" Binding="{Binding Codigo}"/>
+                        <DataGridTextColumn Header="Nombre" Binding="{Binding Nombre}"/>
+                        <DataGridTextColumn Header="Descripción" Binding="{Binding Descripcion}"/>
+                        <DataGridTextColumn Header="IdCategoria" Binding="{Binding IdCategoria}"/>
+                        <DataGridTextColumn Header="Stock" Binding="{Binding Stock}"/>
+                        <DataGridTextColumn Header="Precio de Compra" Binding="{Binding PrecioCompra}"/>
+                        <DataGridTextColumn Header="Precio de Venta" Binding="{Binding PrecioVenta}"/>
+                        <DataGridTextColumn Header="Estado" Binding="{Binding Estado}"/>
+                        <DataGridTextColumn Header="Fecha de Registro" Binding="{Binding FechaRegistro}"/>
+                    </DataGrid.Columns>
+                    <DataGrid.RowStyle>
+                        <Style TargetType="DataGridRow">
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding Visibility}" Value="Collapsed">
+                                    <Setter Property="Visibility" Value="Collapsed"/>
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </DataGrid.RowStyle>
+                </DataGrid>
+            </Border>
         </Grid>
     </ScrollViewer>
 </UserControl>

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ST_FORMS.ViewModel.Comunes;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows;
@@ -18,9 +19,11 @@ namespace ST_FORMS.View.Empleado
     /// </summary>
     public partial class PedidosView : UserControl
     {
-        public PedidosView()
+        private readonly MainViewModel _mainViewModel;
+        public PedidosView(MainViewModel mainViewModel)
         {
             InitializeComponent();
+            _mainViewModel = mainViewModel;
         }
     }
 }

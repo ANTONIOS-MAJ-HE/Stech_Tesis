@@ -1,5 +1,6 @@
 ﻿using ST_Datos.Rol;
 using ST_Entidades.Rol;
+using ST_FORMS.ViewModel.Comunes;
 using ST_Negocio.Model;
 using System;
 using System.Collections.Generic;
@@ -22,12 +23,14 @@ namespace ST_FORMS.View.Admin
     /// </summary>
     public partial class UserView : UserControl
     {
+        private readonly MainViewModel _mainViewModel;
         private CN_Usuario _usuarioRepository;
         private int _selectedRowIndex = -1;
 
-        public UserView()
+        public UserView(MainViewModel mainViewModel)
         {
             InitializeComponent();
+            _mainViewModel = mainViewModel;
             _usuarioRepository = new CN_Usuario();
             Loaded += UserView_Load;
         }

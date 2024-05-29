@@ -1,4 +1,4 @@
-﻿<UserControl x:Class="ST_FORMS.View.Empleado.PistoleoInicioView"
+﻿<UserControl x:Class="ST_FORMS.View.Empleado.ConsolidadosView"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -14,7 +14,7 @@
         </Grid.RowDefinitions>
 
         <!-- Header Section -->
-        <Grid Grid.Row="0" Margin="10">
+        <Grid Grid.Row="0" >
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="Auto"/>
@@ -23,14 +23,14 @@
             <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Grid.Column="0">
                 <TextBlock Text="Fecha: " Foreground="DarkGray" FontSize="22" FontWeight="Medium" FontFamily="Montserrat"/>
                 <StackPanel Orientation="Horizontal">
-                    <DatePicker x:Name="dtFecha" Width="150" Height="28" VerticalContentAlignment="Center"/>
+                    <DatePicker x:Name="dtFechaProceso" Width="150" Height="28" VerticalContentAlignment="Center"/>
                 </StackPanel>
             </StackPanel>
             <StackPanel Grid.Column="1" Orientation="Horizontal">
                 <Button 
-                        FontSize="12" FontFamily="Montserrat" Cursor="Hand"
-                        BorderThickness="0" Foreground="White" VerticalAlignment="Top"
-                        Background="#773DFF" Width="40" Height="40" Margin="0,0,5,0">
+                FontSize="12" FontFamily="Montserrat" Cursor="Hand"
+                BorderThickness="0" Foreground="White" VerticalAlignment="Top"
+                Background="#773DFF" Width="40" Height="40" Margin="0,0,5,0">
                     <fa:IconImage Icon="Search" Foreground="White" Width="20" Height="20"/>
                     <!--Click="btn_buscar_Click"-->
                     <Button.Style>
@@ -54,9 +54,9 @@
                     </Button.Style>
                 </Button>
                 <Button 
-                        FontSize="12" FontFamily="Montserrat" Cursor="Hand"
-                        BorderThickness="0" Foreground="White" VerticalAlignment="Top"
-                        Background="#773DFF" Width="40" Height="40">
+                FontSize="12" FontFamily="Montserrat" Cursor="Hand"
+                BorderThickness="0" Foreground="White" VerticalAlignment="Top"
+                Background="#773DFF" Width="40" Height="40">
                     <fa:IconImage Icon="Broom" Foreground="White" Width="20" Height="20"/>
                     <Button.Style>
                         <Style TargetType="Button">
@@ -82,7 +82,7 @@
         </Grid>
 
         <!-- Main Content Section -->
-        <Grid Grid.Row="1" Margin="10">
+        <Grid Grid.Row="1" >
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="200"/>
                 <ColumnDefinition Width="*"/>
@@ -90,12 +90,50 @@
 
             <!-- Left Section (Form Inputs) -->
             <StackPanel Grid.Column="0" Margin="10">
-                <TextBox x:Name="txtId" Visibility="Collapsed"/>
 
                 <TextBlock Text="Canal" Foreground="DarkGray" FontSize="12" FontWeight="Medium" FontFamily="Montserrat"/>
                 <TextBox x:Name="txtCanal" FontSize="13" FontWeight="Medium" FontFamily="Montserrat" Foreground="White"
-                         CaretBrush="LightGray" BorderBrush="DarkGray" BorderThickness="0,0,0,2" Height="28" Width="180"
-                         VerticalContentAlignment="Center" Padding="20,0,0,0" Margin="0,5,0,10">
+                 CaretBrush="LightGray" BorderBrush="DarkGray" BorderThickness="0,0,0,2" Height="28" Width="180"
+                 VerticalContentAlignment="Center" Padding="20,0,0,0" Margin="0,5,0,10">
+                    <TextBox.Background>
+                        <VisualBrush Stretch="None" AlignmentX="Left" AlignmentY="Center">
+                            <VisualBrush.Visual>
+                                <fa:IconImage Icon="Key" Foreground="DarkGray" Width="15"/>
+                            </VisualBrush.Visual>
+                        </VisualBrush>
+                    </TextBox.Background>
+                </TextBox>
+
+                <TextBlock Text="Numero Orden" Foreground="DarkGray" FontSize="12" FontWeight="Medium" FontFamily="Montserrat"/>
+                <TextBox x:Name="txtNRO_OC" FontSize="13" FontWeight="Medium" FontFamily="Montserrat" Foreground="White"
+ CaretBrush="LightGray" BorderBrush="DarkGray" BorderThickness="0,0,0,2" Height="28" Width="180"
+ VerticalContentAlignment="Center" Padding="20,0,0,0" Margin="0,5,0,10">
+                    <TextBox.Background>
+                        <VisualBrush Stretch="None" AlignmentX="Left" AlignmentY="Center">
+                            <VisualBrush.Visual>
+                                <fa:IconImage Icon="Key" Foreground="DarkGray" Width="15"/>
+                            </VisualBrush.Visual>
+                        </VisualBrush>
+                    </TextBox.Background>
+                </TextBox>
+
+                <TextBlock Text="Cliente" Foreground="DarkGray" FontSize="12" FontWeight="Medium" FontFamily="Montserrat"/>
+                <TextBox x:Name="txtCliente" FontSize="13" FontWeight="Medium" FontFamily="Montserrat" Foreground="White"
+CaretBrush="LightGray" BorderBrush="DarkGray" BorderThickness="0,0,0,2" Height="28" Width="180"
+VerticalContentAlignment="Center" Padding="20,0,0,0" Margin="0,5,0,10">
+                    <TextBox.Background>
+                        <VisualBrush Stretch="None" AlignmentX="Left" AlignmentY="Center">
+                            <VisualBrush.Visual>
+                                <fa:IconImage Icon="Key" Foreground="DarkGray" Width="15"/>
+                            </VisualBrush.Visual>
+                        </VisualBrush>
+                    </TextBox.Background>
+                </TextBox>
+
+                <TextBlock Text="Part Number" Foreground="DarkGray" FontSize="12" FontWeight="Medium" FontFamily="Montserrat"/>
+                <TextBox x:Name="txtPrtnumber" FontSize="13" FontWeight="Medium" FontFamily="Montserrat" Foreground="White"
+CaretBrush="LightGray" BorderBrush="DarkGray" BorderThickness="0,0,0,2" Height="28" Width="180"
+VerticalContentAlignment="Center" Padding="20,0,0,0" Margin="0,5,0,10">
                     <TextBox.Background>
                         <VisualBrush Stretch="None" AlignmentX="Left" AlignmentY="Center">
                             <VisualBrush.Visual>
@@ -107,47 +145,8 @@
 
                 <TextBlock Text="Producto" Foreground="DarkGray" FontSize="12" FontWeight="Medium" FontFamily="Montserrat"/>
                 <TextBox x:Name="txtProducto" FontSize="13" FontWeight="Medium" FontFamily="Montserrat" Foreground="White"
-                         CaretBrush="LightGray" BorderBrush="DarkGray" BorderThickness="0,0,0,2" Height="28" Width="180"
-                         VerticalContentAlignment="Center" Padding="20,0,0,0" Margin="0,5,0,10">
-                    <TextBox.Background>
-                        <VisualBrush Stretch="None" AlignmentX="Left" AlignmentY="Center">
-                            <VisualBrush.Visual>
-                                <fa:IconImage Icon="FolderOpen" Foreground="DarkGray" Width="15"/>
-                            </VisualBrush.Visual>
-                        </VisualBrush>
-                    </TextBox.Background>
-                </TextBox>
-
-                <TextBlock Text="Numero Orden" Foreground="DarkGray" FontSize="12" FontWeight="Medium" FontFamily="Montserrat"/>
-                <TextBox x:Name="txtNroOc" FontSize="13" FontWeight="Medium" FontFamily="Montserrat" Foreground="White"
-                         CaretBrush="LightGray" BorderBrush="DarkGray" BorderThickness="0,0,0,2" Height="28" Width="180"
-                         VerticalContentAlignment="Center" Padding="20,0,0,0" Margin="0,5,0,10">
-                    <TextBox.Background>
-                        <VisualBrush Stretch="None" AlignmentX="Left" AlignmentY="Center">
-                            <VisualBrush.Visual>
-                                <fa:IconImage Icon="UserAlt" Foreground="DarkGray" Width="15"/>
-                            </VisualBrush.Visual>
-                        </VisualBrush>
-                    </TextBox.Background>
-                </TextBox>
-
-                <TextBlock Text="Mini Codigo" Foreground="DarkGray" FontSize="12" FontWeight="Medium" FontFamily="Montserrat"/>
-                <TextBox x:Name="txtMinicod" FontSize="13" FontWeight="Medium" FontFamily="Montserrat" Foreground="White"
-                         CaretBrush="LightGray" BorderBrush="DarkGray" BorderThickness="0,0,0,2" Height="28" Width="180"
-                         VerticalContentAlignment="Center" Padding="20,0,0,0" Margin="0,5,0,10">
-                    <TextBox.Background>
-                        <VisualBrush Stretch="None" AlignmentX="Left" AlignmentY="Center">
-                            <VisualBrush.Visual>
-                                <fa:IconImage Icon="At" Foreground="DarkGray" Width="15"/>
-                            </VisualBrush.Visual>
-                        </VisualBrush>
-                    </TextBox.Background>
-                </TextBox>
-
-                <TextBlock Text="Fecha" Foreground="DarkGray" FontSize="12" FontWeight="Medium" FontFamily="Montserrat"/>
-                <TextBox x:Name="TXTFECHA" FontSize="13" FontWeight="Medium" FontFamily="Montserrat" Foreground="White"
-                         CaretBrush="LightGray" BorderBrush="DarkGray" BorderThickness="0,0,0,2" Height="28" Width="280"
-                         VerticalContentAlignment="Center" Padding="20,0,0,0" Margin="0,5,0,10">
+CaretBrush="LightGray" BorderBrush="DarkGray" BorderThickness="0,0,0,2" Height="28" Width="180"
+VerticalContentAlignment="Center" Padding="20,0,0,0" Margin="0,5,0,10">
                     <TextBox.Background>
                         <VisualBrush Stretch="None" AlignmentX="Left" AlignmentY="Center">
                             <VisualBrush.Visual>
@@ -157,8 +156,8 @@
                     </TextBox.Background>
                 </TextBox>
 
-                <Button x:Name="button_Copy" Content="ACTUALIZAR" Margin="5,0,0,10" Click="button_Copy_Click" Width="175" HorizontalAlignment="Left"
-                        FontSize="12" FontFamily="Montserrat" Cursor="Hand" BorderThickness="0">
+                <Button x:Name="btnBuscar" Content="BUSCAR" Margin="5,0,0,10" Click="btnBuscar_Click" Width="175" HorizontalAlignment="Left"
+                FontSize="12" FontFamily="Montserrat" Cursor="Hand" BorderThickness="0">
                     <Button.Style>
                         <Style TargetType="Button">
                             <Setter Property="Background" Value="#773DFF"/>
@@ -184,34 +183,6 @@
                         </Style>
                     </Button.Style>
                 </Button>
-
-                <Border Background="#200F53" CornerRadius="10" Padding="10" Margin="5,0,0,0">
-                    <DataGrid x:Name="dtg_cantidad" AutoGenerateColumns="False" Background="#200F53" BorderThickness="0">
-                        <DataGrid.ColumnHeaderStyle>
-                            <Style TargetType="DataGridColumnHeader">
-                                <Setter Property="Background" Value="Transparent"/>
-                                <Setter Property="Foreground" Value="#BCBEE0"/>
-                                <Setter Property="Padding" Value="10,0,0,10"/>
-                                <Setter Property="FontFamily" Value="Montserrat"/>
-                                <Setter Property="FontSize" Value="15"/>
-                            </Style>
-                        </DataGrid.ColumnHeaderStyle>
-                        <DataGrid.Columns>
-                            <!-- Define your columns here -->
-                            <DataGridTextColumn Header="CANAL" Binding="{Binding CANAL}"/>
-                            <DataGridTextColumn Header="CANTIDAD" Binding="{Binding CANTIDAD}"/>
-                        </DataGrid.Columns>
-                        <DataGrid.RowStyle>
-                            <Style TargetType="DataGridRow">
-                                <Style.Triggers>
-                                    <DataTrigger Binding="{Binding Visibility}" Value="Collapsed">
-                                        <Setter Property="Visibility" Value="Collapsed"/>
-                                    </DataTrigger>
-                                </Style.Triggers>
-                            </Style>
-                        </DataGrid.RowStyle>
-                    </DataGrid>
-                </Border>
             </StackPanel>
 
             <!-- Right Section (DataGrid and Buttons) -->
@@ -222,7 +193,7 @@
                 </Grid.RowDefinitions>
 
                 <Border Background="#200F53" CornerRadius="10" Padding="10" Grid.Row="0">
-                    <DataGrid x:Name="dtg_Pendientes_" AutoGenerateColumns="False" Background="#200F53" BorderThickness="0" SelectionChanged="dtg_Pendientes__SelectionChanged">
+                    <DataGrid x:Name="dtgConsolidados" AutoGenerateColumns="False" Background="#200F53" BorderThickness="0">
                         <DataGrid.ColumnHeaderStyle>
                             <Style TargetType="DataGridColumnHeader">
                                 <Setter Property="Background" Value="Transparent"/>
@@ -235,17 +206,30 @@
                         <DataGrid.Columns>
                             <!-- Define your columns here -->
                             <DataGridTextColumn Header="CANAL" Binding="{Binding CANAL}"/>
-                            <DataGridTextColumn Header="NROOC" Binding="{Binding NRO_OC}"/>
-                            <DataGridTextColumn Header="SKU" Binding="{Binding SKU}"/>
-                            <DataGridTextColumn Header="EAN_UPC" Binding="{Binding EAN_UPC}"/>
-                            <DataGridTextColumn Header="PRODUCTO" Binding="{Binding PRODUCTO}"/>
-                            <DataGridTextColumn Header="MODELO" Binding="{Binding MODELO}"/>
-                            <DataGridTextColumn Header="MINI_CODIGO" Binding="{Binding MINI_CODIGO}"/>
-                            <DataGridTextColumn Header="PARTNUMBER" Binding="{Binding PARTNUMBER}"/>
+                            <DataGridTextColumn Header="NUMERO_ORDEN" Binding="{Binding NUMERO_ORDEN}"/>
+                            <DataGridTextColumn Header="NUMERO_FACTURA" Binding="{Binding NUMERO_FACTURA}"/>
+                            <DataGridTextColumn Header="DNI_CLIENTE" Binding="{Binding DNI_CLIENTE}"/>
+                            <DataGridTextColumn Header="NOMBRE_CLIENTE" Binding="{Binding NOMBRE_CLIENTE}"/>
+                            <DataGridTextColumn Header="DIRECCION_CLIENTE" Binding="{Binding DIRECCION_CLIENTE}"/>
+                            <DataGridTextColumn Header="REGION_VENTA" Binding="{Binding REGION_VENTA}"/>
+                            <DataGridTextColumn Header="NOMBRE_PRODUCTO" Binding="{Binding NOMBRE_PRODUCTO}"/>
+                            <DataGridTextColumn Header="MODELO_PRODUCTO" Binding="{Binding MODELO_PRODUCTO}"/>
+                            <DataGridTextColumn Header="MARCA_PRODUCTO" Binding="{Binding MARCA_PRODUCTO}"/>
+                            <DataGridTextColumn Header="CATEGORIA_PRODUCTO" Binding="{Binding CATEGORIA_PRODUCTO}"/>
+
+                            <DataGridTextColumn Header="CODIGO_PRODUCTO_CANAL" Binding="{Binding CODIGO_PRODUCTO_CANAL}"/>
+                            <DataGridTextColumn Header="PART_NUMBER" Binding="{Binding PART_NUMBER}"/>
                             <DataGridTextColumn Header="CANTIDAD" Binding="{Binding CANTIDAD}"/>
+                            <DataGridTextColumn Header="PRECIO_S_IGV" Binding="{Binding PRECIO_S_IGV}"/>
+                            <DataGridTextColumn Header="PRECIO_C_IGV" Binding="{Binding PRECIO_C_IGV}"/>
+                            <DataGridTextColumn Header="TOTAL_S_IGV" Binding="{Binding TOTAL_S_IGV}"/>
+                            <DataGridTextColumn Header="TOTAL_C_IGV" Binding="{Binding TOTAL_C_IGV}"/>
+                            <DataGridTextColumn Header="FECHA_ORDEN" Binding="{Binding FECHA_ORDEN}"/>
+                            <DataGridTextColumn Header="FECHA_PROCESO" Binding="{Binding FECHA_PROCESO}"/>
                             <DataGridTextColumn Header="FECHA_DESPACHO" Binding="{Binding FECHA_DESPACHO}"/>
-                            <DataGridTextColumn Header="STOCK_RESTANTE" Binding="{Binding ESTOCK_RESTANTE}"/>
-                            <DataGridTextColumn Header="COURIER" Binding="{Binding COURIER}"/>
+                            <DataGridTextColumn Header="ST_DESPACHO" Binding="{Binding ST_DESPACHO}"/>
+                            <DataGridTextColumn Header="ESTADO_ORDEN" Binding="{Binding ESTADO_ORDEN}"/>
+                            <DataGridTextColumn Header="OBSERVACION_ORDEN" Binding="{Binding OBSERVACION_ORDEN}"/>
                         </DataGrid.Columns>
                         <DataGrid.RowStyle>
                             <Style TargetType="DataGridRow">
@@ -259,61 +243,9 @@
                     </DataGrid>
                 </Border>
 
-                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Grid.Row="1" Margin="10">
-                    <Button x:Name="button_Copy2" Content="LECTURA &#xA; RAPIDA" Width="100" Height="30"  Command="{Binding ShowPistoleoRapidoViewCommand}">
-                        <!--Click="button_Copy2_Click"-->
-                        <Button.Style>
-                            <Style TargetType="{x:Type Button}">
-                                <Setter Property="Background" Value="#773DFF"/>
-                                <Setter Property="Foreground" Value="White"/>
-                                <Setter Property="BorderThickness" Value="0"/>
-                                <Setter Property="FontSize" Value="12"/>
-                                <Setter Property="FontFamily" Value="Montserrat"/>
-                                <Setter Property="Cursor" Value="Hand"/>
-                                <Setter Property="Template">
-                                    <Setter.Value>
-                                        <ControlTemplate TargetType="{x:Type Button}">
-                                            <Border Height="30" Width="100" CornerRadius="15" Background="{TemplateBinding Background}">
-                                                <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center"/>
-                                            </Border>
-                                        </ControlTemplate>
-                                    </Setter.Value>
-                                </Setter>
-                                <Style.Triggers>
-                                    <Trigger Property="IsMouseOver" Value="True">
-                                        <Setter Property="Background" Value="#836EFB"/>
-                                    </Trigger>
-                                </Style.Triggers>
-                            </Style>
-                        </Button.Style>
-                    </Button>
-                    <Button x:Name="button" Content="LECTURA &#xA; SEGURA" Width="100" Height="30" Margin="5,0,0,0"  Command="{Binding ShowPistoleoSeguroViewCommand}">
-                        <!--Click="button_Click"-->
-                        <Button.Style>
-                            <Style TargetType="{x:Type Button}">
-                                <Setter Property="Background" Value="#773DFF"/>
-                                <Setter Property="Foreground" Value="White"/>
-                                <Setter Property="BorderThickness" Value="0"/>
-                                <Setter Property="FontSize" Value="12"/>
-                                <Setter Property="FontFamily" Value="Montserrat"/>
-                                <Setter Property="Cursor" Value="Hand"/>
-                                <Setter Property="Template">
-                                    <Setter.Value>
-                                        <ControlTemplate TargetType="{x:Type Button}">
-                                            <Border Height="30" Width="100" CornerRadius="15" Background="{TemplateBinding Background}">
-                                                <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center"/>
-                                            </Border>
-                                        </ControlTemplate>
-                                    </Setter.Value>
-                                </Setter>
-                                <Style.Triggers>
-                                    <Trigger Property="IsMouseOver" Value="True">
-                                        <Setter Property="Background" Value="#836EFB"/>
-                                    </Trigger>
-                                </Style.Triggers>
-                            </Style>
-                        </Button.Style>
-                    </Button>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Grid.Row="1" Margin="0">
+                    <Label x:Name="label1_Copy7" Content="Productos :" Foreground="DarkGray" FontWeight="Bold" />
+                    <Label x:Name="lblcant_prod" Foreground="DarkGray" FontWeight="Bold"/>
                 </StackPanel>
             </Grid>
         </Grid>

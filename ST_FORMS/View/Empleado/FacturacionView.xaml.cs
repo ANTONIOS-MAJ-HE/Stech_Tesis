@@ -1,5 +1,6 @@
 ﻿using Newtonsoft.Json;
 using ST_Entidades;
+using ST_FORMS.ViewModel.Comunes;
 using ST_Negocio;
 using System;
 using System.Collections.Generic;
@@ -22,10 +23,12 @@ namespace ST_FORMS.View.Empleado
     /// </summary>
     public partial class FacturacionView : UserControl
     {
+        private readonly MainViewModel _mainViewModel;
         n_Facturacion factura_obj = new n_Facturacion();
-        public FacturacionView()
+        public FacturacionView(MainViewModel mainViewModel)
         {
             InitializeComponent();
+            _mainViewModel = mainViewModel;
             fill_ComboBox();
             listar_pendientes();
             RazonS.SelectionChanged += RazonS_SelectionChanged;

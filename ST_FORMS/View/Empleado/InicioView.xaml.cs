@@ -1,5 +1,6 @@
 ﻿using ST_Datos;
 using ST_Entidades;
+using ST_FORMS.ViewModel.Comunes;
 using ST_Negocio;
 using System;
 using System.Collections.Generic;
@@ -21,11 +22,13 @@ namespace ST_FORMS.View.Empleado
     /// </summary>
     public partial class InicioView : UserControl
     {
+        private readonly MainViewModel _mainViewModel;
         private n_TipoCambio tipoCambio;
 
-        public InicioView()
+        public InicioView(MainViewModel mainViewModel)
         {
             InitializeComponent();
+            _mainViewModel = mainViewModel;
             tipoCambio = new n_TipoCambio();
             tipocambio();
             Listar_cambios();

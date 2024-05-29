@@ -10,7 +10,6 @@
         <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto" />
-                <!-- Primera fila con altura automática -->
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
 
@@ -22,76 +21,373 @@
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
                 <!-- Contenido de la primera columna -->
-                <Label Grid.Column="0" Content="Datos del receptor: " HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="22"/>
-                <Label Grid.Column="0" Content="Documento" HorizontalAlignment="Left" Margin="10,39,0,0" VerticalAlignment="Top"/>
-                <Label Grid.Column="0" Content="Nombre del cliente" HorizontalAlignment="Left" Margin="9,93,0,0" VerticalAlignment="Top"/>
-                <Label Content="Datos del transportista: " HorizontalAlignment="Center" Margin="0,157,0,0" VerticalAlignment="Top" FontSize="22"/>
-                <Label Grid.Column="0" x:Name="Tipo_de_transporte" Content="Tipo de transporte" HorizontalAlignment="Left" Margin="9,196,0,0" VerticalAlignment="Top"/>
-                <Label Grid.Column="0" Content="Nombre" HorizontalAlignment="Left" Margin="9,246,0,0" VerticalAlignment="Top"/>
-                <Label Grid.Column="0" Content="Numero de placa" HorizontalAlignment="Left" Margin="9,301,0,0" VerticalAlignment="Top"/>
-                <Label Grid.Column="0" x:Name="label" Content="NRO OC" HorizontalAlignment="Left" Margin="10,327,0,0" VerticalAlignment="Top"/>
+                <Label Grid.Column="0" Foreground="DarkGray" Content="Datos del receptor: " HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="22"/>
+                <Label Grid.Column="0" Foreground="DarkGray" Content="Documento" HorizontalAlignment="Left" FontWeight="Medium" FontFamily="Montserrat" FontSize="12" Margin="10,39,0,0" VerticalAlignment="Top"/>
+                <Label Grid.Column="0" Foreground="DarkGray" Content="Nombre del cliente" HorizontalAlignment="Left" FontWeight="Medium" FontFamily="Montserrat" FontSize="12" Margin="9,93,0,0" VerticalAlignment="Top"/>
+                <Label Grid.Column="0" Content="Datos del transportista: " Foreground="DarkGray" HorizontalAlignment="Center" Margin="0,157,0,0" VerticalAlignment="Top" FontWeight="Medium" FontFamily="Montserrat" FontSize="12"/>
+                <Label Grid.Column="0" Foreground="DarkGray"  x:Name="Tipo_de_transporte" Content="Tipo de transporte" FontWeight="Medium" FontFamily="Montserrat" FontSize="12" HorizontalAlignment="Left" Margin="9,196,0,0" VerticalAlignment="Top"/>
+                <Label Grid.Column="0" Foreground="DarkGray" Content="Nombre" HorizontalAlignment="Left" Margin="9,246,0,0" FontWeight="Medium" FontFamily="Montserrat" FontSize="12" VerticalAlignment="Top"/>
+                <Label Grid.Column="0" Foreground="DarkGray" Content="Numero de placa" HorizontalAlignment="Left" Margin="9,301,0,0" VerticalAlignment="Top" FontWeight="Medium" FontFamily="Montserrat" FontSize="12"/>
+                <Label Grid.Column="0" Foreground="DarkGray" x:Name="label" Content="NRO OC" HorizontalAlignment="Left" Margin="8,346,0,0" VerticalAlignment="Top" FontWeight="Medium" FontFamily="Montserrat" FontSize="12"/>
 
                 <ComboBox Grid.Column="0" x:Name="cmb_TipoDoc" HorizontalAlignment="Left" Height="25" Margin="20,63,0,0" VerticalAlignment="Top" Width="52"/>
-                <TextBox Grid.Column="0" x:Name="txt_DocReceptor" HorizontalAlignment="Left" Height="25" Margin="74,63,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="177"/>
-                <TextBox Grid.Column="0" x:Name="txt_NombreReceptor" Height="25" Margin="10,119,10,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top"/>
-                <ComboBox Grid.Column="0" x:Name="cmb_TipoTransportista" HorizontalAlignment="Left" Height="25" Margin="10,221,0,0" VerticalAlignment="Top" Width="203"/>
-                <TextBox Grid.Column="0" x:Name="txt_NombreTransportista" HorizontalAlignment="Left" Margin="9,272,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="233" Height="24"/>
-                <TextBox Grid.Column="0" x:Name="txt_Placa" HorizontalAlignment="Left" Height="20" Margin="116,305,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="135"/>
-                <TextBox Grid.Column="0" x:Name="txt_NROOC" HorizontalAlignment="Left" Height="25" Margin="74,328,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="82"/>
+                <TextBox Grid.Column="0" x:Name="txt_DocReceptor" FontSize="13" FontWeight="Medium" FontFamily="Montserrat" HorizontalAlignment="Left" Foreground="White" CaretBrush="LightGray" BorderBrush="DarkGray" BorderThickness="0,0,0,2" Height="22" Margin="94,67,0,302" Width="130">
+                    <TextBox.Background>
+                        <VisualBrush Stretch="None" AlignmentX="Left" AlignmentY="Center">
+                        </VisualBrush>
+                    </TextBox.Background>
+                </TextBox>
+                <TextBox Grid.Column="0" x:Name="txt_NombreReceptor" FontSize="13" FontWeight="Medium" FontFamily="Montserrat" HorizontalAlignment="Left" Foreground="White" CaretBrush="LightGray" BorderBrush="DarkGray" BorderThickness="0,0,0,2" Height="22" Margin="20,117,0,252" Width="204">
+                    <TextBox.Background>
+                        <VisualBrush Stretch="None" AlignmentX="Left" AlignmentY="Center">
+                        </VisualBrush>
+                    </TextBox.Background>
+                </TextBox>
+                <TextBox Grid.Column="0" x:Name="cmb_TipoTransportista" FontSize="13" FontWeight="Medium" FontFamily="Montserrat" HorizontalAlignment="Left" Foreground="White" CaretBrush="LightGray" BorderBrush="DarkGray" BorderThickness="0,0,0,2" Height="22" Margin="20,224,0,145" Width="204">
+                    <TextBox.Background>
+                        <VisualBrush Stretch="None" AlignmentX="Left" AlignmentY="Center">
+                        </VisualBrush>
+                    </TextBox.Background>
+                </TextBox>
+                <TextBox Grid.Column="0" x:Name="txt_NombreTransportista" FontSize="13" FontWeight="Medium" FontFamily="Montserrat" HorizontalAlignment="Left" Foreground="White" CaretBrush="LightGray" BorderBrush="DarkGray" BorderThickness="0,0,0,2" Height="22" Margin="20,272,0,97" Width="204">
+                    <TextBox.Background>
+                        <VisualBrush Stretch="None" AlignmentX="Left" AlignmentY="Center">
+                        </VisualBrush>
+                    </TextBox.Background>
+                </TextBox>
+                <TextBox Grid.Column="0" x:Name="txt_Placa" FontSize="13" FontWeight="Medium" FontFamily="Montserrat" HorizontalAlignment="Left" Foreground="White" CaretBrush="LightGray" BorderBrush="DarkGray" BorderThickness="0,0,0,2" Height="22" Margin="20,316,0,53" Width="204">
+                    <TextBox.Background>
+                        <VisualBrush Stretch="None" AlignmentX="Left" AlignmentY="Center">
+                        </VisualBrush>
+                    </TextBox.Background>
+                </TextBox>
+                <TextBox Grid.Column="0" x:Name="txt_NROOC" FontSize="13" FontWeight="Medium" FontFamily="Montserrat" HorizontalAlignment="Left" Foreground="White" CaretBrush="LightGray" BorderBrush="DarkGray" BorderThickness="0,0,0,2" Height="22" Margin="63,347,0,22" Width="118">
+                    <TextBox.Background>
+                        <VisualBrush Stretch="None" AlignmentX="Left" AlignmentY="Center">
+                        </VisualBrush>
+                    </TextBox.Background>
+                </TextBox>
 
-                <Button Grid.Column="0" x:Name="btn_BuscarReceptor" Content="Buscar" HorizontalAlignment="Left" Height="26" Margin="198,7,0,0" VerticalAlignment="Top" Width="53"/>
-                <Button Grid.Column="0" x:Name="btn_BuscarTransportista" Content="Buscar" HorizontalAlignment="Left" Height="26" Margin="198,191,0,0" VerticalAlignment="Top" Width="53" RenderTransformOrigin="0.878,0.348"/>
-                <Button Grid.Column="0" x:Name="btn_Find" Content="Buscar" HorizontalAlignment="Left" Height="20" Margin="182,330,0,0" VerticalAlignment="Top" Width="60" />
+                <Button Grid.Column="0" x:Name="btn_BuscarReceptor" Content="Buscar" FontSize="12" FontFamily="Montserrat" Cursor="Hand" BorderThickness="0" Foreground="DarkGray" VerticalAlignment="Top" HorizontalAlignment="Left" Width="63" Background="#773DFF" Margin="188,21,0,0">
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <Setter Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate TargetType="Button">
+                                        <Border Height="30" CornerRadius="15" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}">
+                                            <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                        </Border>
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" Value="#836EFB"/>
+                                    <Setter Property="BorderBrush" Value="#836EFB"/>
+                                    <Setter Property="Effect">
+                                        <Setter.Value>
+                                            <DropShadowEffect BlurRadius="5" Color="#836EFB" ShadowDepth="0"/>
+                                        </Setter.Value>
+                                    </Setter>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+                </Button>
+                <Button  Grid.Column="0" x:Name="btn_BuscarTransportista" Content="Buscar" FontSize="12" FontFamily="Montserrat" Cursor="Hand" BorderThickness="0" Foreground="DarkGray" VerticalAlignment="Top" HorizontalAlignment="Left" Width="63" Background="#773DFF" Margin="188,190,0,0">
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <Setter Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate TargetType="Button">
+                                        <Border Height="30" CornerRadius="15" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}">
+                                            <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                        </Border>
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" Value="#836EFB"/>
+                                    <Setter Property="BorderBrush" Value="#836EFB"/>
+                                    <Setter Property="Effect">
+                                        <Setter.Value>
+                                            <DropShadowEffect BlurRadius="5" Color="#836EFB" ShadowDepth="0"/>
+                                        </Setter.Value>
+                                    </Setter>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+                </Button>
+                <Button  Grid.Column="0" x:Name="btn_Find" Content="Buscar" FontSize="12" FontFamily="Montserrat" Cursor="Hand" BorderThickness="0" Foreground="DarkGray" VerticalAlignment="Top" HorizontalAlignment="Left" Width="63" Background="#773DFF" Margin="188,343,0,0">
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <Setter Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate TargetType="Button">
+                                        <Border Height="30" CornerRadius="15" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}">
+                                            <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                        </Border>
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" Value="#836EFB"/>
+                                    <Setter Property="BorderBrush" Value="#836EFB"/>
+                                    <Setter Property="Effect">
+                                        <Setter.Value>
+                                            <DropShadowEffect BlurRadius="5" Color="#836EFB" ShadowDepth="0"/>
+                                        </Setter.Value>
+                                    </Setter>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+                </Button>
 
 
                 <!-- Contenido de la segunda columna -->
-                <Label Grid.Column="1" Content="Direccion" HorizontalAlignment="Left" Margin="10,34,0,0" VerticalAlignment="Top" Width="66"/>
-                <Label Grid.Column="1" Content="Correo" HorizontalAlignment="Left" Margin="10,93,0,0" VerticalAlignment="Top" Width="47"/>
-                <Label Grid.Column="1" Content="Telefono" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="153,95,0,0"/>
-                <Label Grid.Column="1" Content="Documento" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="13,196,0,0"/>
-                <Label Grid.Column="1" x:Name="numero_mtc" Content="Numero mtc" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5,246,0,0"/>
-                <Label Grid.Column="1" Content="Licencia" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="8,301,0,0"/>
+                <Label Grid.Column="1" Foreground="DarkGray" Content="Direccion" HorizontalAlignment="Left" Margin="10,34,0,0" VerticalAlignment="Top" Width="66" FontWeight="Medium" FontFamily="Montserrat" FontSize="12"/>
+                <Label Grid.Column="1" Foreground="DarkGray" Content="Correo" HorizontalAlignment="Left" Margin="10,93,0,0" VerticalAlignment="Top" Width="47" FontWeight="Medium" FontFamily="Montserrat" FontSize="12"/>
+                <Label Grid.Column="1" Foreground="DarkGray" Content="Telefono" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="153,95,0,0" FontWeight="Medium" FontFamily="Montserrat" FontSize="12"/>
+                <Label Grid.Column="1" Foreground="DarkGray" Content="Documento" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="13,196,0,0" FontWeight="Medium" FontFamily="Montserrat" FontSize="12"/>
+                <Label Grid.Column="1" Foreground="DarkGray" x:Name="numero_mtc" Content="Numero mtc" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5,246,0,0" FontWeight="Medium" FontFamily="Montserrat" FontSize="12"/>
+                <Label Grid.Column="1" Foreground="DarkGray" Content="Licencia" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="8,301,0,0" FontWeight="Medium" FontFamily="Montserrat" FontSize="12"/>
 
-                <TextBox Grid.Column="1" x:Name="txt_DirReceptor" HorizontalAlignment="Left" Height="25" Margin="10,65,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="225"/>
-                <TextBox Grid.Column="1" x:Name="txt_CorreoReceptor" HorizontalAlignment="Left" Height="25" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="151" Margin="10,121,0,0"/>
-                <TextBox Grid.Column="1" x:Name="txt_TelefonoReceptor" HorizontalAlignment="Left" Height="25" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="85" Margin="166,119,0,0"/>
+                <TextBox Grid.Column="1" x:Name="txt_DirReceptor" FontSize="13" FontWeight="Medium" FontFamily="Montserrat" HorizontalAlignment="Left" Foreground="White" CaretBrush="LightGray" BorderBrush="DarkGray" BorderThickness="0,0,0,2" Height="22" Margin="15,58,0,311" Width="236">
+                    <TextBox.Background>
+                        <VisualBrush Stretch="None" AlignmentX="Left" AlignmentY="Center">
+                        </VisualBrush>
+                    </TextBox.Background>
+                </TextBox>
+                <TextBox Grid.Column="1" x:Name="txt_CorreoReceptor" FontSize="13" FontWeight="Medium" FontFamily="Montserrat" HorizontalAlignment="Left" Foreground="White" CaretBrush="LightGray" BorderBrush="DarkGray" BorderThickness="0,0,0,2" Height="22" Margin="15,121,0,249" Width="125">
+                    <TextBox.Background>
+                        <VisualBrush Stretch="None" AlignmentX="Left" AlignmentY="Center">
+                        </VisualBrush>
+                    </TextBox.Background>
+                </TextBox>
+                <TextBox Grid.Column="1" x:Name="txt_TelefonoReceptor" FontSize="13" FontWeight="Medium" FontFamily="Montserrat" HorizontalAlignment="Left" Foreground="White" CaretBrush="LightGray" BorderBrush="DarkGray" BorderThickness="0,0,0,2" Height="22" Margin="159,121,0,249" Width="99">
+                    <TextBox.Background>
+                        <VisualBrush Stretch="None" AlignmentX="Left" AlignmentY="Center">
+                        </VisualBrush>
+                    </TextBox.Background>
+                </TextBox>
+
                 <ComboBox Grid.Column="1" x:Name="cmb_DocTransportista" HorizontalAlignment="Left" Height="24" VerticalAlignment="Top" Width="60" Margin="25,218,0,0"/>
-                <TextBox Grid.Column="1" x:Name="txt_DocTransportista" HorizontalAlignment="Left" Height="24"  TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="166" Margin="85,218,0,0"/>
-                <TextBox Grid.Column="1" x:Name="txt_NumeroMTC" HorizontalAlignment="Left" Height="24" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="162" Margin="33,272,0,0"/>
-                <TextBox Grid.Column="1" x:Name="txt_Licencia" HorizontalAlignment="Left" Height="24" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="236" Margin="15,326,0,0"/>
+                <TextBox Grid.Column="1" x:Name="txt_DocTransportista" FontSize="13" FontWeight="Medium" FontFamily="Montserrat" HorizontalAlignment="Left" Foreground="White" CaretBrush="LightGray" BorderBrush="DarkGray" BorderThickness="0,0,0,2" Height="22" Margin="87,220,0,150" Width="135">
+                    <TextBox.Background>
+                        <VisualBrush Stretch="None" AlignmentX="Left" AlignmentY="Center">
+                        </VisualBrush>
+                    </TextBox.Background>
+                </TextBox>
+                <TextBox Grid.Column="1" x:Name="txt_NumeroMTC" FontSize="13" FontWeight="Medium" FontFamily="Montserrat" HorizontalAlignment="Left" Foreground="White" CaretBrush="LightGray" BorderBrush="DarkGray" BorderThickness="0,0,0,2" Height="22" Margin="10,274,0,96" Width="212">
+                    <TextBox.Background>
+                        <VisualBrush Stretch="None" AlignmentX="Left" AlignmentY="Center">
+                        </VisualBrush>
+                    </TextBox.Background>
+                </TextBox>
+                <TextBox Grid.Column="1" x:Name="txt_Licencia" FontSize="13" FontWeight="Medium" FontFamily="Montserrat" HorizontalAlignment="Left" Foreground="White" CaretBrush="LightGray" BorderBrush="DarkGray" BorderThickness="0,0,0,2" Height="22" Margin="10,325,0,45" Width="212">
+                    <TextBox.Background>
+                        <VisualBrush Stretch="None" AlignmentX="Left" AlignmentY="Center">
+                        </VisualBrush>
+                    </TextBox.Background>
+                </TextBox>
 
-                <Button Grid.Column="1" x:Name="btn_Crear" Content="Crear Guia" HorizontalAlignment="Left" Height="25"  VerticalAlignment="Top" Width="85" Margin="55,366,0,0"/>
-                <Button Grid.Column="1" x:Name="btn_Enviar" Content="Enviar Guia" HorizontalAlignment="Left" Height="25" VerticalAlignment="Top" Width="83"  Margin="168,366,0,0"/>
+                <Button Grid.Column="1" x:Name="btn_Crear" Content="Crear Guia" FontSize="12" FontFamily="Montserrat" Cursor="Hand" BorderThickness="0" Foreground="DarkGray" VerticalAlignment="Top" HorizontalAlignment="Left" Width="64" Background="#773DFF" Margin="67,361,0,0">
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <Setter Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate TargetType="Button">
+                                        <Border Height="30" CornerRadius="15" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}">
+                                            <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                        </Border>
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" Value="#836EFB"/>
+                                    <Setter Property="BorderBrush" Value="#836EFB"/>
+                                    <Setter Property="Effect">
+                                        <Setter.Value>
+                                            <DropShadowEffect BlurRadius="5" Color="#836EFB" ShadowDepth="0"/>
+                                        </Setter.Value>
+                                    </Setter>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+                </Button>
+                <Button Grid.Column="1" x:Name="btn_Enviar" Content="Enviar Guia" FontSize="12" FontFamily="Montserrat" Cursor="Hand" BorderThickness="0" Foreground="DarkGray" VerticalAlignment="Top" HorizontalAlignment="Left" Width="64" Background="#773DFF" Margin="181,361,0,0">
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <Setter Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate TargetType="Button">
+                                        <Border Height="30" CornerRadius="15" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}">
+                                            <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                        </Border>
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" Value="#836EFB"/>
+                                    <Setter Property="BorderBrush" Value="#836EFB"/>
+                                    <Setter Property="Effect">
+                                        <Setter.Value>
+                                            <DropShadowEffect BlurRadius="5" Color="#836EFB" ShadowDepth="0"/>
+                                        </Setter.Value>
+                                    </Setter>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+                </Button>
+
 
                 <!-- Contenido de la tercera columna -->
-                <Label Grid.Column="2" Content="Datos generales: " HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="22"/>
-                <Label Grid.Column="2" Content="Observacion" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,39,0,0"/>
-                <Label Grid.Column="2" Content="Descripcion del motivo de traslado" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,65,0,0"/>
-                <Label Grid.Column="2" Content="Peso" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,122,0,0"/>
-                <Label Grid.Column="2" Content="Fecha de traslado" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="125,122,0,0"/>
-                <Label Grid.Column="2" Content="Ubigeo de llegada" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,178,0,0"/>
-                <Label Grid.Column="2" Content="Direccion de llegada" HorizontalAlignment="Left" Margin="963,337,0,0" VerticalAlignment="Top"/>
-                <Label Grid.Column="2" Content="Productos: " HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="22" Margin="10,217,0,0"/>
-                <Label Grid.Column="2" Content="NRO de pedido" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="7,254,0,0"/>
+                <Label Grid.Column="2" Foreground="DarkGray" Content="Datos generales: " HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="22" FontWeight="Medium" FontFamily="Montserrat"/>
+                <Label Grid.Column="2" Foreground="DarkGray" Content="Observacion" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,39,0,0" FontWeight="Medium" FontFamily="Montserrat" FontSize="12"/>
+                <Label Grid.Column="2" Foreground="DarkGray" Content="Descripcion del motivo de traslado" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,65,0,0" FontWeight="Medium" FontFamily="Montserrat" FontSize="12"/>
+                <Label Grid.Column="2" Foreground="DarkGray" Content="Peso" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,122,0,0" FontWeight="Medium" FontFamily="Montserrat" FontSize="12"/>
+                <Label Grid.Column="2" Foreground="DarkGray" Content="Fecha de traslado" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="125,122,0,0" FontWeight="Medium" FontFamily="Montserrat" FontSize="12"/>
+                <Label Grid.Column="2" Foreground="DarkGray" Content="Ubigeo de llegada" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,178,0,0" FontWeight="Medium" FontFamily="Montserrat" FontSize="12"/>
+                <Label Grid.Column="2" Foreground="DarkGray" Content="Direccion de llegada" HorizontalAlignment="Left" VerticalAlignment="Top" FontWeight="Medium" FontFamily="Montserrat" FontSize="12" Margin="0,219,0,0"/>
+                <Label Grid.Column="2" Foreground="DarkGray" Content="Productos: " HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="22" Margin="10,267,0,0" FontWeight="Medium" FontFamily="Montserrat"/>
+                <Label Grid.Column="2" Foreground="DarkGray" Content="NRO de pedido" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="7,301,0,0" FontWeight="Medium" FontFamily="Montserrat" FontSize="12"/>
 
-                <TextBox Grid.Column="2" x:Name="txt_observacion" HorizontalAlignment="Left" Height="26" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="175" Margin="76,34,0,0"/>
-                <TextBox Grid.Column="2" x:Name="txt_DescripcionMotivo" HorizontalAlignment="Center" Height="26" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="241" Margin="0,91,0,0"/>
-                <TextBox Grid.Column="2" x:Name="txt_Peso" HorizontalAlignment="Left" Height="25" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="56" Margin="45,123,0,0"/>
+                <TextBox Grid.Column="2" x:Name="txt_observacion"  FontSize="13" FontWeight="Medium" FontFamily="Montserrat" HorizontalAlignment="Left" Foreground="White" CaretBrush="LightGray" BorderBrush="DarkGray" BorderThickness="0,0,0,2" Height="22" Margin="78,39,0,331" Width="173">
+                    <TextBox.Background>
+                        <VisualBrush Stretch="None" AlignmentX="Left" AlignmentY="Center">
+                        </VisualBrush>
+                    </TextBox.Background>
+                </TextBox>
+                <TextBox Grid.Column="2" x:Name="txt_DescripcionMotivo" FontSize="13" FontWeight="Medium" FontFamily="Montserrat" HorizontalAlignment="Center" Foreground="White" CaretBrush="LightGray" BorderBrush="DarkGray" BorderThickness="0,0,0,2" Height="22" Margin="0,89,0,281" Width="243">
+                    <TextBox.Background>
+                        <VisualBrush Stretch="None" AlignmentX="Left" AlignmentY="Center">
+                        </VisualBrush>
+                    </TextBox.Background>
+                </TextBox>
+                <TextBox Grid.Column="2" x:Name="txt_Peso" FontSize="13" FontWeight="Medium" FontFamily="Montserrat" HorizontalAlignment="Left" Foreground="White" CaretBrush="LightGray" BorderBrush="DarkGray" BorderThickness="0,0,0,2" Height="22" Margin="10,150,0,220" Width="108">
+                    <TextBox.Background>
+                        <VisualBrush Stretch="None" AlignmentX="Left" AlignmentY="Center">
+                        </VisualBrush>
+                    </TextBox.Background>
+                </TextBox>
                 <DatePicker Grid.Column="2" x:Name="dt_FechaTraslado" HorizontalAlignment="Left" Height="25" VerticalAlignment="Top" Width="126" Margin="125,148,0,0"/>
-                <TextBox Grid.Column="2" x:Name="txt_CodigoUbigeo" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="99" Margin="105,181,0,0"/>
-                <TextBox Grid.Column="2" x:Name="txt_DireccionLlegada" HorizontalAlignment="Left" Height="26" Margin="1098,337,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="433"/>
-                <TextBox Grid.Column="2" x:Name="txt_NroPedido" HorizontalAlignment="Left" Height="26" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="111" Margin="7,280,0,0"/>
-
-                <Button Grid.Column="2" x:Name="btn_BuscarUbigeo" Content="Buscar" HorizontalAlignment="Left" Height="23" VerticalAlignment="Top" Width="42" Margin="209,181,0,0"/>
-                <Button Grid.Column="2" x:Name="btn_BuscarPedido" Content="Buscar" HorizontalAlignment="Left" Height="22" VerticalAlignment="Top" Width="76" Margin="7,318,0,0"/>
-
+                <TextBox Grid.Column="2" x:Name="txt_CodigoUbigeo" FontSize="13" FontWeight="Medium" FontFamily="Montserrat" HorizontalAlignment="Left" Foreground="White" CaretBrush="LightGray" BorderBrush="DarkGray" BorderThickness="0,0,0,2" Height="22" Margin="10,194,0,176" Width="108">
+                    <TextBox.Background>
+                        <VisualBrush Stretch="None" AlignmentX="Left" AlignmentY="Center">
+                        </VisualBrush>
+                    </TextBox.Background>
+                </TextBox>
+                <TextBox Grid.Column="2" x:Name="txt_DireccionLlegada" FontSize="13" FontWeight="Medium" FontFamily="Montserrat" HorizontalAlignment="Left" Foreground="White" CaretBrush="LightGray" BorderBrush="DarkGray" BorderThickness="0,0,0,2" Height="22" Margin="6,245,0,125" Width="245">
+                    <TextBox.Background>
+                        <VisualBrush Stretch="None" AlignmentX="Left" AlignmentY="Center">
+                        </VisualBrush>
+                    </TextBox.Background>
+                </TextBox>
+                <TextBox Grid.Column="2" x:Name="txt_NroPedido" FontSize="13" FontWeight="Medium" FontFamily="Montserrat" HorizontalAlignment="Left" Foreground="White" CaretBrush="LightGray" BorderBrush="DarkGray" BorderThickness="0,0,0,2" Height="22" Margin="6,325,0,45" Width="85">
+                    <TextBox.Background>
+                        <VisualBrush Stretch="None" AlignmentX="Left" AlignmentY="Center">
+                        </VisualBrush>
+                    </TextBox.Background>
+                </TextBox>
+                <Button Grid.Column="2" x:Name="btn_BuscarUbigeo" Content="Buscar" FontSize="12" FontFamily="Montserrat" Cursor="Hand" BorderThickness="0" Foreground="DarkGray" VerticalAlignment="Top" HorizontalAlignment="Left" Width="63" Background="#773DFF" Margin="188,190,0,0">
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <Setter Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate TargetType="Button">
+                                        <Border Height="30" CornerRadius="15" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}">
+                                            <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                        </Border>
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" Value="#836EFB"/>
+                                    <Setter Property="BorderBrush" Value="#836EFB"/>
+                                    <Setter Property="Effect">
+                                        <Setter.Value>
+                                            <DropShadowEffect BlurRadius="5" Color="#836EFB" ShadowDepth="0"/>
+                                        </Setter.Value>
+                                    </Setter>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+                </Button>
+                <Button  Grid.Column="2" x:Name="btn_BuscarPedido" Content="Buscar" FontSize="12" FontFamily="Montserrat" Cursor="Hand" BorderThickness="0" Foreground="DarkGray" VerticalAlignment="Top" HorizontalAlignment="Left" Width="63" Background="#773DFF" Margin="17,361,0,0">
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <Setter Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate TargetType="Button">
+                                        <Border Height="30" CornerRadius="15" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}">
+                                            <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                        </Border>
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" Value="#836EFB"/>
+                                    <Setter Property="BorderBrush" Value="#836EFB"/>
+                                    <Setter Property="Effect">
+                                        <Setter.Value>
+                                            <DropShadowEffect BlurRadius="5" Color="#836EFB" ShadowDepth="0"/>
+                                        </Setter.Value>
+                                    </Setter>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+                </Button>
             </Grid>
 
             <!-- Contenido de la segunda fila -->
             <Grid Grid.Row="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
-                <DataGrid x:Name="dtgGuias" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" ClipboardCopyMode="IncludeHeader" Margin="57,10,42,0" />
+                <Border Background="#200F53" CornerRadius="10" Padding="10" Margin="10,25,10,10">
+                    <DataGrid x:Name="dtgGuias" AutoGenerateColumns="False" Background="#200F53" BorderThickness="0" Margin="57,10,42,0">
+                        <DataGrid.ColumnHeaderStyle>
+                            <Style TargetType="DataGridColumnHeader">
+                                <Setter Property="Background" Value="Transparent"/>
+                                <Setter Property="Foreground" Value="#BCBEE0"/>
+                                <Setter Property="Padding" Value="10,0,0,10"/>
+                                <Setter Property="FontFamily" Value="Montserrat"/>
+                                <Setter Property="FontSize" Value="15"/>
+                            </Style>
+                        </DataGrid.ColumnHeaderStyle>
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="IdProducto" Binding="{Binding IdProducto}"/>
+                            <DataGridTextColumn Header="Codigo" Binding="{Binding Codigo}"/>
+                            <DataGridTextColumn Header="Nombre" Binding="{Binding Nombre}"/>
+                            <DataGridTextColumn Header="Descripción" Binding="{Binding Descripcion}"/>
+                            <DataGridTextColumn Header="IdCategoria" Binding="{Binding IdCategoria}"/>
+                            <DataGridTextColumn Header="Stock" Binding="{Binding Stock}"/>
+                            <DataGridTextColumn Header="Precio de Compra" Binding="{Binding PrecioCompra}"/>
+                            <DataGridTextColumn Header="Precio de Venta" Binding="{Binding PrecioVenta}"/>
+                            <DataGridTextColumn Header="Estado" Binding="{Binding Estado}"/>
+                            <DataGridTextColumn Header="Fecha de Registro" Binding="{Binding FechaRegistro}"/>
+                        </DataGrid.Columns>
+                        <DataGrid.RowStyle>
+                            <Style TargetType="DataGridRow">
+                                <Style.Triggers>
+                                    <DataTrigger Binding="{Binding Visibility}" Value="Collapsed">
+                                        <Setter Property="Visibility" Value="Collapsed"/>
+                                    </DataTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </DataGrid.RowStyle>
+                    </DataGrid>
+                </Border>
             </Grid>
-
         </Grid>
     </ScrollViewer>
 </UserControl>

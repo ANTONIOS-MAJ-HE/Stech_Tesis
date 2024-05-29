@@ -41,6 +41,7 @@ namespace ST_Datos
                     lista.MODELO_PRODUCTO = (string)reader["MODELO_PRODUCTO"];
                     lista.MARCA_PRODUCTO = (string)reader["MARCA_PRODUCTO"];
                     lista.CATEGORIA_PRODUCTO = (string)reader["CATEGORIA_PRODUCTO"];
+
                     lista.CODIGO_PRODUCTO_CANAL = (string)reader["CODIGO_PRODUCTO_CANAL"];
                     lista.PART_NUMBER = (string)reader["PART_NUMBER"];
                     lista.CANTIDAD = (int)reader["CANTIDAD"];

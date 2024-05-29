@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ST_FORMS.ViewModel.Comunes;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows;
@@ -18,7 +19,8 @@ namespace ST_FORMS.View.Empleado
     /// </summary>
     public partial class FacturaView : UserControl
     {
-        public FacturaView()
+        private readonly MainViewModel _mainViewModel;
+        public FacturaView(MainViewModel mainViewModel)
         {
             InitializeComponent();
         }

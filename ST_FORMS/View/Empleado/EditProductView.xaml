@@ -10,11 +10,8 @@
         <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
-                <!-- Primera fila con altura automática -->
                 <RowDefinition Height="*"/>
-                <!-- Segunda fila que ocupa el espacio restante -->
                 <RowDefinition Height="Auto"/>
-                <!-- Tercera fila que ocupa el espacio restante -->
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
 
@@ -29,93 +26,315 @@
                     <ColumnDefinition Width="Auto"/>
                 </Grid.ColumnDefinitions>
 
-                <Label Grid.Column="0" x:Name="label1_Copy9" Content="Buscar por" VerticalAlignment="Top" FontFamily="Bahnschrift Light" FontSize="10" FontStretch="Normal" FontWeight="Bold" Margin="5,22,0,0"/>
+                <Label Grid.Column="0" Foreground="DarkGray" x:Name="label1_Copy9" Content="Buscar por" VerticalAlignment="Top" FontFamily="Bahnschrift Light" FontSize="10" FontStretch="Normal" FontWeight="Bold" Margin="5,22,0,0"/>
                 <ComboBox Grid.Column="1" x:Name="cmbSearch" VerticalAlignment="Top"  Width="100" Margin="5,20,10,0"/>
                 <TextBox Grid.Column="2" x:Name="txt_Search" VerticalAlignment="Top" Margin="10,18,10,0" TextWrapping="Wrap" FontSize="16"/>
-                <Button Grid.Column="3" x:Name="btn_Buscar" Content="Buscar" VerticalAlignment="Top" FontSize="16" Foreground="White" Background="#FF2263A4" Margin="10,20,10,0"/>
-                <Button Grid.Column="4" x:Name="btn_Limp_Copy1" Content="Limpiar" VerticalAlignment="Top" Background="#FFA5B600" Foreground="White" FontWeight="Normal" FontSize="16" Margin="10,20,10,0" />
-                <Label Grid.Column="5" x:Name="label1" Content="Productos encontrados:" VerticalAlignment="Top" FontSize="12" Margin="3,22,0,0"/>
-                <Label Grid.Column="5" x:Name="txt_prd_cant" Content="5" VerticalAlignment="Top" FontWeight="Bold" FontSize="14" Margin="26,48,23,0"/>
+                <Button Grid.Column="3" x:Name="btn_Buscar" Content="Buscar" FontSize="12" FontFamily="Montserrat" Cursor="Hand" BorderThickness="0" Foreground="DarkGray" VerticalAlignment="Top" HorizontalAlignment="Center" Width="100" Background="#773DFF" Margin="10,20,10,0">
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <Setter Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate TargetType="Button">
+                                        <Border Height="30" CornerRadius="15" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}">
+                                            <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                        </Border>
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" Value="#836EFB"/>
+                                    <Setter Property="BorderBrush" Value="#836EFB"/>
+                                    <Setter Property="Effect">
+                                        <Setter.Value>
+                                            <DropShadowEffect BlurRadius="5" Color="#836EFB" ShadowDepth="0"/>
+                                        </Setter.Value>
+                                    </Setter>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+                </Button>
+                <Button Grid.Column="4" x:Name="btn_Limp_Copy1" Content="Limpiar" FontSize="12" FontFamily="Montserrat" Cursor="Hand" BorderThickness="0" Foreground="DarkGray" VerticalAlignment="Top" HorizontalAlignment="Center" Width="100" Background="#773DFF" Margin="10,20,10,0">
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <Setter Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate TargetType="Button">
+                                        <Border Height="30" CornerRadius="15" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}">
+                                            <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                        </Border>
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" Value="#836EFB"/>
+                                    <Setter Property="BorderBrush" Value="#836EFB"/>
+                                    <Setter Property="Effect">
+                                        <Setter.Value>
+                                            <DropShadowEffect BlurRadius="5" Color="#836EFB" ShadowDepth="0"/>
+                                        </Setter.Value>
+                                    </Setter>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+                </Button>
+                <Label Grid.Column="5" Foreground="White" x:Name="label1" Content="Productos encontrados:" VerticalAlignment="Top" FontSize="12" Margin="3,22,0,0"/>
+                <Label Grid.Column="5" Foreground="DarkGray" x:Name="txt_prd_cant" Content="5" VerticalAlignment="Top" FontWeight="Bold" FontSize="14" Margin="26,48,23,0"/>
             </Grid>
 
             <!-- Contenido de la segunda fila -->
-            <DataGrid Grid.Row="1" x:Name="dt_planta" Margin="25,0,25,0"/>
-            <Label Grid.Row="3" x:Name="label1_Copy7" Content="TITULO" HorizontalAlignment="Left" VerticalAlignment="Top" Height="29" FontFamily="Bahnschrift Light" FontSize="18" FontStretch="Normal" Margin="5,6,0,0"/>
-            <TextBox Grid.Row="3" x:Name="txt_Titulo" TextWrapping="Wrap" VerticalAlignment="Top" Height="24" FontSize="16"  Margin="106,6,278,0"/>
+            <Border Grid.Row="1" Background="#200F53" CornerRadius="10" Padding="10">
+                <DataGrid x:Name="dt_planta" AutoGenerateColumns="False" Background="#200F53" BorderThickness="0" Margin="-10,-10,-10,49">
+                    <DataGrid.ColumnHeaderStyle>
+                        <Style TargetType="DataGridColumnHeader">
+                            <Setter Property="Background" Value="Transparent"/>
+                            <Setter Property="Foreground" Value="#BCBEE0"/>
+                            <Setter Property="Padding" Value="10,0,0,10"/>
+                            <Setter Property="FontFamily" Value="Montserrat"/>
+                            <Setter Property="FontSize" Value="15"/>
+                        </Style>
+                    </DataGrid.ColumnHeaderStyle>
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="IdProducto" Binding="{Binding IdProducto}"/>
+                        <DataGridTextColumn Header="Codigo" Binding="{Binding Codigo}"/>
+                        <DataGridTextColumn Header="Nombre" Binding="{Binding Nombre}"/>
+                        <DataGridTextColumn Header="Descripción" Binding="{Binding Descripcion}"/>
+                        <DataGridTextColumn Header="IdCategoria" Binding="{Binding IdCategoria}"/>
+                        <DataGridTextColumn Header="Stock" Binding="{Binding Stock}"/>
+                        <DataGridTextColumn Header="Precio de Compra" Binding="{Binding PrecioCompra}"/>
+                        <DataGridTextColumn Header="Precio de Venta" Binding="{Binding PrecioVenta}"/>
+                        <DataGridTextColumn Header="Estado" Binding="{Binding Estado}"/>
+                        <DataGridTextColumn Header="Fecha de Registro" Binding="{Binding FechaRegistro}"/>
+                    </DataGrid.Columns>
+                    <DataGrid.RowStyle>
+                        <Style TargetType="DataGridRow">
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding Visibility}" Value="Collapsed">
+                                    <Setter Property="Visibility" Value="Collapsed"/>
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </DataGrid.RowStyle>
+                </DataGrid>
+            </Border>
+            <Label Grid.Row="3" x:Name="label1_Copy7" Foreground="DarkGray" Content="TITULO" HorizontalAlignment="Left" VerticalAlignment="Top" Height="29" FontWeight="Medium" FontFamily="Montserrat" FontSize="12" Margin="5,6,0,0"/>
+            <TextBox Grid.Row="3" x:Name="txt_Titulo" FontSize="13" FontWeight="Medium" FontFamily="Montserrat" Foreground="White" CaretBrush="LightGray" BorderBrush="DarkGray" BorderThickness="0,0,0,2" Height="22" Margin="107,9,186,24">
+                <TextBox.Background>
+                    <VisualBrush Stretch="None" AlignmentX="Left" AlignmentY="Center">
+                    </VisualBrush>
+                </TextBox.Background>
+            </TextBox>
 
 
             <!-- Contenido de la tercera fila -->
             <Grid Grid.Row="2">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"/>
-                    <!-- Primera columna que ocupa 1/3 del ancho total -->
                     <ColumnDefinition Width="*"/>
-                    <!-- Segunda columna que ocupa 1/3 del ancho total -->
                     <ColumnDefinition Width="*"/>
-                    <!-- Tercera columna que ocupa 1/3 del ancho total -->
                 </Grid.ColumnDefinitions>
 
                 <!-- Contenido de la primera columna -->
-                <Label Grid.Column="0" x:Name="label1_Copy1" Content="UPC" VerticalAlignment="Top" Height="25" FontSize="15" FontFamily="Bahnschrift Light" FontStretch="Normal" Margin="5,0,215,0"/>
-                <Label Grid.Column="0" x:Name="label1_Copy" Content="EAN"  VerticalAlignment="Top" Height="25" FontSize="15" FontFamily="Bahnschrift Light" FontStretch="Normal" Margin="5,27,0,0"/>
-                <Label Grid.Column="0" x:Name="label1_Copy2" Content="MODELO" VerticalAlignment="Top" Height="25" FontSize="15" FontFamily="Bahnschrift Light" FontStretch="Normal" Margin="5,52,0,0"/>
-                <Label Grid.Column="0" x:Name="label1_Copy3" Content="MINI CODIGO" VerticalAlignment="Top" Height="25" FontSize="15" FontFamily="Bahnschrift Light" FontStretch="Normal" Margin="5,79,0,0"/>
-                <Label Grid.Column="0" x:Name="label1_Copy4" Content="PARTNUMBER" VerticalAlignment="Top" Height="25" FontSize="15" FontFamily="Bahnschrift Light" FontStretch="Normal" Margin="5,106,0,0"/>
-                <Label Grid.Column="0" x:Name="label1_Copy5" Content="MARCA"  VerticalAlignment="Top" Height="25" FontSize="15" FontFamily="Bahnschrift Light" FontStretch="Normal" Margin="5,129,0,0"/>
-                <Label Grid.Column="0" x:Name="label1_Copy6" Content="TIPO" VerticalAlignment="Top" Height="25" FontSize="15" FontFamily="Bahnschrift Light" FontStretch="Normal" Margin="5,165,0,0"/>
-                <Label Grid.Column="0" x:Name="label1_Copy8" Content="DESCONTINUADO" VerticalAlignment="Top" Height="25" FontSize="15" FontFamily="Bahnschrift Light" FontStretch="Normal" Margin="5,199,134,0"/>
-                <Label Grid.Column="0" x:Name="label1_Copy11" Content="SKU _SAGA" VerticalAlignment="Top" Height="25" FontSize="15" FontFamily="Bahnschrift Light" FontStretch="Normal" Margin="5,237,0,0"/>
+                <Label Grid.Column="0" Foreground="DarkGray" x:Name="label1_Copy1" Content="UPC" VerticalAlignment="Top" Height="25" FontWeight="Medium" FontFamily="Montserrat" FontSize="12" Margin="5,0,215,0"/>
+                <Label Grid.Column="0" Foreground="DarkGray" x:Name="label1_Copy" Content="EAN"  VerticalAlignment="Top" Height="25" FontWeight="Medium" FontFamily="Montserrat" FontSize="12" Margin="5,27,0,0"/>
+                <Label Grid.Column="0" Foreground="DarkGray" x:Name="label1_Copy2" Content="MODELO" VerticalAlignment="Top" Height="25" FontWeight="Medium" FontFamily="Montserrat" FontSize="12" Margin="5,52,0,0"/>
+                <Label Grid.Column="0" Foreground="DarkGray" x:Name="label1_Copy3" Content="MINI CODIGO" VerticalAlignment="Top" Height="25" FontWeight="Medium" FontFamily="Montserrat" FontSize="12" Margin="5,79,0,0"/>
+                <Label Grid.Column="0" Foreground="DarkGray" x:Name="label1_Copy4" Content="PARTNUMBER" VerticalAlignment="Top" Height="25" FontWeight="Medium" FontFamily="Montserrat" FontSize="12" Margin="5,106,0,0"/>
+                <Label Grid.Column="0" Foreground="DarkGray" x:Name="label1_Copy5" Content="MARCA"  VerticalAlignment="Top" Height="25" FontWeight="Medium" FontFamily="Montserrat" FontSize="12" Margin="5,129,0,0"/>
+                <Label Grid.Column="0" Foreground="DarkGray" x:Name="label1_Copy6" Content="TIPO" VerticalAlignment="Top" Height="25" FontWeight="Medium" FontFamily="Montserrat" FontSize="12" Margin="5,165,0,0"/>
+                <Label Grid.Column="0" Foreground="DarkGray" x:Name="label1_Copy8" Content="DESCONTINUADO" VerticalAlignment="Top" Height="25" FontWeight="Medium" FontFamily="Montserrat" FontSize="12" Margin="5,199,134,0"/>
+                <Label Grid.Column="0" Foreground="DarkGray" x:Name="label1_Copy11" Content="SKU _SAGA" VerticalAlignment="Top" Height="25" FontWeight="Medium" FontFamily="Montserrat" FontSize="12" Margin="5,237,0,0"/>
 
 
-                <TextBox Grid.Column="0" x:Name="txt_UPC" TextWrapping="Wrap" VerticalAlignment="Top" Height="20" FontSize="16"  Margin="106,6,5,0"/>
-                <TextBox Grid.Column="0" x:Name="txt_EAN" TextWrapping="Wrap" VerticalAlignment="Top" Height="20" FontSize="16"  Margin="106,30,5,0"/>
-                <TextBox Grid.Column="0" x:Name="txt_Modelo" TextWrapping="Wrap" VerticalAlignment="Top" Height="19" FontSize="16"  Margin="106,55,5,0"/>
-                <TextBox Grid.Column="0" x:Name="txt_Mini_codigo" TextWrapping="Wrap" VerticalAlignment="Top" Height="20" FontSize="16"  Margin="106,79,5,0"/>
-                <TextBox Grid.Column="0" x:Name="txt_Partnumber" TextWrapping="Wrap" VerticalAlignment="Top" Height="20" FontSize="16"  Margin="106,104,5,0"/>
-                <TextBox Grid.Column="0" x:Name="txt_Marca" TextWrapping="Wrap" VerticalAlignment="Top" Height="20" FontSize="16"  Margin="106,134,5,0"/>
-                <TextBox Grid.Column="0" x:Name="txt_Tipo" TextWrapping="Wrap" VerticalAlignment="Top" Height="20" FontSize="16"  Margin="106,171,5,0"/>
-                <TextBox Grid.Column="0" x:Name="txt_Descont" TextWrapping="Wrap" VerticalAlignment="Top" Height="20" FontSize="16"  Margin="106,201,5,0"/>
-                <TextBox Grid.Column="0" x:Name="txt_SKU_SAGA" TextWrapping="Wrap" VerticalAlignment="Top" Height="20" FontSize="16"  Margin="106,237,5,0"/>
-
+                <TextBox Grid.Column="0" x:Name="txt_UPC" FontSize="13" FontWeight="Medium" FontFamily="Montserrat" Foreground="White" CaretBrush="LightGray" BorderBrush="DarkGray" BorderThickness="0,0,0,2" Height="22" Margin="106,5,5,236">
+                    <TextBox.Background>
+                        <VisualBrush Stretch="None" AlignmentX="Left" AlignmentY="Center">
+                        </VisualBrush>
+                    </TextBox.Background>
+                </TextBox>
+                <TextBox Grid.Column="0" x:Name="txt_EAN" FontSize="13" FontWeight="Medium" FontFamily="Montserrat" Foreground="White" CaretBrush="LightGray" BorderBrush="DarkGray" BorderThickness="0,0,0,2" Height="22" Margin="106,29,5,212">
+                    <TextBox.Background>
+                        <VisualBrush Stretch="None" AlignmentX="Left" AlignmentY="Center">
+                        </VisualBrush>
+                    </TextBox.Background>
+                </TextBox>
+                <TextBox Grid.Column="0" x:Name="txt_Modelo" FontSize="13" FontWeight="Medium" FontFamily="Montserrat" Foreground="White" CaretBrush="LightGray" BorderBrush="DarkGray" BorderThickness="0,0,0,2" Height="22" Margin="106,51,5,190">
+                    <TextBox.Background>
+                        <VisualBrush Stretch="None" AlignmentX="Left" AlignmentY="Center">
+                        </VisualBrush>
+                    </TextBox.Background>
+                </TextBox>
+                <TextBox Grid.Column="0" x:Name="txt_Mini_codigo" FontSize="13" FontWeight="Medium" FontFamily="Montserrat" Foreground="White" CaretBrush="LightGray" BorderBrush="DarkGray" BorderThickness="0,0,0,2" Height="22" Margin="106,77,5,164">
+                    <TextBox.Background>
+                        <VisualBrush Stretch="None" AlignmentX="Left" AlignmentY="Center">
+                        </VisualBrush>
+                    </TextBox.Background>
+                </TextBox>
+                <TextBox Grid.Column="0" x:Name="txt_Partnumber" FontSize="13" FontWeight="Medium" FontFamily="Montserrat" Foreground="White" CaretBrush="LightGray" BorderBrush="DarkGray" BorderThickness="0,0,0,2" Height="22" Margin="106,107,5,134">
+                    <TextBox.Background>
+                        <VisualBrush Stretch="None" AlignmentX="Left" AlignmentY="Center">
+                        </VisualBrush>
+                    </TextBox.Background>
+                </TextBox>
+                <TextBox Grid.Column="0" x:Name="txt_Marca" FontSize="13" FontWeight="Medium" FontFamily="Montserrat" Foreground="White" CaretBrush="LightGray" BorderBrush="DarkGray" BorderThickness="0,0,0,2" Height="22" Margin="106,138,5,103">
+                    <TextBox.Background>
+                        <VisualBrush Stretch="None" AlignmentX="Left" AlignmentY="Center">
+                        </VisualBrush>
+                    </TextBox.Background>
+                </TextBox>
+                <TextBox Grid.Column="0" x:Name="txt_Tipo" FontSize="13" FontWeight="Medium" FontFamily="Montserrat" Foreground="White" CaretBrush="LightGray" BorderBrush="DarkGray" BorderThickness="0,0,0,2" Height="22" Margin="106,166,5,75">
+                    <TextBox.Background>
+                        <VisualBrush Stretch="None" AlignmentX="Left" AlignmentY="Center">
+                        </VisualBrush>
+                    </TextBox.Background>
+                </TextBox>
+                <TextBox Grid.Column="0" x:Name="txt_Descont" FontSize="13" FontWeight="Medium" FontFamily="Montserrat" Foreground="White" CaretBrush="LightGray" BorderBrush="DarkGray" BorderThickness="0,0,0,2" Height="22" Margin="106,201,5,40">
+                    <TextBox.Background>
+                        <VisualBrush Stretch="None" AlignmentX="Left" AlignmentY="Center">
+                        </VisualBrush>
+                    </TextBox.Background>
+                </TextBox>
+                <TextBox Grid.Column="0" x:Name="txt_SKU_SAGA" FontSize="13" FontWeight="Medium" FontFamily="Montserrat" Foreground="White" CaretBrush="LightGray" BorderBrush="DarkGray" BorderThickness="0,0,0,2" Height="22" Margin="106,231,5,10">
+                    <TextBox.Background>
+                        <VisualBrush Stretch="None" AlignmentX="Left" AlignmentY="Center">
+                        </VisualBrush>
+                    </TextBox.Background>
+                </TextBox>
 
 
                 <!-- Contenido de la segunda columna -->
-                <Label Grid.Column="1" x:Name="label1_Copy12" Content="SKU LINIO" VerticalAlignment="Top" Height="25" FontSize="15" FontFamily="Bahnschrift Light" FontStretch="Normal" Margin="0,0,180,0"/>
-                <Label Grid.Column="1" x:Name="label1_Copy13" Content="SKU RIPLEY" HorizontalAlignment="Left" VerticalAlignment="Top" Height="25" FontSize="15" FontFamily="Bahnschrift Light" FontStretch="Normal" Margin="5,28,0,0"/>
-                <Label Grid.Column="1" x:Name="label1_Copy16" Content="SKU R.PLAZA" HorizontalAlignment="Left" VerticalAlignment="Top" Height="25" FontSize="15" FontFamily="Bahnschrift Light" FontStretch="Normal" Margin="5,52,0,0"/>
-                <Label Grid.Column="1" x:Name="label1_Copy14" Content="SKU JUNTOZ&#xD;&#xA;" HorizontalAlignment="Left" VerticalAlignment="Top" Height="25" FontSize="15" FontFamily="Bahnschrift Light" FontStretch="Normal" Grid.ColumnSpan="2" Margin="5,78,0,0"/>
-                <Label Grid.Column="1" x:Name="label1_Copy15" Content="SKU LUMINGO" HorizontalAlignment="Left" VerticalAlignment="Top" Height="25" FontSize="15" FontFamily="Bahnschrift Light" FontStretch="Normal" Margin="5,107,0,0"/>
-                <Label Grid.Column="1" x:Name="label1_Copy17" Content="SKU SODIMAC" HorizontalAlignment="Left" VerticalAlignment="Top" Height="25" FontSize="15" FontFamily="Bahnschrift Light" FontStretch="Normal" Margin="5,143,0,0"/>
-                <Label Grid.Column="1" x:Name="label1_Copy18" Content="SKU TOTTUS" HorizontalAlignment="Left" VerticalAlignment="Top" Height="25" FontSize="15" FontFamily="Bahnschrift Light" FontStretch="Normal" Margin="5,171,0,0"/>
-                <Label Grid.Column="1" x:Name="label1_Copy19" Content="SKU KINGSTON" HorizontalAlignment="Left" VerticalAlignment="Top" Height="25" FontSize="15" FontFamily="Bahnschrift Light" FontStretch="Normal" Margin="5,201,0,0"/>
-                <Label Grid.Column="1" x:Name="label1_Copy22" Content="SKU M.LIBRE" HorizontalAlignment="Left" VerticalAlignment="Top" Height="25" FontSize="15" FontFamily="Bahnschrift Light"  FontStretch="Normal" Margin="5,237,0,0" Width="101"/>
+                <Label Grid.Column="1" Foreground="DarkGray" x:Name="label1_Copy12" Content="SKU LINIO" VerticalAlignment="Top" Height="25" FontWeight="Medium" FontFamily="Montserrat" FontSize="12" Margin="0,0,180,0"/>
+                <Label Grid.Column="1" Foreground="DarkGray" x:Name="label1_Copy13" Content="SKU RIPLEY" HorizontalAlignment="Left" VerticalAlignment="Top" Height="25" FontWeight="Medium" FontFamily="Montserrat" FontSize="12" Margin="5,28,0,0"/>
+                <Label Grid.Column="1" Foreground="DarkGray" x:Name="label1_Copy16" Content="SKU R.PLAZA" HorizontalAlignment="Left" VerticalAlignment="Top" Height="25" FontWeight="Medium" FontFamily="Montserrat" FontSize="12" Margin="5,52,0,0"/>
+                <Label Grid.Column="1" Foreground="DarkGray" x:Name="label1_Copy14" Content="SKU JUNTOZ&#xD;&#xA;" HorizontalAlignment="Left" VerticalAlignment="Top" FontWeight="Medium" FontFamily="Montserrat" FontSize="12" Grid.ColumnSpan="2" Margin="5,78,0,0"/>
+                <Label Grid.Column="1" Foreground="DarkGray" x:Name="label1_Copy15" Content="SKU LUMINGO" HorizontalAlignment="Left" VerticalAlignment="Top" FontWeight="Medium" FontFamily="Montserrat" FontSize="12" Margin="5,107,0,0"/>
+                <Label Grid.Column="1" Foreground="DarkGray" x:Name="label1_Copy17" Content="SKU SODIMAC" HorizontalAlignment="Left" VerticalAlignment="Top" Height="25" FontWeight="Medium" FontFamily="Montserrat" FontSize="12" Margin="5,143,0,0"/>
+                <Label Grid.Column="1" Foreground="DarkGray" x:Name="label1_Copy18" Content="SKU TOTTUS" HorizontalAlignment="Left" VerticalAlignment="Top" Height="25" FontWeight="Medium" FontFamily="Montserrat" FontSize="12" Margin="5,171,0,0"/>
+                <Label Grid.Column="1" Foreground="DarkGray" x:Name="label1_Copy19" Content="SKU KINGSTON" HorizontalAlignment="Left" VerticalAlignment="Top" Height="25" FontWeight="Medium" FontFamily="Montserrat" FontSize="12" Margin="5,201,0,0"/>
+                <Label Grid.Column="1" Foreground="DarkGray" x:Name="label1_Copy22" Content="SKU M.LIBRE" HorizontalAlignment="Left" VerticalAlignment="Top" Height="25" FontWeight="Medium" FontFamily="Montserrat" FontSize="12" Margin="5,237,0,0" Width="101"/>
 
-                <TextBox Grid.Column="1" x:Name="txt_SKU_LINIO" TextWrapping="Wrap" VerticalAlignment="Top" Height="25" FontSize="16"  Margin="141,1,10,0"/>
-                <TextBox Grid.Column="1" x:Name="txt_SKU_RIPLEY" TextWrapping="Wrap" VerticalAlignment="Top" Height="20" FontSize="16"  Margin="141,31,10,0"/>
-                <TextBox Grid.Column="1" x:Name="txt_SKU_RPG" TextWrapping="Wrap" VerticalAlignment="Top" Height="24" FontSize="16"  Margin="141,56,10,0"/>
-                <TextBox Grid.Column="1" x:Name="txt_SKU_JUNTOZ" TextWrapping="Wrap" VerticalAlignment="Top" Height="26" FontSize="16"  Margin="141,83,10,0"/>
-                <TextBox Grid.Column="1" x:Name="txt_SKU_LUMINGO" TextWrapping="Wrap" VerticalAlignment="Top" Height="24" FontSize="16"  Margin="141,114,10,0"/>
-                <TextBox Grid.Column="1" x:Name="txt_SKU_SODIMAC" TextWrapping="Wrap" VerticalAlignment="Top" Height="24" FontSize="16"  Margin="141,147,10,0"/>
-                <TextBox Grid.Column="1" x:Name="txt_SKU_TOTTUS" TextWrapping="Wrap" VerticalAlignment="Top" Height="24" FontSize="16"  Margin="141,181,10,0"/>
-                <TextBox Grid.Column="1" x:Name="txt_SKU_KINGSTON" TextWrapping="Wrap" VerticalAlignment="Top" Height="20" FontSize="16"  Margin="141,213,10,0"/>
-                <TextBox Grid.Column="1" x:Name="txt_SKU_MLIBRE" TextWrapping="Wrap" VerticalAlignment="Top" Height="24" FontSize="16"  Margin="141,237,10,0"/>
+                <TextBox Grid.Column="1" x:Name="txt_SKU_LINIO" FontSize="13" FontWeight="Medium" FontFamily="Montserrat" Foreground="White" CaretBrush="LightGray" BorderBrush="DarkGray" BorderThickness="0,0,0,2" Height="22" Margin="141,3,10,238">
+                    <TextBox.Background>
+                        <VisualBrush Stretch="None" AlignmentX="Left" AlignmentY="Center">
+                        </VisualBrush>
+                    </TextBox.Background>
+                </TextBox>
+                <TextBox Grid.Column="1" x:Name="txt_SKU_RIPLEY" FontSize="13" FontWeight="Medium" FontFamily="Montserrat" Foreground="White" CaretBrush="LightGray" BorderBrush="DarkGray" BorderThickness="0,0,0,2" Height="22" Margin="141,25,10,216">
+                    <TextBox.Background>
+                        <VisualBrush Stretch="None" AlignmentX="Left" AlignmentY="Center">
+                        </VisualBrush>
+                    </TextBox.Background>
+                </TextBox>
+                <TextBox Grid.Column="1" x:Name="txt_SKU_RPG" FontSize="13" FontWeight="Medium" FontFamily="Montserrat" Foreground="White" CaretBrush="LightGray" BorderBrush="DarkGray" BorderThickness="0,0,0,2" Height="22" Margin="141,54,10,187">
+                    <TextBox.Background>
+                        <VisualBrush Stretch="None" AlignmentX="Left" AlignmentY="Center">
+                        </VisualBrush>
+                    </TextBox.Background>
+                </TextBox>
+                <TextBox Grid.Column="1" x:Name="txt_SKU_JUNTOZ" FontSize="13" FontWeight="Medium" FontFamily="Montserrat" Foreground="White" CaretBrush="LightGray" BorderBrush="DarkGray" BorderThickness="0,0,0,2" Height="22" Margin="141,81,10,160">
+                    <TextBox.Background>
+                        <VisualBrush Stretch="None" AlignmentX="Left" AlignmentY="Center">
+                        </VisualBrush>
+                    </TextBox.Background>
+                </TextBox>
+                <TextBox Grid.Column="1" x:Name="txt_SKU_LUMINGO" FontSize="13" FontWeight="Medium" FontFamily="Montserrat" Foreground="White" CaretBrush="LightGray" BorderBrush="DarkGray" BorderThickness="0,0,0,2" Height="22" Margin="141,114,10,127">
+                    <TextBox.Background>
+                        <VisualBrush Stretch="None" AlignmentX="Left" AlignmentY="Center">
+                        </VisualBrush>
+                    </TextBox.Background>
+                </TextBox>
+                <TextBox Grid.Column="1" x:Name="txt_SKU_SODIMAC" FontSize="13" FontWeight="Medium" FontFamily="Montserrat" Foreground="White" CaretBrush="LightGray" BorderBrush="DarkGray" BorderThickness="0,0,0,2" Height="22" Margin="141,145,10,96">
+                    <TextBox.Background>
+                        <VisualBrush Stretch="None" AlignmentX="Left" AlignmentY="Center">
+                        </VisualBrush>
+                    </TextBox.Background>
+                </TextBox>
+                <TextBox Grid.Column="1" x:Name="txt_SKU_TOTTUS" FontSize="13" FontWeight="Medium" FontFamily="Montserrat" Foreground="White" CaretBrush="LightGray" BorderBrush="DarkGray" BorderThickness="0,0,0,2" Height="22" Margin="141,177,10,64">
+                    <TextBox.Background>
+                        <VisualBrush Stretch="None" AlignmentX="Left" AlignmentY="Center">
+                        </VisualBrush>
+                    </TextBox.Background>
+                </TextBox>
+                <TextBox Grid.Column="1" x:Name="txt_SKU_KINGSTON" FontSize="13" FontWeight="Medium" FontFamily="Montserrat" Foreground="White" CaretBrush="LightGray" BorderBrush="DarkGray" BorderThickness="0,0,0,2" Height="22" Margin="141,201,10,40">
+                    <TextBox.Background>
+                        <VisualBrush Stretch="None" AlignmentX="Left" AlignmentY="Center">
+                        </VisualBrush>
+                    </TextBox.Background>
+                </TextBox>
+                <TextBox Grid.Column="1" x:Name="txt_SKU_MLIBRE" FontSize="13" FontWeight="Medium" FontFamily="Montserrat" Foreground="White" CaretBrush="LightGray" BorderBrush="DarkGray" BorderThickness="0,0,0,2" Height="22" Margin="141,237,10,4">
+                    <TextBox.Background>
+                        <VisualBrush Stretch="None" AlignmentX="Left" AlignmentY="Center">
+                        </VisualBrush>
+                    </TextBox.Background>
+                </TextBox>
 
 
                 <!-- Contenido de la tercera columna -->
-                <Label Grid.Column="2" x:Name="label1_Copy23" Content="SKU CATPHONE" HorizontalAlignment="Left" VerticalAlignment="Top" Height="24" FontSize="16" FontFamily="Bahnschrift Light" FontStretch="Normal" Margin="5,0,0,0"/>
-                <Label Grid.Column="2" x:Name="label1_Copy24" Content="SKU COOLBOX" HorizontalAlignment="Left" VerticalAlignment="Top" Height="24" FontSize="16" FontFamily="Bahnschrift Light" FontStretch="Normal" Margin="5,32,0,0"/>
-                <Label Grid.Column="2" x:Name="label1_Copy25" Content="SKU FALABELLA" HorizontalAlignment="Left" VerticalAlignment="Top" Height="24" FontSize="16" FontFamily="Bahnschrift Light" FontStretch="Normal" Margin="5,62,0,0"/>
-                <Label Grid.Column="2" x:Name="label1_Copy21" Content="COSTO UNITARIO&#xA; SIN IGV DOLARES" HorizontalAlignment="Left" VerticalAlignment="Top" Height="24" FontSize="16" FontFamily="Bahnschrift Light" FontStretch="Normal" FontWeight="Bold" Margin="5,95,0,0"/>
-                <Label Grid.Column="2" x:Name="label1_Copy20" Content="COSTO UNITARIO&#xD;&#xA; SIN IGV SOLES" HorizontalAlignment="Left" VerticalAlignment="Top" Height="24" FontSize="16" FontFamily="Bahnschrift Light" FontStretch="Normal" FontWeight="Bold" Margin="5,144,0,0"/>
-                <Button Grid.Column="2" x:Name="btn_Mod" Content="Modificar" HorizontalAlignment="Center" VerticalAlignment="Top" Height="52" Width="218" FontSize="18" Background="#FF57B87A" Foreground="White" FontWeight="Bold" Margin="0,211,0,0"/>
+                <Label Grid.Column="2" Foreground="DarkGray" x:Name="label1_Copy23" Content="SKU CATPHONE" HorizontalAlignment="Left" VerticalAlignment="Top" Height="24" FontWeight="Medium" FontFamily="Montserrat" FontSize="12" Margin="5,16,0,0"/>
+                <Label Grid.Column="2" Foreground="DarkGray" x:Name="label1_Copy24" Content="SKU COOLBOX" HorizontalAlignment="Left" VerticalAlignment="Top" Height="24" FontWeight="Medium" FontFamily="Montserrat" FontSize="12" Margin="5,49,0,0"/>
+                <Label Grid.Column="2" Foreground="DarkGray" x:Name="label1_Copy25" Content="SKU FALABELLA" HorizontalAlignment="Left" VerticalAlignment="Top" Height="24" FontWeight="Medium" FontFamily="Montserrat" FontSize="12" Margin="10,76,0,0"/>
+                <Label Grid.Column="2" Foreground="DarkGray" x:Name="label1_Copy21" Content="COSTO UNITARIO&#xA; SIN IGV DOLARES" HorizontalAlignment="Left" VerticalAlignment="Top" Height="24" FontWeight="Medium" FontFamily="Montserrat" FontSize="12" Margin="10,108,0,0"/>
+                <Label Grid.Column="2" Foreground="DarkGray" x:Name="label1_Copy20" Content="COSTO UNITARIO&#xD;&#xA; SIN IGV SOLES" HorizontalAlignment="Left" VerticalAlignment="Top" Height="24" FontWeight="Medium" FontFamily="Montserrat" FontSize="12" Margin="5,144,0,0"/>
+                <Button Grid.Column="2" Content="Modificar" FontSize="12" FontFamily="Montserrat" Cursor="Hand" BorderThickness="0" Foreground="DarkGray" VerticalAlignment="Top" HorizontalAlignment="Center" Width="100" Background="#773DFF" Margin="83,192,0,0">
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <Setter Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate TargetType="Button">
+                                        <Border Height="30" CornerRadius="15" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}">
+                                            <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                        </Border>
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" Value="#836EFB"/>
+                                    <Setter Property="BorderBrush" Value="#836EFB"/>
+                                    <Setter Property="Effect">
+                                        <Setter.Value>
+                                            <DropShadowEffect BlurRadius="5" Color="#836EFB" ShadowDepth="0"/>
+                                        </Setter.Value>
+                                    </Setter>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+                </Button>
 
-                <TextBox Grid.Column="2" x:Name="txt_SKU_CATPHONE" TextWrapping="Wrap" VerticalAlignment="Top" Height="24" FontSize="16"  Margin="146,8,10,0"/>
-                <TextBox Grid.Column="2" x:Name="txt_SKU_COOLBOX" TextWrapping="Wrap" VerticalAlignment="Top" Height="24" FontSize="16"  Margin="146,37,10,0"/>
-                <TextBox Grid.Column="2" x:Name="txt_SKU_FALABELLA" TextWrapping="Wrap" VerticalAlignment="Top" Height="24" FontSize="16"  Margin="146,68,10,0"/>
-                <TextBox Grid.Column="2" x:Name="txt_C_U_S_IGV_USD"  TextWrapping="Wrap" VerticalAlignment="Top" Height="24" FontSize="16"  Margin="146,102,10,0"/>
-                <TextBox Grid.Column="2" x:Name="txt_C_U_S_IGV_PEN" TextWrapping="Wrap" VerticalAlignment="Top" Height="24" FontSize="16"  Margin="146,143,10,0"/>
-
-
+                <TextBox Grid.Column="2" x:Name="txt_SKU_CATPHONE" FontSize="13" FontWeight="Medium" FontFamily="Montserrat" Foreground="White" CaretBrush="LightGray" BorderBrush="DarkGray" BorderThickness="0,0,0,2" Height="22" Margin="146,10,10,231">
+                    <TextBox.Background>
+                        <VisualBrush Stretch="None" AlignmentX="Left" AlignmentY="Center">
+                        </VisualBrush>
+                    </TextBox.Background>
+                </TextBox>
+                <TextBox Grid.Column="2" x:Name="txt_SKU_COOLBOX" FontSize="13" FontWeight="Medium" FontFamily="Montserrat" Foreground="White" CaretBrush="LightGray" BorderBrush="DarkGray" BorderThickness="0,0,0,2" Height="22" Margin="146,48,10,193">
+                    <TextBox.Background>
+                        <VisualBrush Stretch="None" AlignmentX="Left" AlignmentY="Center">
+                        </VisualBrush>
+                    </TextBox.Background>
+                </TextBox>
+                <TextBox Grid.Column="2" x:Name="txt_SKU_FALABELLA" FontSize="13" FontWeight="Medium" FontFamily="Montserrat" Foreground="White" CaretBrush="LightGray" BorderBrush="DarkGray" BorderThickness="0,0,0,2" Height="22" Margin="146,70,10,171">
+                    <TextBox.Background>
+                        <VisualBrush Stretch="None" AlignmentX="Left" AlignmentY="Center">
+                        </VisualBrush>
+                    </TextBox.Background>
+                </TextBox>
+                <TextBox Grid.Column="2" x:Name="txt_C_U_S_IGV_USD" FontSize="13" FontWeight="Medium" FontFamily="Montserrat" Foreground="White" CaretBrush="LightGray" BorderBrush="DarkGray" BorderThickness="0,0,0,2" Height="22" Margin="146,108,10,133">
+                    <TextBox.Background>
+                        <VisualBrush Stretch="None" AlignmentX="Left" AlignmentY="Center">
+                        </VisualBrush>
+                    </TextBox.Background>
+                </TextBox>
+                <TextBox Grid.Column="2" x:Name="txt_C_U_S_IGV_PEN" FontSize="13" FontWeight="Medium" FontFamily="Montserrat" Foreground="White" CaretBrush="LightGray" BorderBrush="DarkGray" BorderThickness="0,0,0,2" Height="22" Margin="146,142,10,99">
+                    <TextBox.Background>
+                        <VisualBrush Stretch="None" AlignmentX="Left" AlignmentY="Center">
+                        </VisualBrush>
+                    </TextBox.Background>
+                </TextBox>
             </Grid>
         </Grid>
     </ScrollViewer>

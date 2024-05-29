@@ -1,4 +1,6 @@
-﻿using System;
+﻿using ST_FORMS.ViewModel.Comunes;
+using ST_Negocio;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows;
@@ -8,34 +10,25 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
-using ST_Negocio;
-using ST_Entidades;
 
-namespace ST_FORMS
+namespace ST_FORMS.View.Empleado
 {
     /// <summary>
-    /// Interaction logic for frm_Consolidados.xaml
+    /// Lógica de interacción para HomeView.xaml
     /// </summary>
-    public partial class frm_Consolidados : Window
+    public partial class ConsolidadosView : UserControl
     {
+        private readonly MainViewModel _mainViewModel;
         n_Consolidados ConsolidadosOBJ = new n_Consolidados();
-        public frm_Consolidados()
+        public ConsolidadosView(MainViewModel mainViewModel)
         {
             InitializeComponent();
-            //Fill_combobox();
+            _mainViewModel = mainViewModel;
             Cargar_desp_nuevo();
             ListarCanal();
         }
-
-        //public void Fill_combobox()
-        //{
-        //    cmbCanal.Items.Add("SAGA");
-        //    cmbCanal.Items.Add("LINIO");
-        //    cmbCanal.Items.Add("RIPLEY");
-        //    cmbCanal.Items.Add("REAL PLAZA");
-        //    cmbCanal.Items.Add("KINGSTON");
-        //}
 
         public void Cargar_desp_nuevo()
         {
@@ -44,12 +37,12 @@ namespace ST_FORMS
 
         public void ListarCanal()
         {
-            Boolean filtro = txtCanal.Text.Length == 0 && txtCliente.Text.Length == 0 && txtNRO_OC.Text.Length == 0 && txtPrtnumber.Text.Length == 0 && dtFechaProceso.Text=="" && txtProducto.Text.Length == 0;
+            Boolean filtro = txtCanal.Text.Length == 0 && txtCliente.Text.Length == 0 && txtNRO_OC.Text.Length == 0 && txtPrtnumber.Text.Length == 0 && dtFechaProceso.Text == "" && txtProducto.Text.Length == 0;
             if (filtro)
             {
                 //if (cmbCanal.SelectedIndex == -1)
                 //{
-                    dtgConsolidados.ItemsSource = ConsolidadosOBJ.Lista_entradas();
+                dtgConsolidados.ItemsSource = ConsolidadosOBJ.Lista_entradas();
                 //}
                 //else if (cmbCanal.SelectedIndex == 0)
                 //{
@@ -76,29 +69,29 @@ namespace ST_FORMS
             {
                 //if (cmbCanal.SelectedIndex == -1)
                 //{
-            //        dtgConsolidados.ItemsSource = ConsolidadosOBJ.Lista_entradas_S();
-            //}
-            //    else if (cmbCanal.SelectedIndex == 0)
-            //{
+                //        dtgConsolidados.ItemsSource = ConsolidadosOBJ.Lista_entradas_S();
+                //}
+                //    else if (cmbCanal.SelectedIndex == 0)
+                //{
                 dtgConsolidados.ItemsSource = ConsolidadosOBJ.Lista_entradas_F(txtCanal.Text, txtPrtnumber.Text, txtCliente.Text, txtNRO_OC.Text, dtFechaProceso.Text, txtProducto.Text);
-            //}
-            //else if (cmbCanal.SelectedIndex == 1)
-            //{
-            //    dtgConsolidados.ItemsSource = ConsolidadosOBJ.Lista_entradas_L_F(txtPrtnumber.Text, txtCliente.Text, txtNRO_OC.Text, dtFechaProceso.Text, txtProducto.Text);
-            //}
-            //else if (cmbCanal.SelectedIndex == 2)
-            //{
-            //    dtgConsolidados.ItemsSource = ConsolidadosOBJ.Lista_entradas_R_F(txtPrtnumber.Text, txtCliente.Text, txtNRO_OC.Text, dtFechaProceso.Text, txtProducto.Text);
-            //}
-            //else if (cmbCanal.SelectedIndex == 3)
-            //{
-            //    dtgConsolidados.ItemsSource = ConsolidadosOBJ.Lista_entradas_RP_F(txtPrtnumber.Text, txtCliente.Text, txtNRO_OC.Text, dtFechaProceso.Text, txtProducto.Text);
-            //}
-            //else if (cmbCanal.SelectedIndex == 4)
-            //{
-            //    dtgConsolidados.ItemsSource = ConsolidadosOBJ.Lista_entradas_KG_F(txtPrtnumber.Text, txtCliente.Text, txtNRO_OC.Text, dtFechaProceso.Text, txtProducto.Text);
-            //}
-        }
+                //}
+                //else if (cmbCanal.SelectedIndex == 1)
+                //{
+                //    dtgConsolidados.ItemsSource = ConsolidadosOBJ.Lista_entradas_L_F(txtPrtnumber.Text, txtCliente.Text, txtNRO_OC.Text, dtFechaProceso.Text, txtProducto.Text);
+                //}
+                //else if (cmbCanal.SelectedIndex == 2)
+                //{
+                //    dtgConsolidados.ItemsSource = ConsolidadosOBJ.Lista_entradas_R_F(txtPrtnumber.Text, txtCliente.Text, txtNRO_OC.Text, dtFechaProceso.Text, txtProducto.Text);
+                //}
+                //else if (cmbCanal.SelectedIndex == 3)
+                //{
+                //    dtgConsolidados.ItemsSource = ConsolidadosOBJ.Lista_entradas_RP_F(txtPrtnumber.Text, txtCliente.Text, txtNRO_OC.Text, dtFechaProceso.Text, txtProducto.Text);
+                //}
+                //else if (cmbCanal.SelectedIndex == 4)
+                //{
+                //    dtgConsolidados.ItemsSource = ConsolidadosOBJ.Lista_entradas_KG_F(txtPrtnumber.Text, txtCliente.Text, txtNRO_OC.Text, dtFechaProceso.Text, txtProducto.Text);
+                //}
+            }
 
         }
 
@@ -107,19 +100,19 @@ namespace ST_FORMS
             ListarCanal();
         }
 
-        private void button_Click(object sender, RoutedEventArgs e)
-        {
-            frm_Inicio frm = new frm_Inicio();
-            this.Close();
-            frm.ShowDialog();
-        }
+        //private void button_Click(object sender, RoutedEventArgs e)
+        //{
+        //    frm_Inicio frm = new frm_Inicio();
+        //    this.Close();
+        //    frm.ShowDialog();
+        //}
 
-        private void btnReporte_Click(object sender, RoutedEventArgs e)
-        {
-            frm_Reporte frm = new frm_Reporte();
-            this.Close();
-            frm.ShowDialog();
-        }
+        //private void btnReporte_Click(object sender, RoutedEventArgs e)
+        //{
+        //    frm_Reporte frm = new frm_Reporte();
+        //    this.Close();
+        //    frm.ShowDialog();
+        //}
 
         private void btnBuscar_Click(object sender, RoutedEventArgs e)
         {

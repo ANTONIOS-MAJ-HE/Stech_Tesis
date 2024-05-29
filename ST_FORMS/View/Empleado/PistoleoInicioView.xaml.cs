@@ -1,4 +1,5 @@
-﻿using ST_Negocio;
+﻿using ST_FORMS.ViewModel.Comunes;
+using ST_Negocio;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -19,12 +20,19 @@ namespace ST_FORMS.View.Empleado
     /// </summary>
     public partial class PistoleoInicioView : UserControl
     {
+        private readonly MainViewModel _mainViewModel;
         n_Pistoleo obj_pistoleo = new n_Pistoleo();
-        public PistoleoInicioView()
+        public PistoleoInicioView(MainViewModel mainViewModel)
         {
             InitializeComponent();
+            _mainViewModel = mainViewModel;
+            button_Copy2.Click += NavigateToPistoleoRapido;
             Cargar_desp_nuevo();
             Listar_pendientes();
+        }
+        private void NavigateToPistoleoRapido(object sender, RoutedEventArgs e)
+        {
+            _mainViewModel.CurrentChildView = new PistoleoRapidoView(_mainViewModel);
         }
         public void Cargar_desp_nuevo()
         {

@@ -4,13 +4,14 @@ using ST_Datos.Repositories;
 using ST_Datos.Repository;
 using ST_Datos.Rol;
 using ST_Entidades.Rol;
-using ST_FORMS.ViewModel.Admin;
-using ST_FORMS.ViewModel.Empleado;
+using ST_FORMS.View.Admin;
+using ST_FORMS.View.Empleado;
 using ST_Negocio.Model;
 using System;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading;
+using System.Windows.Controls;
 using System.Windows.Input;
 
 namespace ST_FORMS.ViewModel.Comunes
@@ -20,7 +21,8 @@ namespace ST_FORMS.ViewModel.Comunes
         // Campos privados para almacenar datos y estados
         private UserAccountModel _currentUserAccount; // Información de la cuenta de usuario actual
         private Usuario _usuarioActual;
-        private ViewModelBase _currentChildView; // Vista secundaria actual
+        private UserControl _currentChildView;
+        /*private ViewModelBase _currentChildView; */// Vista secundaria actual
         private string _caption; // Título de la vista actual
         private IconChar _icon; // Ícono asociado a la vista actual
 
@@ -54,7 +56,17 @@ namespace ST_FORMS.ViewModel.Comunes
             }
         }
 
-        public ViewModelBase CurrentChildView
+        //public ViewModelBase CurrentChildView
+        //{
+        //    get { return _currentChildView; }
+        //    set
+        //    {
+        //        _currentChildView = value;
+        //        OnPropertyChanged(nameof(CurrentChildView)); // Notificar cambios a la interfaz de usuario
+        //    }
+        //}
+
+        public UserControl CurrentChildView
         {
             get { return _currentChildView; }
             set
@@ -152,7 +164,15 @@ namespace ST_FORMS.ViewModel.Comunes
         public ICommand ShowSagaGuiasViewCommand { get; }
         public ICommand ShowFacturaViewCommand { get; }
         public ICommand ShowGuiasConectaViewCommand { get; }
+        //Pistoleo
         public ICommand ShowPistoleoInicioViewCommand { get; }
+        public ICommand ShowPistoleoRapidoViewCommand { get; }
+        public ICommand ShowPistoleoSeguroViewCommand { get; }
+
+        public ICommand ShowAlertaStockViewCommand { get; }
+        public ICommand ShowConsolidadosViewCommand { get; }
+        public ICommand ShowTransportistaViewCommand { get; }
+        public ICommand ShowRatiosViewCommand { get; }
 
         // Constructor para inicializar el ViewModel
         public MainViewModel()
@@ -164,7 +184,7 @@ namespace ST_FORMS.ViewModel.Comunes
 
             // Inicializar los comandos
             ShowHomeViewCommand = new ViewModelCommand(ExecuteShowHomeViewCommand);
-            ShowCustomerViewCommand = new ViewModelCommand(ExecuteShowCustomerViewCommand);
+            //ShowCustomerViewCommand = new ViewModelCommand(ExecuteShowCustomerViewCommand);
             ShowInicioViewCommand = new ViewModelCommand(ExecuteShowInicioViewCommand);
 
             //Inicializando el comando de incidencia
@@ -188,7 +208,15 @@ namespace ST_FORMS.ViewModel.Comunes
             ShowSagaGuiasViewCommand = new ViewModelCommand(ExecuteShowSagaGuiasViewCommand);
             ShowFacturaViewCommand = new ViewModelCommand(ExecuteShowFacturaViewCommand);
             ShowGuiasConectaViewCommand = new ViewModelCommand(ExecuteShowGuiasConectaViewCommand);
+
             ShowPistoleoInicioViewCommand = new ViewModelCommand(ExecuteShowPistoleoInicioViewCommand);
+            ShowPistoleoRapidoViewCommand = new ViewModelCommand(ExecuteShowPistoleoRapidoViewCommand);
+            ShowPistoleoSeguroViewCommand = new ViewModelCommand(ExecuteShowPistoleoSeguroViewCommand);
+
+            ShowAlertaStockViewCommand = new ViewModelCommand(ExecuteShowAlertaStockViewCommand);
+            ShowConsolidadosViewCommand = new ViewModelCommand(ExecuteShowConsolidadosViewCommand);
+            ShowTransportistaViewCommand = new ViewModelCommand(ExecuteShowTransportistaViewCommand);
+            ShowRatiosViewCommand = new ViewModelCommand(ExecuteShowRatiosViewCommand);
 
             // Mostrar la vista de inicio por defecto al inicio de la aplicación
             ExecuteShowHomeViewCommand(null);
@@ -203,23 +231,23 @@ namespace ST_FORMS.ViewModel.Comunes
         // Método para mostrar la vista de inicio
         private void ExecuteShowHomeViewCommand(object obj)
         {
-            CurrentChildView = new HomeViewModel(); // Crear una nueva instancia de la vista de inicio
+            CurrentChildView = new HomeView(this); // Crear una nueva instancia de la vista de inicio
             Caption = "Dashboard"; // Establecer el título de la vista
             Icon = IconChar.Home; // Establecer el ícono asociado a la vista
         }
 
         // Método para mostrar la vista de clientes
-        private void ExecuteShowCustomerViewCommand(object obj)
-        {
-            CurrentChildView = new CustomerViewModel(facturaRepository); // Crear una nueva instancia de la vista de clientes
-            Caption = "Customers"; // Establecer el título de la vista
-            Icon = IconChar.UserGroup; // Establecer el ícono asociado a la vista
-        }
+        //private void ExecuteShowCustomerViewCommand(object obj)
+        //{
+        //    CurrentChildView = new CustomerViewModel(facturaRepository); // Crear una nueva instancia de la vista de clientes
+        //    Caption = "Customers"; // Establecer el título de la vista
+        //    Icon = IconChar.UserGroup; // Establecer el ícono asociado a la vista
+        //}
 
         // Método para mostrar la vista de inicio de la aplicación (Order)
         private void ExecuteShowInicioViewCommand(object obj)
         {
-            CurrentChildView = new InicioViewModel(); // Crear una nueva instancia de la vista de inicio de la aplicación
+            CurrentChildView = new InicioView(this); // Crear una nueva instancia de la vista de inicio de la aplicación
             Caption = "Order"; // Establecer el título de la vista
             Icon = IconChar.Truck; // Establecer el ícono asociado a la vista
         }
@@ -228,14 +256,14 @@ namespace ST_FORMS.ViewModel.Comunes
 
         private void ExecuteShowIncidenciaViewCommand(object obj)
         {
-            CurrentChildView = new IncidenciaViewModel(); // Crear una nueva instancia de la vista de inicio de la aplicación
+            CurrentChildView = new Incidencias(this); // Crear una nueva instancia de la vista de inicio de la aplicación
             Caption = "Incidencia"; // Establecer el título de la vista
             Icon = IconChar.Truck; // Establecer el ícono asociado a la vista
         }
 
         private void ExecuteShowUserViewCommand(object obj)
         {
-            CurrentChildView = new UserViewModel(); // Crear una nueva instancia de la vista de inicio de la aplicación
+            CurrentChildView = new UserView(this); // Crear una nueva instancia de la vista de inicio de la aplicación
             Caption = "Usuarios"; // Establecer el título de la vista
             Icon = IconChar.User; // Establecer el ícono asociado a la vista
         }
@@ -245,57 +273,57 @@ namespace ST_FORMS.ViewModel.Comunes
       
         private void ExecuteShowCreateProductViewCommand(object obj)
         {
-            CurrentChildView = new CreateProductViewModel(); // Crear una nueva instancia de la vista de inicio de la aplicación
+            CurrentChildView = new CreateProductView(this); // Crear una nueva instancia de la vista de inicio de la aplicación
             Caption = "Create Product"; // Establecer el título de la vista
             Icon = IconChar.Truck; // Establecer el ícono asociado a la vista
         }
 
         private void ExecuteShowEntradaViewCommand(object obj)
         {
-            CurrentChildView = new EntradaViewModel(); // Crear una nueva instancia de la vista de inicio de la aplicación
+            CurrentChildView = new EntradaView(this); // Crear una nueva instancia de la vista de inicio de la aplicación
             Caption = "Entradas"; // Establecer el título de la vista
             Icon = IconChar.User; // Establecer el ícono asociado a la vista
         }
         //agregando mas vistas
         private void ExecuteShowActKardexCommand(object obj)
         {
-            CurrentChildView = new ActKardexViewModel(); // Crear una nueva instancia de la vista de inicio de la aplicación
+            CurrentChildView = new ActKardexView(this); // Crear una nueva instancia de la vista de inicio de la aplicación
             Caption = "Entradas"; // Establecer el título de la vista
             Icon = IconChar.User; // Establecer el ícono asociado a la vista
         }
         private void ExecuteShowClientContactViewCommand(object obj)
         {
-            CurrentChildView = new ClientContactViewModel(); // Crear una nueva instancia de la vista de inicio de la aplicación
+            CurrentChildView = new ClientContactView(this); // Crear una nueva instancia de la vista de inicio de la aplicación
             Caption = "Entradas"; // Establecer el título de la vista
             Icon = IconChar.User; // Establecer el ícono asociado a la vista
         }
         private void ExecuteShowEditProductViewCommand(object obj)
         {
-            CurrentChildView = new EditProductViewModel(); // Crear una nueva instancia de la vista de inicio de la aplicación
+            CurrentChildView = new EditProductView(this); // Crear una nueva instancia de la vista de inicio de la aplicación
             Caption = "Entradas"; // Establecer el título de la vista
             Icon = IconChar.User; // Establecer el ícono asociado a la vista
         }
         private void ExecuteShowGuiasOficinaViewCommand(object obj)
         {
-            CurrentChildView = new GuiasOficinaViewModel(); // Crear una nueva instancia de la vista de inicio de la aplicación
+            CurrentChildView = new GuiasOficinaView(this); // Crear una nueva instancia de la vista de inicio de la aplicación
             Caption = "Entradas"; // Establecer el título de la vista
             Icon = IconChar.User; // Establecer el ícono asociado a la vista
         }
         private void ExecuteShowPedidosViewCommand(object obj)
         {
-            CurrentChildView = new PedidosViewModel(); // Crear una nueva instancia de la vista de inicio de la aplicación
+            CurrentChildView = new PedidosView(this); // Crear una nueva instancia de la vista de inicio de la aplicación
             Caption = "Entradas"; // Establecer el título de la vista
             Icon = IconChar.User; // Establecer el ícono asociado a la vista
         }
         private void ExecuteShowPlantaStechViewCommand(object obj)
         {
-            CurrentChildView = new PlantaStechViewModel(); // Crear una nueva instancia de la vista de inicio de la aplicación
+            CurrentChildView = new PlantaStechView(this); // Crear una nueva instancia de la vista de inicio de la aplicación
             Caption = "Entradas"; // Establecer el título de la vista
             Icon = IconChar.User; // Establecer el ícono asociado a la vista
         }
         private void ExecuteShowRegistroSalidasViewCommand(object obj)
         {
-            CurrentChildView = new RegistroSalidasViewModel(); // Crear una nueva instancia de la vista de inicio de la aplicación
+            CurrentChildView = new RegistroSalidasView(this); // Crear una nueva instancia de la vista de inicio de la aplicación
             Caption = "Entradas"; // Establecer el título de la vista
             Icon = IconChar.User; // Establecer el ícono asociado a la vista
         }
@@ -303,29 +331,70 @@ namespace ST_FORMS.ViewModel.Comunes
         //Antonio
         private void ExecuteShowSagaGuiasViewCommand(object obj)
         {
-            CurrentChildView = new SagaGuiasViewModel(); // Crear una nueva instancia de la vista de inicio de la aplicación
+            CurrentChildView = new SagaGuiasView(this); // Crear una nueva instancia de la vista de inicio de la aplicación
             Caption = "Saga Guias"; // Establecer el título de la vista
             Icon = IconChar.User; // Establecer el ícono asociado a la vista
         }
 
         private void ExecuteShowFacturaViewCommand(object obj)
         {
-            CurrentChildView = new FacturaViewModel(); // Crear una nueva instancia de la vista de inicio de la aplicación
+            CurrentChildView = new FacturacionView(this); // Crear una nueva instancia de la vista de inicio de la aplicación
             Caption = "Factura"; // Establecer el título de la vista
             Icon = IconChar.User; // Establecer el ícono asociado a la vista
         }
 
         private void ExecuteShowGuiasConectaViewCommand(object obj)
         {
-            CurrentChildView = new GuiasConectaViewModel(); // Crear una nueva instancia de la vista de inicio de la aplicación
+            CurrentChildView = new GuiasConectaView(this); // Crear una nueva instancia de la vista de inicio de la aplicación
             Caption = "Guias Conecta"; // Establecer el título de la vista
             Icon = IconChar.User; // Establecer el ícono asociado a la vista
         }
         private void ExecuteShowPistoleoInicioViewCommand(object obj)
         {
-            CurrentChildView = new PistoleoInicioViewModel(); // Crear una nueva instancia de la vista de inicio de la aplicación
-            Caption = "Pistoleo Home"; // Establecer el título de la vista
+            CurrentChildView = new PistoleoInicioView(this);
+            Caption = "Pistoleo Home";
+            Icon = IconChar.User;
+        }
+
+        private void ExecuteShowPistoleoRapidoViewCommand(object obj)
+        {
+            CurrentChildView = new PistoleoRapidoView(this);
+            Caption = "Pistoleo Rapido";
+            Icon = IconChar.User;
+        }
+
+        private void ExecuteShowPistoleoSeguroViewCommand(object obj)
+        {
+            CurrentChildView = new PistoleoSeguroView(this);
+            Caption = "Pistoleo Seguro";
+            Icon = IconChar.User;
+        }
+
+        private void ExecuteShowAlertaStockViewCommand(object obj)
+        {
+            CurrentChildView = new AlertaStockView(this); // Crear una nueva instancia de la vista de inicio de la aplicación
+            Caption = "Alerta Stock"; // Establecer el título de la vista
             Icon = IconChar.User; // Establecer el ícono asociado a la vista
+        }
+        private void ExecuteShowConsolidadosViewCommand(object obj)
+        {
+            CurrentChildView = new ConsolidadosView(this);
+            Caption = "Consolidados";
+            Icon = IconChar.User;
+        }
+
+        private void ExecuteShowTransportistaViewCommand(object obj)
+        {
+            CurrentChildView = new TransportistaView(this);
+            Caption = "Transportista";
+            Icon = IconChar.User;
+        }
+
+        private void ExecuteShowRatiosViewCommand(object obj)
+        {
+            CurrentChildView = new RatiosView(this);
+            Caption = "Comparacion de Ventas ";
+            Icon = IconChar.User;
         }
 
 

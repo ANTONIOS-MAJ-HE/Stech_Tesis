@@ -1,4 +1,5 @@
 ﻿using ST_Entidades;
+using ST_FORMS.ViewModel.Comunes;
 using ST_Negocio;
 using System;
 using System.Collections.Generic;
@@ -21,11 +22,13 @@ namespace ST_FORMS.View.Empleado
     /// </summary>
     public partial class GuiasConectaView : UserControl
     {
+        private readonly MainViewModel _mainViewModel;
         n_GuiasConecta guias_obj = new n_GuiasConecta();
         string NRO_OC = "";
-        public GuiasConectaView()
+        public GuiasConectaView(MainViewModel mainViewModel)
         {
             InitializeComponent();
+            _mainViewModel = mainViewModel;
             actualizarGuias();
             mostrarGuias();
             fill_ComboBox();

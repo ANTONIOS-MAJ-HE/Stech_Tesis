@@ -9,87 +9,299 @@
     <ScrollViewer VerticalScrollBarVisibility="Auto">
         <Grid>
             <Grid.RowDefinitions>
-                <RowDefinition Height="Auto"/>
-                <!-- Primera fila con altura ajustable -->
+                <RowDefinition Height="Auto" />
                 <RowDefinition Height="*"/>
-                <!-- Segunda fila que ocupa el espacio restante -->
-                <RowDefinition Height="*"/>
-                <!-- Tercera fila con altura ajustable -->
             </Grid.RowDefinitions>
 
-            <!-- Primera fila con cuatro columnas -->
             <Grid Grid.Row="0">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
-                <!-- Contenido de la primera fila -->
-                <Label Grid.Column="0"  x:Name="lbl_fecha" Content="Fecha registro&#xA;" HorizontalAlignment="Left" Margin="-1,13,0,180" Height="22" FontFamily="Bahnschrift Light" FontSize="10" FontStretch="Normal" Width="76"/>
-                <Label Grid.Column="0"  x:Name="lbl_fecha_Copy1" Content="Código UPC&#xA;" HorizontalAlignment="Left" Height="22" FontFamily="Bahnschrift Light" FontSize="10" FontStretch="Normal" Margin="4,65,0,128" Width="62"/>
-                <Label Grid.Column="0"  x:Name="lbl_fecha_Copy2" Content="Modelo&#xA;" HorizontalAlignment="Left" Height="22" FontFamily="Bahnschrift Light" FontSize="10" FontStretch="Normal" Margin="14,101,0,92" Width="46"/>
-                <Label Grid.Column="0" x:Name="lbl_fecha_Copy3" Content="Mini código&#xA;" HorizontalAlignment="Left" Height="22" FontFamily="Bahnschrift Light" FontSize="10" FontStretch="Normal" Margin="6,134,0,58" Width="60"/>
 
-                <DatePicker Grid.Column="0" x:Name="datePicker" Height="24" Margin="100,8,10,183"/>
-                <TextBox Grid.Column="0" x:Name="txtEAN" TextWrapping="Wrap" FontSize="16" Height="24" Margin="100,32,10,159"/>
-                <TextBox Grid.Column="0" x:Name="txtUPC" TextWrapping="Wrap" FontSize="16" Height="22" Margin="100,65,10,128"/>
-                <TextBox Grid.Column="0" x:Name="txtModelo" TextWrapping="Wrap" FontSize="16" Height="22" Margin="98,101,10,92"/>
-                <TextBox Grid.Column="0" x:Name="txtMinicod" TextWrapping="Wrap" FontSize="16" Height="22" Margin="98,129,10,64"/>
+                <Label Grid.Column="0" Foreground="DarkGray" FontWeight="Medium" FontFamily="Montserrat" FontSize="12" x:Name="label1_Copy8" Content="Datos Generales" HorizontalAlignment="Left" VerticalAlignment="Top" Height="36" FontStretch="Normal" Margin="80,1,0,0" Width="156"/>
+                <Label Grid.Column="0" Foreground="DarkGray" x:Name="label1_Copy" Content="Tipo" HorizontalAlignment="Left" VerticalAlignment="Top" Height="22" FontWeight="Medium" FontFamily="Montserrat" FontSize="12" Margin="5,33,0,0" Width="50"/>
+                <Label Grid.Column="0" Foreground="DarkGray" x:Name="label1_Copy1" Content="Responsable" HorizontalAlignment="Left" VerticalAlignment="Top" Height="22" FontWeight="Medium" FontFamily="Montserrat" FontSize="12" Margin="5,60,0,0" Width="68"/>
+                <Label Grid.Column="0" Foreground="DarkGray" x:Name="label1_Copy2" Content="Fecha entrada" HorizontalAlignment="Left" VerticalAlignment="Top" Height="22" FontWeight="Medium" FontFamily="Montserrat" FontSize="12" Margin="5,87,0,0" Width="74"/>
+                <Label Grid.Column="0" Foreground="DarkGray" x:Name="label1_Copy3" Content="Serie fact." HorizontalAlignment="Left" VerticalAlignment="Top" Height="22" FontWeight="Medium" FontFamily="Montserrat" FontSize="12" Margin="5,114,0,0" Width="55"/>
+                <Label Grid.Column="0" Foreground="DarkGray" x:Name="label1_Copy4" Content="Nro fact." HorizontalAlignment="Left" VerticalAlignment="Top" Height="22" FontWeight="Medium" FontFamily="Montserrat" FontSize="12" Margin="5,142,0,0" Width="48"/>
+                <Label Grid.Column="0" Foreground="DarkGray" x:Name="label1_Copy18" Content="Fecha factura" HorizontalAlignment="Left" Margin="5,169,0,0" VerticalAlignment="Top" Height="22" FontWeight="Medium" FontFamily="Montserrat" FontSize="12" Width="71"/>
+                <Label Grid.Column="0" Foreground="DarkGray" x:Name="label1_Copy9" Content="Datos Producto" HorizontalAlignment="Center" Margin="0,199,0,0" VerticalAlignment="Top" Height="36" FontFamily="Montserrat" FontSize="12" FontWeight="Bold" Width="146"/>
+                <Label Grid.Column="0" Foreground="DarkGray" x:Name="label1_Copy30" Content="Producto" HorizontalAlignment="Left" Margin="5,221,0,0" VerticalAlignment="Top" Height="22" FontWeight="Medium" FontFamily="Montserrat" FontSize="12" Width="50"/>
+                <Label Grid.Column="0" Foreground="DarkGray" x:Name="label1_Copy10" Content="Mini código" HorizontalAlignment="Left" Margin="5,239,0,0" VerticalAlignment="Top" Height="22" FontWeight="Medium" FontFamily="Montserrat" FontSize="12" Width="60"/>
+                <Label Grid.Column="0" Foreground="DarkGray" x:Name="label1_Copy11" Content="Precio unitario" HorizontalAlignment="Left" Margin="5,261,0,0" VerticalAlignment="Top" Height="21" FontWeight="Medium" FontFamily="Montserrat" FontSize="12" Width="76"/>
+                <Label Grid.Column="0" Foreground="DarkGray" x:Name="label1_Copy15" Content="Entradas :" HorizontalAlignment="Left" Margin="10,287,0,0" VerticalAlignment="Top" Height="36" FontFamily="Montserrat" FontSize="12" FontWeight="Bold" Width="99"/>
 
 
-                <!-- Contenido de la segunda columna -->
-                <Label  Grid.Column="1" x:Name="lbl_fecha_Copy9" Content="Marca&#xA;" Height="22" FontFamily="Bahnschrift Light" FontSize="10" Margin="5,10,132,182"/>
-                <Label  Grid.Column="1" x:Name="lbl_fecha_Copy5" Content="Tipo" Height="22" FontFamily="Bahnschrift Light" FontSize="10" Margin="10,42,132,150"/>
-                <Label  Grid.Column="1" x:Name="lbl_fecha_Copy4" Content="Partnumber&#xA;" Height="22" FontFamily="Bahnschrift Light" FontSize="10" FontStretch="Normal" Margin="0,75,137,118"/>
-                <Label Grid.Column="1" x:Name="lbl_fecha_Copy6" Content="Color" Height="22" FontFamily="Bahnschrift Light" FontSize="10" FontStretch="Normal" Margin="6,109,132,84"/>
-                <Label Grid.Column="1" x:Name="lbl_fecha_Copy7" Content="Título" Height="22" FontFamily="Bahnschrift Light" FontSize="10" FontStretch="Normal" Margin="6,145,132,48"/>
+                <ComboBox Grid.Column="0" x:Name="cmbTipo" Margin="101,33,10,0" VerticalAlignment="Top" Height="22" FontSize="16"/>
+                <ComboBox Grid.Column="0" x:Name="cmbResponsable" VerticalAlignment="Top" Height="22" FontSize="16"  Margin="101,62,10,0"/>
+                <DatePicker Grid.Column="0" x:Name="dt_entrada" VerticalAlignment="Top" Height="22" FontSize="16" Margin="101,89,10,0"/>
+                <TextBox Grid.Column="0" x:Name="txtserie" FontSize="13" FontWeight="Medium" FontFamily="Montserrat" Foreground="White" CaretBrush="LightGray" BorderBrush="DarkGray" BorderThickness="0,0,0,2" Height="22" Margin="101,116,10,185">
+                    <TextBox.Background>
+                        <VisualBrush Stretch="None" AlignmentX="Left" AlignmentY="Center">
+                        </VisualBrush>
+                    </TextBox.Background>
+                </TextBox>
+                <TextBox Grid.Column="0" x:Name="txtNrofct" FontSize="13" FontWeight="Medium" FontFamily="Montserrat" Foreground="White" CaretBrush="LightGray" BorderBrush="DarkGray" BorderThickness="0,0,0,2" Height="22" Margin="101,145,10,156">
+                    <TextBox.Background>
+                        <VisualBrush Stretch="None" AlignmentX="Left" AlignmentY="Center">
+                        </VisualBrush>
+                    </TextBox.Background>
+                </TextBox>
+                <DatePicker Grid.Column="0" x:Name="dtFact" VerticalAlignment="Top" FontSize="16" Height="22" Margin="101,170,10,0"/>
+                <TextBox Grid.Column="0" x:Name="txtPreciounit" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Height="22" FontSize="16" Margin="87,260,0,0" Width="70"/>
+                <CheckBox Grid.Column="0" x:Name="cbxIGV" Content="Incluye IGV" HorizontalAlignment="Left" VerticalAlignment="Top" Width="95" FontSize="14" Margin="157,262,0,0"  Height="18"/>
+                <Label Grid.Column="0" x:Name="lblcant_entradas" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Height="22" FontFamily="Arial Rounded MT Bold" FontSize="18" FontStretch="Normal" FontWeight="Bold" Width="95" Margin="141,294,0,0"/>
 
-                <TextBox Grid.Column="1" x:Name="txtMarca" TextWrapping="Wrap" Height="24" Margin="68,8,34,182"/>
-                <TextBox Grid.Column="1" x:Name="txtTipo" TextWrapping="Wrap" Height="25" Margin="68,40,34,150"/>
-                <TextBox Grid.Column="1" x:Name="txtPartnumb" TextWrapping="Wrap" FontSize="16" Height="24" Margin="68,73,34,118"/>
-                <TextBox Grid.Column="1" x:Name="txtColor" TextWrapping="Wrap" FontSize="16" Height="24" Margin="68,107,34,84"/>
-                <TextBox  Grid.Column="1" x:Name="txtTitulo" TextWrapping="Wrap" FontSize="16" Height="24" Margin="68,145,34,46"/>
 
-                <!-- Contenido de la tercera columna -->
-                <Label Grid.Column="2" Content="Medidas del producto" FontSize="8" Height="20"  Margin="58,5,45,190"/>
-                <Label Grid.Column="2"  Content="Largo" FontSize="8" Height="24" Margin="0,23,165,168"/>
-                <Label Grid.Column="2"  Content="Ancho" FontSize="8" Height="20" Margin="62,25,99,170" RenderTransformOrigin="0.777,0.052"/>
-                <Label Grid.Column="2" Content="Alto" FontSize="8" Height="20" Margin="136,26,31,168"/>
-                <TextBox Grid.Column="2" x:Name="txt_Pr_largo" Height="21" TextWrapping="Wrap" Text="" HorizontalAlignment="Left" Margin="30,26,0,168" Width="28"/>
-                <TextBox Grid.Column="2" x:Name="txt_Pr_ancho" Height="21" TextWrapping="Wrap" Text="" HorizontalAlignment="Left" Margin="92,28,0,166" Width="37"/>
-                <TextBox Grid.Column="2" x:Name="txt_Pr_alto" Height="21" TextWrapping="Wrap" Text="" HorizontalAlignment="Left" Margin="158,30,0,164" Width="30"/>
-                <Label Grid.Column="2" Content="Medidas del empaque" HorizontalAlignment="Left" FontSize="8" Height="20" Margin="62,53,0,142" Width="90"/>
-                <Label Grid.Column="2" Content="Largo" HorizontalAlignment="Left" FontSize="8" Height="22" Margin="129,79,0,114" Width="30" RenderTransformOrigin="0.233,0.5"/>
-                <Label Grid.Column="2" Content="Ancho" HorizontalAlignment="Left" FontSize="8" Height="20" Margin="2,76,0,119" Width="32"/>
-                <Label Grid.Column="2" Content="Alto" HorizontalAlignment="Left" FontSize="8" Height="20" Margin="72,78,0,117" Width="24"/>
-                <TextBox Grid.Column="2" x:Name="txt_Cj_largo" HorizontalAlignment="Left" Height="20" TextWrapping="Wrap" Text="" Width="38" Margin="34,78,0,117"/>
-                <TextBox Grid.Column="2" x:Name="txt_Cj_ancho" HorizontalAlignment="Left" TextWrapping="Wrap" Text="" Width="33" Margin="96,78,0,116"/>
-                <TextBox Grid.Column="2" x:Name="txt_Cj_alto" HorizontalAlignment="Left" Height="20" TextWrapping="Wrap" Text="" Width="34" Margin="154,79,0,116"/>
-                <Label Grid.Column="2" x:Name="lbl_fecha_Copy10" Content="Peso (KG)" HorizontalAlignment="Left" Height="22" FontFamily="Bahnschrift Light" FontSize="10" FontStretch="Normal" Margin="8,117,0,76"/>
-                <TextBox Grid.Column="2" x:Name="txtPeso" TextWrapping="Wrap" FontSize="16" Height="24" Margin="76,116,10,74"/>
 
-                <!-- Contenido de la cuarta columna -->
-                <Label Grid.Column="3" x:Name="label1_Copy9" Content="Producto" HorizontalAlignment="Left" Height="22" FontFamily="Bahnschrift Light" FontSize="10" FontStretch="Normal" FontWeight="Bold" Margin="66,12,0,180" RenderTransformOrigin="-0.007,0.775"/>
-                <DataGrid x:Name="dtg_vista" Margin="42,40,57,118" Grid.Column="3"/>
+                <Label Grid.Column="1" Foreground="DarkGray" x:Name="label1_Copy5" Content="RUC Proveedor" HorizontalAlignment="Left" VerticalAlignment="Top"  Height="22" FontWeight="Medium" FontFamily="Montserrat" FontSize="12" Margin="5,23,0,0" Width="91"/>
+                <Label Grid.Column="1" Foreground="DarkGray" x:Name="label1_Copy6" Content="Proveedor" HorizontalAlignment="Left"  VerticalAlignment="Top"  Height="22" FontWeight="Medium" FontFamily="Montserrat" FontSize="12" Margin="5,52,0,0" Width="56"/>
+                <Label x:Name="label1_Copy7" Foreground="DarkGray" Content="Origen" HorizontalAlignment="Left" VerticalAlignment="Top"  Height="22" FontWeight="Medium" FontFamily="Montserrat" FontSize="12" Grid.Column="1" Margin="5,82,0,0" Width="39"/>
+                <Label x:Name="label1_Copy14" Foreground="DarkGray" Content="Moneda" HorizontalAlignment="Left" VerticalAlignment="Top"  Height="22" FontWeight="Medium" FontFamily="Montserrat" FontSize="12" Grid.Column="1" Margin="5,106,0,0" Width="45"/>
+                <Label x:Name="label1_Copy19" Foreground="DarkGray" Content="Fecha guia" HorizontalAlignment="Left" VerticalAlignment="Top" Height="22" FontWeight="Medium" FontFamily="Montserrat" FontSize="12" Grid.Column="1" Margin="5,133,0,0" Width="58"/>
+                <Label x:Name="label1_Copy12" Foreground="DarkGray" Content="Cantidad" HorizontalAlignment="Left" VerticalAlignment="Top" Height="22" FontWeight="Medium" FontFamily="Montserrat" FontSize="12" Grid.Column="1" Margin="5,199,0,0" Width="49"/>
+                <Label x:Name="label1_Copy13" Foreground="DarkGray" Content="Observaciones" HorizontalAlignment="Left" VerticalAlignment="Top" Height="22" FontWeight="Medium" FontFamily="Montserrat" FontSize="12" Grid.Column="1" Margin="5,225,0,0" Width="76"/>
 
-                <Button x:Name="btn_Ingresar" Content="Ingresar" HorizontalAlignment="Left" FontSize="10"  Background="#FF2263A4" Foreground="White" Margin="130,195,0,10"  Width="58" Grid.Column="2"/>
-                <Button x:Name="btn_Mod" Content="Modificar" HorizontalAlignment="Left" Margin="24,195,0,10" FontSize="10" Background="#FF57B87A" Foreground="White" RenderTransformOrigin="0.435,0.434"  Width="62" Grid.Column="3"/>
-                <Button x:Name="btn_Limp" Content="Limpiar" HorizontalAlignment="Left" Margin="132,195,0,0" Background="#FFB46FB1" Foreground="White" FontWeight="Normal" FontSize="10"  Height="17" VerticalAlignment="Top" Width="54" Grid.Column="3"/>
+                <TextBox Grid.Column="1" x:Name="txtRUC" FontSize="13" FontWeight="Medium" FontFamily="Montserrat" HorizontalAlignment="Left" Foreground="White" CaretBrush="LightGray" BorderBrush="DarkGray" BorderThickness="0,0,0,2" Height="22" Margin="101,19,0,282" Width="130">
+                    <TextBox.Background>
+                        <VisualBrush Stretch="None" AlignmentX="Left" AlignmentY="Center">
+                        </VisualBrush>
+                    </TextBox.Background>
+                </TextBox>
+                <TextBox Grid.Column="1" x:Name="txtProveedor" FontSize="13" FontWeight="Medium" FontFamily="Montserrat" Foreground="White" CaretBrush="LightGray" BorderBrush="DarkGray" BorderThickness="0,0,0,2" Height="22" Margin="82,52,8,249">
+                    <TextBox.Background>
+                        <VisualBrush Stretch="None" AlignmentX="Left" AlignmentY="Center">
+                        </VisualBrush>
+                    </TextBox.Background>
+                </TextBox>
+                <TextBox Grid.Column="1" x:Name="txtOrigen" FontSize="13" FontWeight="Medium" FontFamily="Montserrat" Foreground="White" CaretBrush="LightGray" BorderBrush="DarkGray" BorderThickness="0,0,0,2" Height="22" Margin="79,82,10,219">
+                    <TextBox.Background>
+                        <VisualBrush Stretch="None" AlignmentX="Left" AlignmentY="Center">
+                        </VisualBrush>
+                    </TextBox.Background>
+                </TextBox>
+                <ComboBox x:Name="cmbMoneda" VerticalAlignment="Top" Height="19" FontSize="16" Grid.Column="1" Margin="80,109,10,0" />
+                <DatePicker x:Name="dtGuia" VerticalAlignment="Top" FontSize="16" Grid.Column="1" Margin="80,132,10,0" Height="23"/>
+                <TextBox Grid.Column="1" x:Name="txtCantidad" FontSize="13" FontWeight="Medium" FontFamily="Montserrat" Foreground="White" CaretBrush="LightGray" BorderBrush="DarkGray" BorderThickness="0,0,0,2" Height="22" Margin="82,199,8,102">
+                    <TextBox.Background>
+                        <VisualBrush Stretch="None" AlignmentX="Left" AlignmentY="Center">
+                        </VisualBrush>
+                    </TextBox.Background>
+                </TextBox>
+                <TextBox Grid.Column="1" x:Name="txtObservaciones" FontSize="13" FontWeight="Medium" FontFamily="Montserrat" Foreground="White" CaretBrush="LightGray" BorderBrush="DarkGray" BorderThickness="0,0,0,2" Height="22" Margin="82,232,8,69">
+                    <TextBox.Background>
+                        <VisualBrush Stretch="None" AlignmentX="Left" AlignmentY="Center">
+                        </VisualBrush>
+                    </TextBox.Background>
+                </TextBox>
+
+                <Button x:Name="btn_proveedores" Content="..." HorizontalAlignment="Right" VerticalAlignment="Top" Height="25" Width="30" Grid.Column="1" Margin="231,19,0,0"/>
+                <Button Grid.Column="1" x:Name="btn_Ingresar" Content="Ingresar" FontSize="12" FontFamily="Montserrat" Cursor="Hand" BorderThickness="0" Foreground="DarkGray" VerticalAlignment="Top" HorizontalAlignment="Left" Width="63" Background="#773DFF" Margin="10,263,0,0">
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <Setter Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate TargetType="Button">
+                                        <Border Height="30" CornerRadius="15" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}">
+                                            <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                        </Border>
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" Value="#836EFB"/>
+                                    <Setter Property="BorderBrush" Value="#836EFB"/>
+                                    <Setter Property="Effect">
+                                        <Setter.Value>
+                                            <DropShadowEffect BlurRadius="5" Color="#836EFB" ShadowDepth="0"/>
+                                        </Setter.Value>
+                                    </Setter>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+                </Button>
+                <Button Grid.Column="1" x:Name="btn_Mod" Content="Modificar" FontSize="12" FontFamily="Montserrat" Cursor="Hand" BorderThickness="0" Foreground="DarkGray" VerticalAlignment="Top" HorizontalAlignment="Left" Width="63" Background="#773DFF" Margin="94,263,0,0">
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <Setter Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate TargetType="Button">
+                                        <Border Height="30" CornerRadius="15" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}">
+                                            <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                        </Border>
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" Value="#836EFB"/>
+                                    <Setter Property="BorderBrush" Value="#836EFB"/>
+                                    <Setter Property="Effect">
+                                        <Setter.Value>
+                                            <DropShadowEffect BlurRadius="5" Color="#836EFB" ShadowDepth="0"/>
+                                        </Setter.Value>
+                                    </Setter>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+                </Button>
+                <Button Grid.Column="1" x:Name="btn_Limp" Content="Limpiar" FontSize="12" FontFamily="Montserrat" Cursor="Hand" BorderThickness="0" Foreground="DarkGray" VerticalAlignment="Top" HorizontalAlignment="Left" Width="63" Background="#773DFF" Margin="183,263,0,0">
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <Setter Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate TargetType="Button">
+                                        <Border Height="30" CornerRadius="15" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}">
+                                            <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                        </Border>
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" Value="#836EFB"/>
+                                    <Setter Property="BorderBrush" Value="#836EFB"/>
+                                    <Setter Property="Effect">
+                                        <Setter.Value>
+                                            <DropShadowEffect BlurRadius="5" Color="#836EFB" ShadowDepth="0"/>
+                                        </Setter.Value>
+                                    </Setter>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+                </Button>
+                <Button Grid.Column="1" x:Name="btn_Nuevo" HorizontalAlignment="Right" Content="Nuevo" FontSize="12" FontFamily="Montserrat" Cursor="Hand" BorderThickness="0" Foreground="DarkGray" VerticalAlignment="Top" Width="63" Background="#773DFF" Margin="183,164,0,0">
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <Setter Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate TargetType="Button">
+                                        <Border Height="30" CornerRadius="15" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}">
+                                            <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                        </Border>
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" Value="#836EFB"/>
+                                    <Setter Property="BorderBrush" Value="#836EFB"/>
+                                    <Setter Property="Effect">
+                                        <Setter.Value>
+                                            <DropShadowEffect BlurRadius="5" Color="#836EFB" ShadowDepth="0"/>
+                                        </Setter.Value>
+                                    </Setter>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+                </Button>
+
+                <Label x:Name="label1_Copy20" Foreground="DarkGray" Content="Comprobante :" HorizontalAlignment="Left" VerticalAlignment="Top" Height="30" FontWeight="Medium" FontFamily="Montserrat" FontSize="12" Grid.Column="2" Margin="10,13,0,0" Width="119"/>
+                <Label x:Name="label1_Copy21" Foreground="DarkGray" Content="Total unidades:" HorizontalAlignment="Left" VerticalAlignment="Top" Height="36" FontWeight="Medium" FontFamily="Montserrat" FontSize="12" Grid.Column="2" Margin="10,40,0,0" Width="122"/>
+                <Label x:Name="label1_Copy22" Foreground="DarkGray" Content="Total costo:" HorizontalAlignment="Left" VerticalAlignment="Top" Height="36" FontWeight="Medium" FontFamily="Montserrat" FontSize="12" Grid.Column="2" Margin="10,68,0,0" Width="96"/>
+                <Label x:Name="label1_Copy16" Foreground="DarkGray" Content="Info producto" HorizontalAlignment="Left" VerticalAlignment="Top" Height="41" FontWeight="Medium" FontFamily="Montserrat" FontSize="12" Grid.Column="2" Margin="10,93,0,0" Width="128"/>
+                <Label x:Name="label1_Copy28" Foreground="DarkGray" Content="Buscar por:" HorizontalAlignment="Left" VerticalAlignment="Top" Height="30" FontWeight="Medium" FontFamily="Montserrat" FontSize="12" Grid.Column="2" Margin="2,215,0,0" Width="113"/>
+                <Label x:Name="label1_Copy24" Foreground="DarkGray" Content="Factura" HorizontalAlignment="Left"  VerticalAlignment="Top" FontWeight="Bold" Grid.Column="2" Margin="2,245,0,0" Height="26" Width="52"/>
+                <Label x:Name="label1_Copy25" Foreground="DarkGray" Content="RUC Proveedor" HorizontalAlignment="Left" VerticalAlignment="Top" FontWeight="Bold" Margin="2,269,0,0" Grid.Column="2" Height="26" Width="96"/>
+                <Label x:Name="label1_Copy26" Foreground="DarkGray" Content="Proveedor" HorizontalAlignment="Left" VerticalAlignment="Top" FontWeight="Bold" Grid.Column="2" Margin="2,290,0,0" Height="26" Width="69"/>
+                <Label x:Name="label1_Copy23" Foreground="DarkGray" Content="Nro Orden" HorizontalAlignment="Left" VerticalAlignment="Top" FontWeight="Bold" Grid.Column="2" Margin="152,242,0,0" Height="26" Width="70"/>
+                <Label x:Name="label1_Copy17" Foreground="DarkGray" Content="Producto" HorizontalAlignment="Left" VerticalAlignment="Top" FontWeight="Bold" Grid.Column="2" Margin="152,270,0,0" Height="26" Width="62"/>
+                <Label x:Name="label1_Copy27" Foreground="DarkGray" Content="Marca" HorizontalAlignment="Left" VerticalAlignment="Top" FontWeight="Bold" Grid.Column="2" Margin="152,287,0,0" Height="26" Width="45"/>
+
+                <TextBox Grid.Column="2" x:Name="txt_searchfactura" HorizontalAlignment="Left" FontSize="13" FontWeight="Medium" FontFamily="Montserrat" Foreground="White" CaretBrush="LightGray" BorderBrush="DarkGray" BorderThickness="0,0,0,2" Height="22" Margin="58,243,0,58" Width="89">
+                    <TextBox.Background>
+                        <VisualBrush Stretch="None" AlignmentX="Left" AlignmentY="Center">
+                        </VisualBrush>
+                    </TextBox.Background>
+                </TextBox>
+                <TextBox Grid.Column="2" x:Name="txt_searchrucproveedor" FontSize="13" HorizontalAlignment="Left" FontWeight="Medium" FontFamily="Montserrat" Foreground="White" CaretBrush="LightGray" BorderBrush="DarkGray" BorderThickness="0,0,0,2" Height="22" Margin="103,269,0,32" Width="49">
+                    <TextBox.Background>
+                        <VisualBrush Stretch="None" AlignmentX="Left" AlignmentY="Center">
+                        </VisualBrush>
+                    </TextBox.Background>
+                </TextBox>
+                <TextBox Grid.Column="2" x:Name="txt_searchproveedor" HorizontalAlignment="Left" FontSize="13" FontWeight="Medium" FontFamily="Montserrat" Foreground="White" CaretBrush="LightGray" BorderBrush="DarkGray" BorderThickness="0,0,0,2" Height="22" Margin="74,291,0,10" Width="78">
+                    <TextBox.Background>
+                        <VisualBrush Stretch="None" AlignmentX="Left" AlignmentY="Center">
+                        </VisualBrush>
+                    </TextBox.Background>
+                </TextBox>
+                <TextBox Grid.Column="2" x:Name="txt_searchnorden" HorizontalAlignment="Left" FontSize="13" FontWeight="Medium" FontFamily="Montserrat" Foreground="White" CaretBrush="LightGray" BorderBrush="DarkGray" BorderThickness="0,0,0,2" Height="22" Margin="222,246,0,55" Width="45">
+                    <TextBox.Background>
+                        <VisualBrush Stretch="None" AlignmentX="Left" AlignmentY="Center">
+                        </VisualBrush>
+                    </TextBox.Background>
+                </TextBox>
+                <TextBox Grid.Column="2" x:Name="txt_searchproducto" HorizontalAlignment="Left" FontSize="13" FontWeight="Medium" FontFamily="Montserrat" Foreground="White" CaretBrush="LightGray" BorderBrush="DarkGray" BorderThickness="0,0,0,2" Height="22" Margin="211,270,0,31" Width="56">
+                    <TextBox.Background>
+                        <VisualBrush Stretch="None" AlignmentX="Left" AlignmentY="Center">
+                        </VisualBrush>
+                    </TextBox.Background>
+                </TextBox>
+                <TextBox Grid.Column="2" x:Name="txt_searchmarca" FontSize="13" HorizontalAlignment="Left" FontWeight="Medium" FontFamily="Montserrat" Foreground="White" CaretBrush="LightGray" BorderBrush="DarkGray" BorderThickness="0,0,0,2" Height="22" Margin="211,292,0,9" Width="56">
+                    <TextBox.Background>
+                        <VisualBrush Stretch="None" AlignmentX="Left" AlignmentY="Center">
+                        </VisualBrush>
+                    </TextBox.Background>
+                </TextBox>
+
+
+
+
+
+                <Button x:Name="btn_Limp_Copy" Content="Buscar" HorizontalAlignment="Left" VerticalAlignment="Top" Height="24" Width="72" Background="#FF079E60" Foreground="White" FontWeight="Normal" FontSize="16" Grid.Column="2" Margin="115,221,0,0" />
+                <Button x:Name="btn_Limp_Copy1" Content="Limpiar" HorizontalAlignment="Left" VerticalAlignment="Top" Height="26" Width="67" Background="#FFA5B600" Foreground="White" FontWeight="Normal" FontSize="16" Grid.Column="2" Margin="190,221,0,0"  RenderTransformOrigin="0.458,0.309" />
+                <DataGrid x:Name="dtg_infoprod" HorizontalAlignment="Center" Height="74" VerticalAlignment="Top" Width="235" Grid.Column="2" Margin="0,130,0,30"/>
 
             </Grid>
 
-            <!-- Segunda fila con una sola columna -->
+
+            <!-- Elementos de la segunda fila -->
             <Grid Grid.Row="1">
-                <Label x:Name="label1_Copy8" Content="Productos registrados recientemente" HorizontalAlignment="Left" VerticalAlignment="Top" Height="36" FontFamily="Bahnschrift Light" FontSize="18" FontStretch="Normal" FontWeight="Bold" Margin="10,10,0,0" Width="311"/>
-                <DataGrid x:Name="dtg_Similares" Margin="349,0,28,0"/>
+                <Label Foreground="DarkGray" x:Name="lbl_mode" Content="Modo Edición : OFF" HorizontalAlignment="Left" VerticalAlignment="Top"></Label>
+                <Border Background="#200F53" CornerRadius="10" Padding="10" Margin="10,25,10,10">
+                    <DataGrid x:Name="dtgEntradas" AutoGenerateColumns="False" Background="#200F53" BorderThickness="0" Margin="-10,-10,-10,49">
+                        <DataGrid.ColumnHeaderStyle>
+                            <Style TargetType="DataGridColumnHeader">
+                                <Setter Property="Background" Value="Transparent"/>
+                                <Setter Property="Foreground" Value="#BCBEE0"/>
+                                <Setter Property="Padding" Value="10,0,0,10"/>
+                                <Setter Property="FontFamily" Value="Montserrat"/>
+                                <Setter Property="FontSize" Value="15"/>
+                            </Style>
+                        </DataGrid.ColumnHeaderStyle>
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="IdProducto" Binding="{Binding IdProducto}"/>
+                            <DataGridTextColumn Header="Codigo" Binding="{Binding Codigo}"/>
+                            <DataGridTextColumn Header="Nombre" Binding="{Binding Nombre}"/>
+                            <DataGridTextColumn Header="Descripción" Binding="{Binding Descripcion}"/>
+                            <DataGridTextColumn Header="IdCategoria" Binding="{Binding IdCategoria}"/>
+                            <DataGridTextColumn Header="Stock" Binding="{Binding Stock}"/>
+                            <DataGridTextColumn Header="Precio de Compra" Binding="{Binding PrecioCompra}"/>
+                            <DataGridTextColumn Header="Precio de Venta" Binding="{Binding PrecioVenta}"/>
+                            <DataGridTextColumn Header="Estado" Binding="{Binding Estado}"/>
+                            <DataGridTextColumn Header="Fecha de Registro" Binding="{Binding FechaRegistro}"/>
+                        </DataGrid.Columns>
+                        <DataGrid.RowStyle>
+                            <Style TargetType="DataGridRow">
+                                <Style.Triggers>
+                                    <DataTrigger Binding="{Binding Visibility}" Value="Collapsed">
+                                        <Setter Property="Visibility" Value="Collapsed"/>
+                                    </DataTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </DataGrid.RowStyle>
+                    </DataGrid>
+                </Border>
             </Grid>
 
-            <!-- Tercera fila con una sola columna -->
-            <Grid Grid.Row="2">
-                <Label x:Name="labelprod" Content="Productos similares" HorizontalAlignment="Left" FontFamily="Bahnschrift Light" FontSize="18" Margin="0,0,0,68"/>
-                <DataGrid x:Name="dtgSalidas" Margin="201,10,0,10"/>
-            </Grid>
         </Grid>
     </ScrollViewer>
 </UserControl>

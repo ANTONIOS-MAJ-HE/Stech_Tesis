@@ -1,5 +1,6 @@
 ﻿using ST_Entidades;
 using ST_Entidades.Rol;
+using ST_FORMS.ViewModel.Comunes;
 using ST_Negocio;
 using System;
 using System.Collections.Generic;
@@ -23,10 +24,12 @@ namespace ST_FORMS.View.Empleado
     /// </summary>
     public partial class SagaGuiasView : UserControl
     {
+        private readonly MainViewModel _mainViewModel;
         n_Guias guias_obj = new n_Guias();
         string NRO_OC = "";
-        public SagaGuiasView()
+        public SagaGuiasView(MainViewModel mainViewModel)
         {
+            _mainViewModel = mainViewModel;
             InitializeComponent();
             actualizarGuias();
             mostrarGuias();

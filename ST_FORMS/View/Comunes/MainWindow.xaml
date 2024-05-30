@@ -242,7 +242,7 @@ Tag="{StaticResource color8}"
 Command="{Binding ShowEntradaViewCommand}">
                                     <StackPanel Orientation="Horizontal">
                                         <fa:IconImage Icon="Tools" Style="{StaticResource menuButtonIcon}"/>
-                                        <TextBlock Text="Settings" Style="{StaticResource menuButtonText}"/>
+                                        <TextBlock Text="Entradas" Style="{StaticResource menuButtonText}"/>
                                     </StackPanel>
                                 </RadioButton>
                                 <!--Agregando mas Buttons-->
@@ -251,7 +251,7 @@ Tag="{StaticResource color8}"
 Command="{Binding ShowActKardexViewCommand}">
                                     <StackPanel Orientation="Horizontal">
                                         <fa:IconImage Icon="Tools" Style="{StaticResource menuButtonIcon}"/>
-                                        <TextBlock Text="Settings" Style="{StaticResource menuButtonText}"/>
+                                        <TextBlock Text="Kardex" Style="{StaticResource menuButtonText}"/>
                                     </StackPanel>
                                 </RadioButton>
                                 <RadioButton Style="{StaticResource menuButton}"
@@ -259,7 +259,7 @@ Tag="{StaticResource color8}"
 Command="{Binding ShowClientContactViewCommand}">
                                     <StackPanel Orientation="Horizontal">
                                         <fa:IconImage Icon="Tools" Style="{StaticResource menuButtonIcon}"/>
-                                        <TextBlock Text="Settings" Style="{StaticResource menuButtonText}"/>
+                                        <TextBlock Text="Contacto Cliente" Style="{StaticResource menuButtonText}"/>
                                     </StackPanel>
                                 </RadioButton>
                                 <RadioButton Style="{StaticResource menuButton}"
@@ -267,7 +267,7 @@ Tag="{StaticResource color8}"
 Command="{Binding ShowEditProductViewCommand}">
                                     <StackPanel Orientation="Horizontal">
                                         <fa:IconImage Icon="Tools" Style="{StaticResource menuButtonIcon}"/>
-                                        <TextBlock Text="Settings" Style="{StaticResource menuButtonText}"/>
+                                        <TextBlock Text="Editar Producto" Style="{StaticResource menuButtonText}"/>
                                     </StackPanel>
                                 </RadioButton>
                                 <RadioButton Style="{StaticResource menuButton}"
@@ -275,7 +275,7 @@ Tag="{StaticResource color8}"
 Command="{Binding ShowGuiasOficinaViewCommand}">
                                     <StackPanel Orientation="Horizontal">
                                         <fa:IconImage Icon="Tools" Style="{StaticResource menuButtonIcon}"/>
-                                        <TextBlock Text="Settings" Style="{StaticResource menuButtonText}"/>
+                                        <TextBlock Text="Guias Oficina" Style="{StaticResource menuButtonText}"/>
                                     </StackPanel>
                                 </RadioButton>
                                 <RadioButton Style="{StaticResource menuButton}"
@@ -283,7 +283,7 @@ Tag="{StaticResource color8}"
 Command="{Binding ShowPedidosViewCommand}">
                                     <StackPanel Orientation="Horizontal">
                                         <fa:IconImage Icon="Tools" Style="{StaticResource menuButtonIcon}"/>
-                                        <TextBlock Text="Settings" Style="{StaticResource menuButtonText}"/>
+                                        <TextBlock Text="Pedidos" Style="{StaticResource menuButtonText}"/>
                                     </StackPanel>
                                 </RadioButton>
                                 <RadioButton Style="{StaticResource menuButton}"
@@ -291,7 +291,7 @@ Tag="{StaticResource color8}"
 Command="{Binding ShowPlantaStechViewCommand}">
                                     <StackPanel Orientation="Horizontal">
                                         <fa:IconImage Icon="Tools" Style="{StaticResource menuButtonIcon}"/>
-                                        <TextBlock Text="Settings" Style="{StaticResource menuButtonText}"/>
+                                        <TextBlock Text="Planta Stech" Style="{StaticResource menuButtonText}"/>
                                     </StackPanel>
                                 </RadioButton>
                                 <RadioButton Style="{StaticResource menuButton}"
@@ -299,7 +299,7 @@ Tag="{StaticResource color8}"
 Command="{Binding ShowRegistroSalidasViewCommand}">
                                     <StackPanel Orientation="Horizontal">
                                         <fa:IconImage Icon="Tools" Style="{StaticResource menuButtonIcon}"/>
-                                        <TextBlock Text="Settings" Style="{StaticResource menuButtonText}"/>
+                                        <TextBlock Text="Registro Salidas" Style="{StaticResource menuButtonText}"/>
                                     </StackPanel>
                                 </RadioButton>
 

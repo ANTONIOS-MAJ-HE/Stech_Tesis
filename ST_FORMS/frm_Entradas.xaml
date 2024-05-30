@@ -61,7 +61,7 @@
         <Label x:Name="label_Copy" Content="volver" HorizontalAlignment="Left" Margin="62,22,0,0" VerticalAlignment="Top" Height="26" Width="54" FontSize="14" Foreground="White" FontWeight="Bold" RenderTransformOrigin="0.709,0.835"/>
         <ComboBox x:Name="cmbTipo" HorizontalAlignment="Left" Margin="179,107,0,0" VerticalAlignment="Top" Width="218" Height="28" SelectionChanged="cmbTipo_SelectionChanged" FontSize="16"/>
         <DatePicker x:Name="dtFact" HorizontalAlignment="Left" Margin="179,294,0,0" VerticalAlignment="Top" Width="216" FontSize="16"/>
-        <DatePicker x:Name="dtGuia" HorizontalAlignment="Left" Margin="644,253,0,0" VerticalAlignment="Top" Width="216" FontSize="16"/>
+        <DatePicker x:Name="dtGuia" HorizontalAlignment="Left" Margin="1851,815,0,0" VerticalAlignment="Top" Width="216" FontSize="16"/>
         <Label x:Name="label1_Copy18" Content="Fecha factura" HorizontalAlignment="Left" Margin="48,288,0,0" VerticalAlignment="Top" Height="36" FontFamily="Bahnschrift Light" FontSize="18" FontStretch="Normal"/>
         <Label x:Name="label1_Copy19" Content="Fecha guia" HorizontalAlignment="Left" Margin="539,247,0,0" VerticalAlignment="Top" Height="36" FontFamily="Bahnschrift Light" FontSize="18" FontStretch="Normal"/>
         <Label x:Name="label1_Copy20" Content="Comprobante :" HorizontalAlignment="Left" Margin="901,99,0,0" VerticalAlignment="Top" Height="36" FontFamily="Arial Rounded MT Bold" FontSize="18" FontStretch="Normal" FontWeight="Bold"/>
@@ -102,19 +102,19 @@
         <Label x:Name="lblcant_entradas" Content="" HorizontalAlignment="Left" Margin="157,488,0,0" VerticalAlignment="Top" Height="36" FontFamily="Arial Rounded MT Bold" FontSize="18" FontStretch="Normal" FontWeight="Bold" Width="95"/>
         <Button x:Name="btn_Limp_Copy1" Content="Limpiar" HorizontalAlignment="Left" Margin="1451,476,0,0" VerticalAlignment="Top" Height="28" Width="100" Background="#FFA5B600" Foreground="White" FontWeight="Normal" FontSize="16" Click="btn_Limp_Copy1_Click" />
         <Button x:Name="btn_proveedores" Content="..." HorizontalAlignment="Left" Margin="830,105,0,0" VerticalAlignment="Top" Height="27" Width="30" Click="btn_proveedores_Click"/>
-        <DockPanel x:Name="Panelpedidos" LastChildFill="False" Background="#FFDBF3EF" Margin="327,133,283,248" Visibility="Hidden"   >
+        <DockPanel x:Name="Panelpedidos" LastChildFill="False" Background="#FFDBF3EF" Margin="327,133,283,248" Visibility="Visible"   >
             <DataGrid x:Name="dtg_prov" Width="891" Height="384" DockPanel.Dock="Bottom" Margin="0,0,3,25" SelectionChanged="dtg_pedidos_SelectionChanged"/>
             <Label x:Name="label1_Copy29" Content="    Seleccionar Proveedor" FontWeight="Bold" DockPanel.Dock="Left" Width="268" Height="44" FontSize="16"/>
             <Button x:Name="btn_Salir" Content="Salir" DockPanel.Dock="Right" Width="128" Height="29" Margin="12,0,12,0" Background="#FFEC5252" Foreground="White" FontSize="16" FontWeight="Bold" Click="btn_Salir_Click"/>
             <TextBox x:Name="txtsearch_prov" TextWrapping="Wrap" DockPanel.Dock="Left" Width="197" Height="26" TextChanged="txtsearch_prov_TextChanged_1"/>
         </DockPanel>
-        <DataGrid x:Name="dtgFact" Margin="1150,105,48,647" SelectionChanged="dtgFact_SelectionChanged" Visibility="Hidden"/>
+        <DataGrid x:Name="dtgFact" Margin="1150,105,48,647" SelectionChanged="dtgFact_SelectionChanged" Visibility="Visible"/>
         <Button x:Name="button1_Copy" HorizontalAlignment="Left" Margin="32,16,0,0" VerticalAlignment="Top" Height="40" Background="{x:Null}" Width="39" BorderBrush="{x:Null}" Click="button1_Copy_Click" >
             <Image x:Name="image2" Height="28" Width="29" Source="/4829874_arrow_back_left_icon.png"/>
         </Button>
         <Label x:Name="label1_Copy30" Content="Producto" HorizontalAlignment="Left" Margin="52,363,0,0" VerticalAlignment="Top" Height="36" FontFamily="Bahnschrift Light" FontSize="18" FontStretch="Normal"/>
         <TextBox x:Name="txtProducto" HorizontalAlignment="Left" Height="27" Margin="147,366,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="358" TextChanged="txtProducto_TextChanged"/>
-        <Label x:Name="lblPartnumb" Content="" HorizontalAlignment="Left" Height="26" Margin="425,330,0,0" VerticalAlignment="Top" Width="132" RenderTransformOrigin="0.5,0.5" Visibility="Hidden">
+        <Label x:Name="lblPartnumb" Content="" HorizontalAlignment="Left" Height="26" Margin="425,330,0,0" VerticalAlignment="Top" Width="132" RenderTransformOrigin="0.5,0.5" Visibility="Visible">
             <Label.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>

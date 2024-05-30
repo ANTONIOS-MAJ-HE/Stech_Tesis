@@ -4,105 +4,740 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:ST_FORMS.View.Empleado"
+             xmlns:fa="http://schemas.awesome.incremented/wpf/xaml/fontawesome.sharp"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="*"/>
-        </Grid.RowDefinitions>
 
-        <Grid Grid.Row="0">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
-            </Grid.ColumnDefinitions>
+    <Grid Background="Transparent">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
 
-            <Label Grid.Column="0" x:Name="label1_Copy8" Content="Datos Generales" HorizontalAlignment="Left" VerticalAlignment="Top" Height="36" FontFamily="Arial Rounded MT Bold" FontSize="18" FontStretch="Normal" FontWeight="Bold" Margin="80,1,0,0" Width="156"/>
-            <Label Grid.Column="0" x:Name="label1_Copy" Content="Tipo" HorizontalAlignment="Left" VerticalAlignment="Top" Height="22" FontSize="10" FontFamily="Bahnschrift Light" FontStretch="Normal" Margin="5,33,0,0" Width="28"/>
-            <Label Grid.Column="0" x:Name="label1_Copy1" Content="Responsable" HorizontalAlignment="Left" VerticalAlignment="Top" Height="22" FontSize="10" FontFamily="Bahnschrift Light" FontStretch="Normal" Margin="5,60,0,0" Width="68"/>
-            <Label Grid.Column="0" x:Name="label1_Copy2" Content="Fecha entrada" HorizontalAlignment="Left" VerticalAlignment="Top" Height="22" FontSize="10" FontFamily="Bahnschrift Light" FontStretch="Normal" Margin="5,87,0,0" Width="74"/>
-            <Label Grid.Column="0" x:Name="label1_Copy3" Content="Serie fact." HorizontalAlignment="Left" VerticalAlignment="Top" Height="22" FontSize="10" FontFamily="Bahnschrift Light" FontStretch="Normal" Margin="5,114,0,0" Width="55"/>
-            <Label Grid.Column="0" x:Name="label1_Copy4" Content="Nro fact." HorizontalAlignment="Left" VerticalAlignment="Top" Height="22" FontSize="10" FontFamily="Bahnschrift Light" FontStretch="Normal" Margin="5,142,0,0" Width="48"/>
-            <Label Grid.Column="0" x:Name="label1_Copy18" Content="Fecha factura" HorizontalAlignment="Left" Margin="5,169,0,0" VerticalAlignment="Top" Height="22" FontSize="10" FontFamily="Bahnschrift Light" FontStretch="Normal" Width="71"/>
-            <Label Grid.Column="0" x:Name="label1_Copy9" Content="Datos Producto" HorizontalAlignment="Center" Margin="0,199,0,0" VerticalAlignment="Top" Height="36" FontFamily="Arial Rounded MT Bold" FontSize="18" FontStretch="Normal" FontWeight="Bold" Width="146"/>
-            <Label Grid.Column="0" x:Name="label1_Copy30" Content="Producto" HorizontalAlignment="Left" Margin="5,221,0,0" VerticalAlignment="Top" Height="22" FontSize="10" FontFamily="Bahnschrift Light" FontStretch="Normal" Width="50"/>
-            <Label Grid.Column="0" x:Name="label1_Copy10" Content="Mini código" HorizontalAlignment="Left" Margin="5,239,0,0" VerticalAlignment="Top" Height="22" FontFamily="Bahnschrift Light" FontSize="10" FontStretch="Normal" Width="60"/>
-            <Label Grid.Column="0" x:Name="label1_Copy11" Content="Precio unitario" HorizontalAlignment="Left" Margin="5,261,0,0" VerticalAlignment="Top" Height="21" FontFamily="Bahnschrift Light" FontSize="10" FontStretch="Normal" Width="76"/>
-            <Label Grid.Column="0" x:Name="label1_Copy15" Content="Entradas :" HorizontalAlignment="Left" Margin="10,287,0,0" VerticalAlignment="Top" Height="36" FontFamily="Arial Rounded MT Bold" FontSize="18" FontStretch="Normal" FontWeight="Bold" Width="99"/>
+            <!-- Header Section -->
+            <Grid Grid.Row="0" Margin="10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+
+                <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" CanContentScroll="True" Style="{StaticResource {x:Type ScrollViewer}}">
+                    <Grid Grid.Column="0">
+                        <StackPanel Orientation="Horizontal">
+                            <TextBox x:Name="txt_searchfactura" FontSize="13" FontWeight="Medium" FontFamily="Montserrat" Foreground="White" 
+                                 CaretBrush="LightGray" BorderBrush="DarkGray" BorderThickness="0,0,0,2" Height="28" Width="180"
+                                 VerticalContentAlignment="Center" Padding="20,0,0,0" Margin="2,5,2,5"
+                                 GotFocus="txt_searchfactura_GotFocus" LostFocus="txt_searchfactura_LostFocus" Text="Factura">
+                                <TextBox.Background>
+                                    <VisualBrush Stretch="None" AlignmentX="Left" AlignmentY="Center">
+                                        <VisualBrush.Visual>
+                                            <fa:IconImage Icon="UserAlt" Foreground="DarkGray" Width="15"/>
+                                        </VisualBrush.Visual>
+                                    </VisualBrush>
+                                </TextBox.Background>
+                            </TextBox>
+
+                            <TextBox x:Name="txt_searchrucproveedor" FontSize="13" FontWeight="Medium" FontFamily="Montserrat" Foreground="White" 
+                                 CaretBrush="LightGray" BorderBrush="DarkGray" BorderThickness="0,0,0,2" Height="28" Width="180"
+                                 VerticalContentAlignment="Center" Padding="20,0,0,0" Margin="0,5,0,5"
+                                 GotFocus="txt_searchfactura_GotFocus" LostFocus="txt_searchfactura_LostFocus" Text="Ruc Proveedor">
+                                <TextBox.Background>
+                                    <VisualBrush Stretch="None" AlignmentX="Left" AlignmentY="Center">
+                                        <VisualBrush.Visual>
+                                            <fa:IconImage Icon="UserAlt" Foreground="DarkGray" Width="15"/>
+                                        </VisualBrush.Visual>
+                                    </VisualBrush>
+                                </TextBox.Background>
+                            </TextBox>
+
+                            <TextBox x:Name="txt_searchproveedor" FontSize="13" FontWeight="Medium" FontFamily="Montserrat" Foreground="White" 
+                                 CaretBrush="LightGray" BorderBrush="DarkGray" BorderThickness="0,0,0,2" Height="28" Width="180"
+                                 VerticalContentAlignment="Center" Padding="20,0,0,0" Margin="0,5,0,5"
+                                 GotFocus="txt_searchfactura_GotFocus" LostFocus="txt_searchfactura_LostFocus" Text="Proveedor">
+                                <TextBox.Background>
+                                    <VisualBrush Stretch="None" AlignmentX="Left" AlignmentY="Center">
+                                        <VisualBrush.Visual>
+                                            <fa:IconImage Icon="UserAlt" Foreground="DarkGray" Width="15"/>
+                                        </VisualBrush.Visual>
+                                    </VisualBrush>
+                                </TextBox.Background>
+                            </TextBox>
+
+                            <TextBox x:Name="txt_searchnorden" FontSize="13" FontWeight="Medium" FontFamily="Montserrat" Foreground="White" 
+                                 CaretBrush="LightGray" BorderBrush="DarkGray" BorderThickness="0,0,0,2" Height="28" Width="180"
+                                 VerticalContentAlignment="Center" Padding="20,0,0,0" Margin="0,5,0,5"
+                                 GotFocus="txt_searchfactura_GotFocus" LostFocus="txt_searchfactura_LostFocus" Text="Nro Orden">
+                                <TextBox.Background>
+                                    <VisualBrush Stretch="None" AlignmentX="Left" AlignmentY="Center">
+                                        <VisualBrush.Visual>
+                                            <fa:IconImage Icon="UserAlt" Foreground="DarkGray" Width="15"/>
+                                        </VisualBrush.Visual>
+                                    </VisualBrush>
+                                </TextBox.Background>
+                            </TextBox>
+
+                            <TextBox x:Name="txt_searchproducto" FontSize="13" FontWeight="Medium" FontFamily="Montserrat" Foreground="White" 
+                                 CaretBrush="LightGray" BorderBrush="DarkGray" BorderThickness="0,0,0,2" Height="28" Width="180"
+                                 VerticalContentAlignment="Center" Padding="20,0,0,0" Margin="0,5,0,5"
+                                 GotFocus="txt_searchfactura_GotFocus" LostFocus="txt_searchfactura_LostFocus" Text="Producto">
+                                <TextBox.Background>
+                                    <VisualBrush Stretch="None" AlignmentX="Left" AlignmentY="Center">
+                                        <VisualBrush.Visual>
+                                            <fa:IconImage Icon="UserAlt" Foreground="DarkGray" Width="15"/>
+                                        </VisualBrush.Visual>
+                                    </VisualBrush>
+                                </TextBox.Background>
+                            </TextBox>
+
+                            <TextBox x:Name="txt_searchmarca" FontSize="13" FontWeight="Medium" FontFamily="Montserrat" Foreground="White" 
+                                 CaretBrush="LightGray" BorderBrush="DarkGray" BorderThickness="0,0,0,2" Height="28" Width="180"
+                                 VerticalContentAlignment="Center" Padding="20,0,0,0" Margin="0,5,0,5"
+                                 GotFocus="txt_searchfactura_GotFocus" LostFocus="txt_searchfactura_LostFocus" Text="Marca">
+                                <TextBox.Background>
+                                    <VisualBrush Stretch="None" AlignmentX="Left" AlignmentY="Center">
+                                        <VisualBrush.Visual>
+                                            <fa:IconImage Icon="UserAlt" Foreground="DarkGray" Width="15"/>
+                                        </VisualBrush.Visual>
+                                    </VisualBrush>
+                                </TextBox.Background>
+                            </TextBox>
+                        </StackPanel>
+                    </Grid>
+                </ScrollViewer>
+
+                <StackPanel Grid.Column="1" Orientation="Horizontal" Height="40">
+                    <Button x:Name="btn_Limp_Copy" Click="btn_Limp_Copy_Click"
+                        FontSize="12" FontFamily="Montserrat" Cursor="Hand"
+                        BorderThickness="0" Foreground="White" VerticalAlignment="Top"
+                        Background="#773DFF" Width="40" Height="40" Margin="0,0,5,0">
+                        <fa:IconImage Icon="Search" Foreground="White" Width="20" Height="20"/>
+                        <Button.Style>
+                            <Style TargetType="Button">
+                                <Setter Property="Background" Value="#773DFF"/>
+                                <Setter Property="Template">
+                                    <Setter.Value>
+                                        <ControlTemplate TargetType="Button">
+                                            <Border Height="40" Width="40" CornerRadius="20" Background="{TemplateBinding Background}">
+                                                <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                            </Border>
+                                        </ControlTemplate>
+                                    </Setter.Value>
+                                </Setter>
+                                <Style.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter Property="Background" Value="#836EFB"/>
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Button.Style>
+                    </Button>
+                    <Button x:Name="btn_Limp_Copy1" Click="btn_Limp_Copy1_Click"
+                        FontSize="12" FontFamily="Montserrat" Cursor="Hand"
+                        BorderThickness="0" Foreground="White" VerticalAlignment="Top"
+                        Background="#773DFF" Width="40" Height="40">
+                        <fa:IconImage Icon="Broom" Foreground="White" Width="20" Height="20"/>
+                        <Button.Style>
+                            <Style TargetType="Button">
+                                <Setter Property="Background" Value="#773DFF"/>
+                                <Setter Property="Template">
+                                    <Setter.Value>
+                                        <ControlTemplate TargetType="Button">
+                                            <Border Height="40" Width="40" CornerRadius="20" Background="{TemplateBinding Background}">
+                                                <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                            </Border>
+                                        </ControlTemplate>
+                                    </Setter.Value>
+                                </Setter>
+                                <Style.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter Property="Background" Value="#836EFB"/>
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Button.Style>
+                    </Button>
+                </StackPanel>
+            </Grid>
+
+            <!-- Main Content Section -->
+            <Grid Grid.Row="1" Margin="10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <!-- Left Section (Form Inputs) -->
+                <Grid Grid.Column="0" Margin="0,0,5,0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+
+                    </Grid.RowDefinitions>
+                    <Grid Grid.Row="0">
+
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <ScrollViewer VerticalScrollBarVisibility="Auto" CanContentScroll="True">
+                            <Grid Grid.Column="0">
+                                <StackPanel  Width="180">
+
+                                    <TextBlock Text="Tipo" Foreground="DarkGray" FontSize="12" FontWeight="Medium" FontFamily="Montserrat"/>
+                                    <ComboBox x:Name="cmbTipo" Width="180" Height="28" Margin="0,5,0,10" SelectionChanged="cmbTipo_SelectionChanged" 
+FontSize="13" FontWeight="Medium" FontFamily="Montserrat"
+Foreground="Black" BorderBrush="{StaticResource plainTextColor3}"
+BorderThickness="0,0,0,2" VerticalContentAlignment="Center" Padding="5,0,0,0">
+                                        <ComboBox.Background>
+                                            <VisualBrush Stretch="None" AlignmentX="Left" AlignmentY="Center">
+                                                <VisualBrush.Visual>
+                                                    <fa:IconImage Icon="ArrowDown" Foreground="{StaticResource plainTextColor3}" Width="15"/>
+                                                </VisualBrush.Visual>
+                                            </VisualBrush>
+                                        </ComboBox.Background>
+                                    </ComboBox>
+
+                                    <TextBlock Text="Responsable" Foreground="DarkGray" FontSize="12" FontWeight="Medium" FontFamily="Montserrat"/>
+                                    <ComboBox x:Name="cmbResponsable" Width="180" Height="28" Margin="0,5,0,10" SelectionChanged="cmbResponsable_SelectionChanged"
+FontSize="13" FontWeight="Medium" FontFamily="Montserrat"
+Foreground="Black" BorderBrush="{StaticResource plainTextColor3}"
+BorderThickness="0,0,0,2" VerticalContentAlignment="Center" Padding="5,0,0,0">
+                                        <ComboBox.Background>
+                                            <VisualBrush Stretch="None" AlignmentX="Left" AlignmentY="Center">
+                                                <VisualBrush.Visual>
+                                                    <fa:IconImage Icon="ArrowDown" Foreground="{StaticResource plainTextColor3}" Width="15"/>
+                                                </VisualBrush.Visual>
+                                            </VisualBrush>
+                                        </ComboBox.Background>
+                                    </ComboBox>
+
+                                    <TextBlock Text="Fecha Entrada" Foreground="DarkGray" FontSize="12" FontWeight="Medium" FontFamily="Montserrat"/>
+                                    <StackPanel Orientation="Horizontal">
+                                        <DatePicker x:Name="dt_entrada" Width="180" Height="28" VerticalContentAlignment="Center"/>
+                                    </StackPanel>
 
 
-            <ComboBox Grid.Column="0" x:Name="cmbTipo" Margin="101,33,10,0" VerticalAlignment="Top" Height="22" FontSize="16"/>
-            <ComboBox Grid.Column="0" x:Name="cmbResponsable" VerticalAlignment="Top" Height="22" FontSize="16"  Margin="101,62,10,0"/>
-            <DatePicker Grid.Column="0" x:Name="dt_entrada" VerticalAlignment="Top" Height="22" FontSize="16" Margin="101,89,10,0"/>
-            <TextBox Grid.Column="0" x:Name="txtserie"  TextWrapping="Wrap" VerticalAlignment="Top" Height="22" FontSize="16" Margin="101,116,10,0"/>
-            <TextBox Grid.Column="0" x:Name="txtNrofct" TextWrapping="Wrap" VerticalAlignment="Top" Height="22" FontSize="16" Margin="101,142,10,0"/>
-            <DatePicker Grid.Column="0" x:Name="dtFact" VerticalAlignment="Top" FontSize="16" Height="22" Margin="101,170,10,0"/>
-            <TextBox Grid.Column="0" x:Name="txtPreciounit" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Height="22" FontSize="16" Margin="87,260,0,0" Width="70"/>
-            <CheckBox Grid.Column="0" x:Name="cbxIGV" Content="Incluye IGV" HorizontalAlignment="Left" VerticalAlignment="Top" Width="95" FontSize="14" Margin="157,262,0,0"  Height="18"/>
-            <Label Grid.Column="0" x:Name="lblcant_entradas" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Height="22" FontFamily="Arial Rounded MT Bold" FontSize="18" FontStretch="Normal" FontWeight="Bold" Width="95" Margin="141,294,0,0"/>
+                                    <TextBlock Text="Serie Factura" Foreground="DarkGray" FontSize="12" FontWeight="Medium" FontFamily="Montserrat"/>
+                                    <TextBox x:Name="txtserie" FontSize="13" FontWeight="Medium" FontFamily="Montserrat" Foreground="White"
+CaretBrush="LightGray" BorderBrush="DarkGray" BorderThickness="0,0,0,2" Height="28" Width="180"
+VerticalContentAlignment="Center" Padding="20,0,0,0" Margin="0,5,0,10">
+                                        <TextBox.Background>
+                                            <VisualBrush Stretch="None" AlignmentX="Left" AlignmentY="Center">
+                                                <VisualBrush.Visual>
+                                                    <fa:IconImage Icon="UserAlt" Foreground="DarkGray" Width="15"/>
+                                                </VisualBrush.Visual>
+                                            </VisualBrush>
+                                        </TextBox.Background>
+                                    </TextBox>
+
+                                    <TextBlock Text="Numero Factura" Foreground="DarkGray" FontSize="12" FontWeight="Medium" FontFamily="Montserrat"/>
+                                    <TextBox x:Name="txtNrofct" FontSize="13" FontWeight="Medium" FontFamily="Montserrat" Foreground="White"
+     CaretBrush="LightGray" BorderBrush="DarkGray" BorderThickness="0,0,0,2" Height="28" Width="180"
+     VerticalContentAlignment="Center" Padding="20,0,0,0" Margin="0,5,0,10">
+                                        <TextBox.Background>
+                                            <VisualBrush Stretch="None" AlignmentX="Left" AlignmentY="Center">
+                                                <VisualBrush.Visual>
+                                                    <fa:IconImage Icon="UserAlt" Foreground="DarkGray" Width="15"/>
+                                                </VisualBrush.Visual>
+                                            </VisualBrush>
+                                        </TextBox.Background>
+                                    </TextBox>
+
+                                    <TextBlock Text="Fecha Factura" Foreground="DarkGray" FontSize="12" FontWeight="Medium" FontFamily="Montserrat"/>
+                                    <StackPanel Orientation="Horizontal">
+                                        <DatePicker x:Name="dtFact" Width="180" Height="28" VerticalContentAlignment="Center"/>
+                                    </StackPanel>
+
+                                    <TextBlock Text="Ruc Proveedor" Foreground="DarkGray" FontSize="12" FontWeight="Medium" FontFamily="Montserrat"/>
+                                    <StackPanel Orientation="Horizontal" Margin="0" >
+
+                                        <TextBox x:Name="txtRUC" FontSize="13" FontWeight="Medium" FontFamily="Montserrat" Foreground="White"
+CaretBrush="LightGray" BorderBrush="DarkGray" BorderThickness="0,0,0,2" Height="28" Width="130"
+VerticalContentAlignment="Center" Padding="20,0,0,0" Margin="0,5,0,10">
+                                            <TextBox.Background>
+                                                <VisualBrush Stretch="None" AlignmentX="Left" AlignmentY="Center">
+                                                    <VisualBrush.Visual>
+                                                        <fa:IconImage Icon="UserAlt" Foreground="DarkGray" Width="15"/>
+                                                    </VisualBrush.Visual>
+                                                </VisualBrush>
+                                            </TextBox.Background>
+                                        </TextBox>
+
+                                        <Button x:Name="btn_proveedores" Content="..." Margin="5,0,0,10" Click="btn_proveedores_Click" Width="30" 
+FontSize="12" FontFamily="Montserrat" Cursor="Hand" BorderThickness="0">
+                                            <Button.Style>
+                                                <Style TargetType="Button">
+                                                    <Setter Property="Background" Value="#773DFF"/>
+                                                    <Setter Property="Foreground" Value="White"/>
+                                                    <Setter Property="BorderThickness" Value="0"/>
+                                                    <Setter Property="FontSize" Value="12"/>
+                                                    <Setter Property="FontFamily" Value="Montserrat"/>
+                                                    <Setter Property="Cursor" Value="Hand"/>
+                                                    <Setter Property="Template">
+                                                        <Setter.Value>
+                                                            <ControlTemplate TargetType="Button">
+                                                                <Border Height="30" Width="Auto" CornerRadius="15" Background="{TemplateBinding Background}">
+                                                                    <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                                                </Border>
+                                                            </ControlTemplate>
+                                                        </Setter.Value>
+                                                    </Setter>
+                                                    <Style.Triggers>
+                                                        <Trigger Property="IsMouseOver" Value="True">
+                                                            <Setter Property="Background" Value="#836EFB"/>
+                                                        </Trigger>
+                                                    </Style.Triggers>
+                                                </Style>
+                                            </Button.Style>
+                                        </Button>
+
+                                    </StackPanel>
+
+                                    <TextBlock Text="Proveedor" Foreground="DarkGray" FontSize="12" FontWeight="Medium" FontFamily="Montserrat"/>
+                                    <TextBox x:Name="txtProveedor" FontSize="13" FontWeight="Medium" FontFamily="Montserrat" Foreground="White" TextChanged="txtProveedor_TextChanged"
+CaretBrush="LightGray" BorderBrush="DarkGray" BorderThickness="0,0,0,2" Height="28" Width="180"
+VerticalContentAlignment="Center" Padding="20,0,0,0" Margin="0,5,0,10">
+                                        <TextBox.Background>
+                                            <VisualBrush Stretch="None" AlignmentX="Left" AlignmentY="Center">
+                                                <VisualBrush.Visual>
+                                                    <fa:IconImage Icon="UserAlt" Foreground="DarkGray" Width="15"/>
+                                                </VisualBrush.Visual>
+                                            </VisualBrush>
+                                        </TextBox.Background>
+                                    </TextBox>
+
+                                    <TextBlock Text="Origen" Foreground="DarkGray" FontSize="12" FontWeight="Medium" FontFamily="Montserrat"/>
+                                    <TextBox x:Name="txtOrigen" FontSize="13" FontWeight="Medium" FontFamily="Montserrat" Foreground="White"
+     CaretBrush="LightGray" BorderBrush="DarkGray" BorderThickness="0,0,0,2" Height="28" Width="180"
+     VerticalContentAlignment="Center" Padding="20,0,0,0" Margin="0,5,0,10">
+                                        <TextBox.Background>
+                                            <VisualBrush Stretch="None" AlignmentX="Left" AlignmentY="Center">
+                                                <VisualBrush.Visual>
+                                                    <fa:IconImage Icon="UserAlt" Foreground="DarkGray" Width="15"/>
+                                                </VisualBrush.Visual>
+                                            </VisualBrush>
+                                        </TextBox.Background>
+                                    </TextBox>
+
+                                    <TextBlock Text="Moneda" Foreground="DarkGray" FontSize="12" FontWeight="Medium" FontFamily="Montserrat"/>
+                                    <ComboBox x:Name="cmbMoneda" Width="180" Height="28" Margin="0,5,0,10" SelectionChanged="cmbResponsable_SelectionChanged"
+FontSize="13" FontWeight="Medium" FontFamily="Montserrat"
+Foreground="Black" BorderBrush="{StaticResource plainTextColor3}"
+BorderThickness="0,0,0,2" VerticalContentAlignment="Center" Padding="5,0,0,0">
+                                        <ComboBox.Background>
+                                            <VisualBrush Stretch="None" AlignmentX="Left" AlignmentY="Center">
+                                                <VisualBrush.Visual>
+                                                    <fa:IconImage Icon="ArrowDown" Foreground="{StaticResource plainTextColor3}" Width="15"/>
+                                                </VisualBrush.Visual>
+                                            </VisualBrush>
+                                        </ComboBox.Background>
+                                    </ComboBox>
+
+                                    <TextBlock Text="Fecha Guia" Foreground="DarkGray" FontSize="12" FontWeight="Medium" FontFamily="Montserrat"/>
+                                    <StackPanel Orientation="Horizontal">
+                                        <DatePicker x:Name="dtGuia" Width="180" Height="28" VerticalContentAlignment="Center"/>
+                                    </StackPanel>
+
+                                    <Button x:Name="btn_Nuevo" Content="Agregar" Margin="5,0,0,10" Click="buttonnvo_Click" Width="175" HorizontalAlignment="Left"
+    FontSize="12" FontFamily="Montserrat" Cursor="Hand" BorderThickness="0">
+                                        <Button.Style>
+                                            <Style TargetType="Button">
+                                                <Setter Property="Background" Value="#773DFF"/>
+                                                <Setter Property="Foreground" Value="White"/>
+                                                <Setter Property="BorderThickness" Value="0"/>
+                                                <Setter Property="FontSize" Value="12"/>
+                                                <Setter Property="FontFamily" Value="Montserrat"/>
+                                                <Setter Property="Cursor" Value="Hand"/>
+                                                <Setter Property="Template">
+                                                    <Setter.Value>
+                                                        <ControlTemplate TargetType="Button">
+                                                            <Border Height="30" Width="Auto" CornerRadius="15" Background="{TemplateBinding Background}">
+                                                                <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                                            </Border>
+                                                        </ControlTemplate>
+                                                    </Setter.Value>
+                                                </Setter>
+                                                <Style.Triggers>
+                                                    <Trigger Property="IsMouseOver" Value="True">
+                                                        <Setter Property="Background" Value="#836EFB"/>
+                                                    </Trigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </Button.Style>
+                                    </Button>
+
+                                    <Label x:Name="lblCmp" Content="" HorizontalAlignment="Left"  VerticalAlignment="Top" Width="180" FontSize="12" Foreground="DarkGray"/>
+                                    <Label x:Name="lblUnit" Content="" HorizontalAlignment="Left"  VerticalAlignment="Top" Width="180" FontSize="12" Foreground="DarkGray"/>
+                                    <Label x:Name="lblCosto" Content="" HorizontalAlignment="Left"  VerticalAlignment="Top" Width="180" FontSize="12" Foreground="DarkGray"/>
+
+                                </StackPanel>
+                            </Grid>
+                        </ScrollViewer>
 
 
 
-            <Label Grid.Column="1" x:Name="label1_Copy5" Content="RUC Proveedor" HorizontalAlignment="Left" VerticalAlignment="Top"  Height="22" FontSize="10" FontFamily="Bahnschrift Light"  FontStretch="Normal" Margin="5,23,0,0" Width="77"/>
-            <Label Grid.Column="1" x:Name="label1_Copy6" Content="Proveedor" HorizontalAlignment="Left"  VerticalAlignment="Top"  Height="22" FontSize="10" FontFamily="Bahnschrift Light" FontStretch="Normal" Margin="5,52,0,0" RenderTransformOrigin="0.594,0.002" Width="56"/>
-            <Label x:Name="label1_Copy7" Content="Origen" HorizontalAlignment="Left" VerticalAlignment="Top"  Height="22" FontSize="10" FontFamily="Bahnschrift Light" FontStretch="Normal" Grid.Column="1" Margin="5,82,0,0" Width="39"/>
-            <Label x:Name="label1_Copy14" Content="Moneda" HorizontalAlignment="Left" VerticalAlignment="Top"  Height="22" FontSize="10" FontFamily="Bahnschrift Light" FontStretch="Normal" Grid.Column="1" Margin="5,106,0,0" Width="45"/>
-            <Label x:Name="label1_Copy19" Content="Fecha guia" HorizontalAlignment="Left" VerticalAlignment="Top" Height="22" FontSize="10"  FontFamily="Bahnschrift Light" FontStretch="Normal" Grid.Column="1" Margin="5,133,0,0" Width="58"/>
-            <Label x:Name="label1_Copy12" Content="Cantidad" HorizontalAlignment="Left" VerticalAlignment="Top" Height="22" FontSize="10" FontFamily="Bahnschrift Light" FontStretch="Normal" Grid.Column="1" Margin="5,199,0,0" Width="49"/>
-            <Label x:Name="label1_Copy13" Content="Observaciones" HorizontalAlignment="Left" VerticalAlignment="Top" Height="22" FontSize="10" FontFamily="Bahnschrift Light" FontStretch="Normal" Grid.Column="1" Margin="5,225,0,0" Width="76"/>
+                        <Grid Grid.Column="1">
 
-            <TextBox x:Name="txtRUC" TextWrapping="Wrap" VerticalAlignment="Top" HorizontalAlignment="Left" Height="24" FontSize="16" Grid.Column="1" Margin="82,19,0,0" Width="144"/>
-            <TextBox x:Name="txtProveedor" TextWrapping="Wrap" VerticalAlignment="Top" Height="26" FontSize="16" Grid.Column="1" Margin="80,50,10,0"/>
-            <TextBox x:Name="txtOrigen" TextWrapping="Wrap" VerticalAlignment="Top" Height="19" FontSize="16" Grid.Column="1" Margin="80,79,10,0"/>
-            <ComboBox x:Name="cmbMoneda" VerticalAlignment="Top" Height="19" FontSize="16" Grid.Column="1" Margin="80,109,10,0" />
-            <DatePicker x:Name="dtGuia" VerticalAlignment="Top" FontSize="16" Grid.Column="1" Margin="80,132,10,0" Height="23"/>
-            <TextBox x:Name="txtCantidad" TextWrapping="Wrap" VerticalAlignment="Top" Height="21" FontSize="16" Margin="80,193,10,0" Grid.Column="1"/>
-            <TextBox x:Name="txtObservaciones" TextWrapping="Wrap" VerticalAlignment="Top" Height="20" FontSize="16" Margin="80,225,10,0" Grid.Column="1"/>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
 
-            <Button x:Name="btn_proveedores" Content="..." HorizontalAlignment="Left" VerticalAlignment="Top" Height="25" Width="30" Grid.Column="1" Margin="231,19,0,0"/>
-            <Button x:Name="btn_Ingresar" Content="Ingresar" HorizontalAlignment="Left" VerticalAlignment="Top" Height="28" Width="72" FontSize="16" Background="#FF2263A4" Foreground="White" Margin="9,260,0,0" Grid.Column="1"/>
-            <Button x:Name="btn_Mod" Content="Modificar" HorizontalAlignment="Left" VerticalAlignment="Top" Height="26" Width="77" FontSize="16" Background="#FF57B87A" Foreground="White" Margin="103,261,0,0" Grid.Column="1"/>
-            <Button x:Name="btn_Limp" Content="Limpiar" HorizontalAlignment="Left" VerticalAlignment="Top" Height="27" Width="55" Background="#FFB46FB1" Foreground="White" FontWeight="Normal" FontSize="16" Margin="206,260,0,0" Grid.Column="1"/>
-            <Button x:Name="btn_Nuevo" Content="Nuevo" HorizontalAlignment="Left" VerticalAlignment="Top" Height="28" Width="100" FontSize="16" Background="#FF3D45E6" Foreground="White" Grid.Column="1" Margin="156,160,0,0"/>
+                            <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" CanContentScroll="True" Style="{StaticResource {x:Type ScrollViewer}}">
+                                <Grid Grid.Column="0">
+
+                                    <StackPanel Orientation="Horizontal" Margin="0" >
+
+                                        <Label x:Name="lblcant_entradas" Content=""  VerticalAlignment="Top" Height="36" FontFamily="Arial Rounded MT Bold"  FontStretch="Normal" FontWeight="Bold" Width="50" Foreground="White"/>
+
+                                        <Button x:Name="button1" Content=""  VerticalAlignment="Top" Width="30" Height="30" BorderBrush="{x:Null}" Foreground="{x:Null}" Click="button1_Click">
+                                            <Button.Background>
+                                                <ImageBrush ImageSource="/3688457_refresh_sync_map_reload_rotate_icon.png"/>
+                                            </Button.Background>
+                                        </Button>
+                                        <Button x:Name="button2" Content="" VerticalAlignment="Top" Width="30" Height="30" BorderBrush="{x:Null}" Foreground="{x:Null}" Click="button2_Click_1">
+                                            <Button.Background>
+                                                <ImageBrush ImageSource="/3688460_pencil_text_update_write_draw_icon.png"/>
+                                            </Button.Background>
+                                        </Button>
+
+                                        <Label x:Name="lbl_mode" Content="Modo Edición : OFF" HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="White">
+                                            <Label.Background>
+                                                <ImageBrush/>
+                                            </Label.Background>
+                                        </Label>
+                                    </StackPanel>
+                                </Grid>
+                            </ScrollViewer>
+
+                            <Grid Grid.Row="1">
+                                <Border Background="#200F53" CornerRadius="10" Padding="10" Margin="5,0,0,0">
+                                    <DataGrid x:Name="dtgEntradas" AutoGenerateColumns="False" Background="#200F53" BorderThickness="0" SelectionChanged="dtgEntradas_SelectionChanged" >
+                                        <DataGrid.ColumnHeaderStyle>
+                                            <Style TargetType="DataGridColumnHeader">
+                                                <Setter Property="Background" Value="Transparent"/>
+                                                <Setter Property="Foreground" Value="#BCBEE0"/>
+                                                <Setter Property="Padding" Value="10,0,0,10"/>
+                                                <Setter Property="FontFamily" Value="Montserrat"/>
+                                                <Setter Property="FontSize" Value="15"/>
+                                            </Style>
+                                        </DataGrid.ColumnHeaderStyle>
+                                        <DataGrid.Columns>
+                                            <!-- Define your columns here -->
+                                            <DataGridTextColumn Header="Tipo" Binding="{Binding Tipo}"/>
+                                            <DataGridTextColumn Header="Responsable" Binding="{Binding Responsable}"/>
+                                            <DataGridTextColumn Header="Fecha_Entrada" Binding="{Binding Fecha_Entrada}"/>
+                                            <DataGridTextColumn Header="Serie_Fact" Binding="{Binding Serie_Fact}"/>
+                                            <DataGridTextColumn Header="Nro_Fact" Binding="{Binding Nro_Fact}"/>
+                                            <DataGridTextColumn Header="RUC_Proveedor" Binding="{Binding RUC_Proveedor}"/>
+                                            <DataGridTextColumn Header="Proveedor" Binding="{Binding Proveedor}"/>
+
+                                            <DataGridTextColumn Header="Origen" Binding="{Binding Origen}"/>
+                                            <DataGridTextColumn Header="Moneda" Binding="{Binding Moneda}"/>
+                                            <DataGridTextColumn Header="MiniCodigo" Binding="{Binding MiniCodigo}"/>
+                                            <DataGridTextColumn Header="Producto" Binding="{Binding Producto}"/>
+                                            <DataGridTextColumn Header="Marca" Binding="{Binding Marca}"/>
+                                            <DataGridTextColumn Header="Precio_Unitario" Binding="{Binding Precio_Unitario}"/>
+                                            <DataGridTextColumn Header="Cantidad" Binding="{Binding Cantidad}"/>
+
+                                            <DataGridTextColumn Header="Fecha_guia" Binding="{Binding Fecha_guia}"/>
+                                            <DataGridTextColumn Header="Fecha_factura" Binding="{Binding Fecha_factura}"/>
+                                            <DataGridTextColumn Header="Observaciones" Binding="{Binding Observaciones}"/>
+                                            <DataGridTextColumn Header="Id_Entrada" Binding="{Binding Id_Entrada}"/>
+                                        </DataGrid.Columns>
+                                        <DataGrid.RowStyle>
+                                            <Style TargetType="DataGridRow">
+                                                <Style.Triggers>
+                                                    <DataTrigger Binding="{Binding Visibility}" Value="Collapsed">
+                                                        <Setter Property="Visibility" Value="Collapsed"/>
+                                                    </DataTrigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </DataGrid.RowStyle>
+                                    </DataGrid>
+                                </Border>
+                            </Grid>
+                        </Grid>
+                    </Grid>
+                </Grid>
+
+                <!-- Right Section (DataGrid and Buttons) -->
+                <Grid Grid.Column="1" Margin="0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+
+                    <!--2 Datos Orden-->
+
+                    <Grid Grid.Row="0" Margin="0,0,0,0">
+
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <ScrollViewer VerticalScrollBarVisibility="Auto" CanContentScroll="True">
+                            <Grid Grid.Column="0">
+                                <StackPanel  Width="180">
+
+                                    <Label x:Name="lblPartnumb" Content="" HorizontalAlignment="Left" Height="28"  VerticalAlignment="Top" Width="180" RenderTransformOrigin="0.5,0.5" Visibility="Collapsed"/>
+
+                                    <TextBlock Text="Producto" Foreground="DarkGray" FontSize="12" FontWeight="Medium" FontFamily="Montserrat"/>
+                                    <TextBox x:Name="txtProducto" FontSize="13" FontWeight="Medium" FontFamily="Montserrat" Foreground="White" 
+CaretBrush="LightGray" BorderBrush="DarkGray" BorderThickness="0,0,0,2" Height="28" Width="180"
+VerticalContentAlignment="Center" Padding="20,0,0,0" Margin="0,5,0,10">
+                                        <TextBox.Background>
+                                            <VisualBrush Stretch="None" AlignmentX="Left" AlignmentY="Center">
+                                                <VisualBrush.Visual>
+                                                    <fa:IconImage Icon="UserAlt" Foreground="DarkGray" Width="15"/>
+                                                </VisualBrush.Visual>
+                                            </VisualBrush>
+                                        </TextBox.Background>
+                                    </TextBox>
+
+                                    <TextBlock Text="Mini Codigo" Foreground="DarkGray" FontSize="12" FontWeight="Medium" FontFamily="Montserrat"/>
+                                    <TextBox x:Name="txtMinicod" FontSize="13" FontWeight="Medium" FontFamily="Montserrat" Foreground="White" TextChanged="textBox4_TextChanged" 
+CaretBrush="LightGray" BorderBrush="DarkGray" BorderThickness="0,0,0,2" Height="28" Width="180"
+VerticalContentAlignment="Center" Padding="20,0,0,0" Margin="0,5,0,10">
+                                        <TextBox.Background>
+                                            <VisualBrush Stretch="None" AlignmentX="Left" AlignmentY="Center">
+                                                <VisualBrush.Visual>
+                                                    <fa:IconImage Icon="UserAlt" Foreground="DarkGray" Width="15"/>
+                                                </VisualBrush.Visual>
+                                            </VisualBrush>
+                                        </TextBox.Background>
+                                    </TextBox>
+
+                                    <TextBlock Text="Precio Unitario" Foreground="DarkGray" FontSize="12" FontWeight="Medium" FontFamily="Montserrat"/>
+
+                                    <StackPanel Orientation="Horizontal" Margin="0" >
+
+                                        <TextBox x:Name="txtPreciounit" FontSize="13" FontWeight="Medium" FontFamily="Montserrat" Foreground="White"
+CaretBrush="LightGray" BorderBrush="DarkGray" BorderThickness="0,0,0,2" Height="28" Width="100"
+VerticalContentAlignment="Center" Padding="20,0,0,0" Margin="0,5,0,10">
+                                            <TextBox.Background>
+                                                <VisualBrush Stretch="None" AlignmentX="Left" AlignmentY="Center">
+                                                    <VisualBrush.Visual>
+                                                        <fa:IconImage Icon="UserAlt" Foreground="DarkGray" Width="15"/>
+                                                    </VisualBrush.Visual>
+                                                </VisualBrush>
+                                            </TextBox.Background>
+                                        </TextBox>
+
+                                        <CheckBox x:Name="cbxIGV" Content="Incluye IGV"   Width="80" FontSize="12" Foreground="DarkGray"  Margin="0,5,0,10" VerticalContentAlignment="Bottom"/>
+
+                                    </StackPanel>
 
 
 
-            <Label x:Name="label1_Copy20" Content="Comprobante :" HorizontalAlignment="Left" VerticalAlignment="Top" Height="30" FontFamily="Arial Rounded MT Bold" FontSize="15" FontStretch="Normal" FontWeight="Bold" Grid.Column="2" Margin="10,13,0,0" Width="119"/>
-            <Label x:Name="label1_Copy21" Content="Total unidades:" HorizontalAlignment="Left" VerticalAlignment="Top" Height="36" FontFamily="Arial Rounded MT Bold" FontSize="15" FontStretch="Normal" FontWeight="Bold" Grid.Column="2" Margin="10,40,0,0" Width="122"/>
-            <Label x:Name="label1_Copy22" Content="Total costo:" HorizontalAlignment="Left" VerticalAlignment="Top" Height="36" FontFamily="Arial Rounded MT Bold" FontSize="15" FontStretch="Normal" FontWeight="Bold" Grid.Column="2" Margin="10,68,0,0" Width="96"/>
-            <Label x:Name="label1_Copy16" Content="Info producto" HorizontalAlignment="Left" VerticalAlignment="Top" Height="41" FontFamily="Arial Rounded MT Bold" FontSize="18" FontStretch="Normal" FontWeight="Bold" Grid.Column="2" Margin="10,93,0,0" Width="128"/>
-            <Label x:Name="label1_Copy28" Content="Buscar por:" HorizontalAlignment="Left" VerticalAlignment="Top" Height="30" FontFamily="Arial Rounded MT Bold" FontSize="18" FontStretch="Normal" FontWeight="Bold" Grid.Column="2" Margin="2,215,0,0" Width="113"/>
-            <Label x:Name="label1_Copy24" Content="Factura" HorizontalAlignment="Left"  VerticalAlignment="Top" FontWeight="Bold" Grid.Column="2" Margin="2,245,0,0" Height="26" Width="52"/>
-            <Label x:Name="label1_Copy25" Content="RUC Proveedor" HorizontalAlignment="Left" VerticalAlignment="Top" FontWeight="Bold" Margin="2,269,0,0" Grid.Column="2" Height="26" Width="96"/>
-            <Label x:Name="label1_Copy26" Content="Proveedor" HorizontalAlignment="Left" VerticalAlignment="Top" FontWeight="Bold" Grid.Column="2" Margin="2,290,0,0" Height="26" Width="69"/>
-            <Label x:Name="label1_Copy23" Content="Nro Orden" HorizontalAlignment="Left" VerticalAlignment="Top" FontWeight="Bold" Grid.Column="2" Margin="152,242,0,0" Height="26" Width="70"/>
-            <Label x:Name="label1_Copy17" Content="Producto" HorizontalAlignment="Left" VerticalAlignment="Top" FontWeight="Bold" Grid.Column="2" Margin="152,270,0,0" Height="26" Width="62"/>
-            <Label x:Name="label1_Copy27" Content="Marca" HorizontalAlignment="Left" VerticalAlignment="Top" FontWeight="Bold" Grid.Column="2" Margin="152,287,0,0" Height="26" Width="45"/>
+                                    <TextBlock Text="Cantidad" Foreground="DarkGray" FontSize="12" FontWeight="Medium" FontFamily="Montserrat"/>
+                                    <TextBox x:Name="txtCantidad" FontSize="13" FontWeight="Medium" FontFamily="Montserrat" Foreground="White"
+     CaretBrush="LightGray" BorderBrush="DarkGray" BorderThickness="0,0,0,2" Height="28" Width="180"
+     VerticalContentAlignment="Center" Padding="20,0,0,0" Margin="0,5,0,10">
+                                        <TextBox.Background>
+                                            <VisualBrush Stretch="None" AlignmentX="Left" AlignmentY="Center">
+                                                <VisualBrush.Visual>
+                                                    <fa:IconImage Icon="UserAlt" Foreground="DarkGray" Width="15"/>
+                                                </VisualBrush.Visual>
+                                            </VisualBrush>
+                                        </TextBox.Background>
+                                    </TextBox>
 
-            <TextBox x:Name="txt_searchfactura" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Width="88" Margin="58,249,0,0" Grid.Column="2"/>
-            <TextBox x:Name="txt_searchrucproveedor" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Width="48" Grid.Column="2" Margin="99,272,0,0"/>
-            <TextBox x:Name="txt_searchproveedor" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Width="72" Grid.Column="2" Margin="80,294,0,0"/>
-            <TextBox x:Name="txt_searchnorden" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Width="39" Grid.Column="2" Margin="222,249,0,0"/>
-            <TextBox x:Name="txt_searchproducto" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Width="47" Grid.Column="2" Margin="214,274,0,0"/>
-            <TextBox x:Name="txt_searchmarca" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Width="46" Grid.Column="2" Margin="211,294,0,0"/>
+                                    <TextBlock Text="Observaciones" Foreground="DarkGray" FontSize="12" FontWeight="Medium" FontFamily="Montserrat"/>
+                                    <TextBox x:Name="txtObservaciones" FontSize="13" FontWeight="Medium" FontFamily="Montserrat" Foreground="White"
+CaretBrush="LightGray" BorderBrush="DarkGray" BorderThickness="0,0,0,2" Height="28" Width="180"
+VerticalContentAlignment="Center" Padding="20,0,0,0" Margin="0,5,0,10">
+                                        <TextBox.Background>
+                                            <VisualBrush Stretch="None" AlignmentX="Left" AlignmentY="Center">
+                                                <VisualBrush.Visual>
+                                                    <fa:IconImage Icon="UserAlt" Foreground="DarkGray" Width="15"/>
+                                                </VisualBrush.Visual>
+                                            </VisualBrush>
+                                        </TextBox.Background>
+                                    </TextBox>
+
+                                    <Button x:Name="btn_Ingresar" Content="Agregar" Margin="5,0,0,10" Click="button6_Click" Width="175" HorizontalAlignment="Left"
+FontSize="12" FontFamily="Montserrat" Cursor="Hand" BorderThickness="0">
+                                        <Button.Style>
+                                            <Style TargetType="Button">
+                                                <Setter Property="Background" Value="#773DFF"/>
+                                                <Setter Property="Foreground" Value="White"/>
+                                                <Setter Property="BorderThickness" Value="0"/>
+                                                <Setter Property="FontSize" Value="12"/>
+                                                <Setter Property="FontFamily" Value="Montserrat"/>
+                                                <Setter Property="Cursor" Value="Hand"/>
+                                                <Setter Property="Template">
+                                                    <Setter.Value>
+                                                        <ControlTemplate TargetType="Button">
+                                                            <Border Height="30" Width="Auto" CornerRadius="15" Background="{TemplateBinding Background}">
+                                                                <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                                            </Border>
+                                                        </ControlTemplate>
+                                                    </Setter.Value>
+                                                </Setter>
+                                                <Style.Triggers>
+                                                    <Trigger Property="IsMouseOver" Value="True">
+                                                        <Setter Property="Background" Value="#836EFB"/>
+                                                    </Trigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </Button.Style>
+                                    </Button>
+
+                                    <Button x:Name="btn_Mod" Content="Modificar" Margin="5,0,0,10" Width="175" HorizontalAlignment="Left" Click="button2_Click"
+    FontSize="12" FontFamily="Montserrat" Cursor="Hand" BorderThickness="0">
+                                        <Button.Style>
+                                            <Style TargetType="Button">
+                                                <Setter Property="Background" Value="#773DFF"/>
+                                                <Setter Property="Foreground" Value="White"/>
+                                                <Setter Property="BorderThickness" Value="0"/>
+                                                <Setter Property="FontSize" Value="12"/>
+                                                <Setter Property="FontFamily" Value="Montserrat"/>
+                                                <Setter Property="Cursor" Value="Hand"/>
+                                                <Setter Property="Template">
+                                                    <Setter.Value>
+                                                        <ControlTemplate TargetType="Button">
+                                                            <Border Height="30" Width="Auto" CornerRadius="15" Background="{TemplateBinding Background}">
+                                                                <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                                            </Border>
+                                                        </ControlTemplate>
+                                                    </Setter.Value>
+                                                </Setter>
+                                                <Style.Triggers>
+                                                    <Trigger Property="IsMouseOver" Value="True">
+                                                        <Setter Property="Background" Value="#836EFB"/>
+                                                    </Trigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </Button.Style>
+                                    </Button>
+
+                                    <Button x:Name="btn_Limp" Content="Limpiar" Margin="5,0,0,10" Click="btn_Limp_Click" Width="175" HorizontalAlignment="Left"
+FontSize="12" FontFamily="Montserrat" Cursor="Hand" BorderThickness="0">
+                                        <Button.Style>
+                                            <Style TargetType="Button">
+                                                <Setter Property="Background" Value="#773DFF"/>
+                                                <Setter Property="Foreground" Value="White"/>
+                                                <Setter Property="BorderThickness" Value="0"/>
+                                                <Setter Property="FontSize" Value="12"/>
+                                                <Setter Property="FontFamily" Value="Montserrat"/>
+                                                <Setter Property="Cursor" Value="Hand"/>
+                                                <Setter Property="Template">
+                                                    <Setter.Value>
+                                                        <ControlTemplate TargetType="Button">
+                                                            <Border Height="30" Width="Auto" CornerRadius="15" Background="{TemplateBinding Background}">
+                                                                <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                                            </Border>
+                                                        </ControlTemplate>
+                                                    </Setter.Value>
+                                                </Setter>
+                                                <Style.Triggers>
+                                                    <Trigger Property="IsMouseOver" Value="True">
+                                                        <Setter Property="Background" Value="#836EFB"/>
+                                                    </Trigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </Button.Style>
+                                    </Button>
+
+                                </StackPanel>
+                            </Grid>
+                        </ScrollViewer>
 
 
 
+                        <Grid Grid.Column="1">
 
-            <Button x:Name="btn_Limp_Copy" Content="Buscar" HorizontalAlignment="Left" VerticalAlignment="Top" Height="24" Width="72" Background="#FF079E60" Foreground="White" FontWeight="Normal" FontSize="16" Grid.Column="2" Margin="115,221,0,0" />
-            <Button x:Name="btn_Limp_Copy1" Content="Limpiar" HorizontalAlignment="Left" VerticalAlignment="Top" Height="26" Width="67" Background="#FFA5B600" Foreground="White" FontWeight="Normal" FontSize="16" Grid.Column="2" Margin="190,221,0,0"  RenderTransformOrigin="0.458,0.309" />
-            <DataGrid x:Name="dtg_infoprod" HorizontalAlignment="Center" Height="74" VerticalAlignment="Top" Width="235" Grid.Column="2" Margin="0,130,0,30"/>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+
+                            <Grid Grid.Row="0">
+                                <Border Background="#200F53" CornerRadius="10" Padding="10" Margin="5,0,0,5">
+                                    <DataGrid x:Name="dtg_infoprod" AutoGenerateColumns="False" Background="#200F53" BorderThickness="0" SelectionChanged="dtg_infoprod_SelectionChanged">
+                                        <DataGrid.ColumnHeaderStyle>
+                                            <Style TargetType="DataGridColumnHeader">
+                                                <Setter Property="Background" Value="Transparent"/>
+                                                <Setter Property="Foreground" Value="#BCBEE0"/>
+                                                <Setter Property="Padding" Value="10,0,0,10"/>
+                                                <Setter Property="FontFamily" Value="Montserrat"/>
+                                                <Setter Property="FontSize" Value="15"/>
+                                            </Style>
+                                        </DataGrid.ColumnHeaderStyle>
+                                        <DataGrid.Columns>
+                                            <!-- Define your columns here -->
+                                            <DataGridTextColumn Header="Stock" Binding="{Binding Stock}"/>
+                                            <DataGridTextColumn Header="Mini_Codigo" Binding="{Binding Mini_Codigo}"/>
+                                            <DataGridTextColumn Header="Partnumber" Binding="{Binding Partnumber}"/>
+                                            <DataGridTextColumn Header="Producto" Binding="{Binding Producto}"/>
+                                            <DataGridTextColumn Header="Marca" Binding="{Binding Marca}"/>
+                                            <DataGridTextColumn Header="Proveedor" Binding="{Binding Proveedor}"/>
+                                            <DataGridTextColumn Header="Fecha" Binding="{Binding Fecha}"/>
+                                        </DataGrid.Columns>
+                                        <DataGrid.RowStyle>
+                                            <Style TargetType="DataGridRow">
+                                                <Style.Triggers>
+                                                    <DataTrigger Binding="{Binding Visibility}" Value="Collapsed">
+                                                        <Setter Property="Visibility" Value="Collapsed"/>
+                                                    </DataTrigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </DataGrid.RowStyle>
+                                    </DataGrid>
+                                </Border>
+                            </Grid>
+
+                            <Grid Grid.Row="1">
+                                <Border Background="#200F53" CornerRadius="10" Padding="10" Margin="5,0,0,0">
+                                    <DataGrid x:Name="dtgFact" AutoGenerateColumns="False" Background="#200F53" BorderThickness="0" SelectionChanged="dtg_infoprod_SelectionChanged">
+                                        <DataGrid.ColumnHeaderStyle>
+                                            <Style TargetType="DataGridColumnHeader">
+                                                <Setter Property="Background" Value="Transparent"/>
+                                                <Setter Property="Foreground" Value="#BCBEE0"/>
+                                                <Setter Property="Padding" Value="10,0,0,10"/>
+                                                <Setter Property="FontFamily" Value="Montserrat"/>
+                                                <Setter Property="FontSize" Value="15"/>
+                                            </Style>
+                                        </DataGrid.ColumnHeaderStyle>
+                                        <DataGrid.Columns>
+                                            <!-- Define your columns here -->
+                                            <DataGridTextColumn Header="Factura" Binding="{Binding Factura}"/>
+                                            <DataGridTextColumn Header="Total" Binding="{Binding Total}"/>
+                                            <DataGridTextColumn Header="Cantidad" Binding="{Binding Cantidad}"/>
+                                        </DataGrid.Columns>
+                                        <DataGrid.RowStyle>
+                                            <Style TargetType="DataGridRow">
+                                                <Style.Triggers>
+                                                    <DataTrigger Binding="{Binding Visibility}" Value="Collapsed">
+                                                        <Setter Property="Visibility" Value="Collapsed"/>
+                                                    </DataTrigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </DataGrid.RowStyle>
+                                    </DataGrid>
+                                </Border>
+                            </Grid>
+
+                        </Grid>
+                    </Grid>
+
+                    <!--4. Datos Adicionales-->
+
+                </Grid>
+            </Grid>
 
         </Grid>
 
 
-        <!-- Elementos de la segunda fila -->
-        <Grid Grid.Row="1">
-            <Label x:Name="lbl_mode" Content="Modo Edición : OFF" HorizontalAlignment="Left" VerticalAlignment="Top"></Label>
-            <DataGrid x:Name="dtgEntradas" Margin="132,10,0,10"/>
-        </Grid>
+        <DockPanel x:Name="Panelpedidos" LastChildFill="False" Background="DodgerBlue"  Visibility="Collapsed" Width="700" Height="350" VerticalAlignment="Center" HorizontalAlignment="Center">
+            <DataGrid x:Name="dtg_prov" Width="600" Height="300" DockPanel.Dock="Bottom"  SelectionChanged="dtg_pedidos_SelectionChanged"/>
+            <Label x:Name="label1_Copy29" Content="    Seleccionar Proveedor" FontWeight="Bold" DockPanel.Dock="Left" Width="200" Height="44" FontSize="16" Foreground="DarkGray"/>
+            <Button x:Name="btn_Salir" Content="Salir" DockPanel.Dock="Right" Width="128" Height="29" Margin="12,0,12,0" Background="#FFEC5252" Foreground="White" FontSize="16" FontWeight="Bold" Click="btn_Salir_Click"/>
+            <TextBox x:Name="txtsearch_prov" TextWrapping="Wrap" DockPanel.Dock="Left" Width="197" Height="26" TextChanged="txtsearch_prov_TextChanged_1"/>
+        </DockPanel>
 
     </Grid>
+
 </UserControl>
